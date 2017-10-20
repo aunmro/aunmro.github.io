@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+> 本文内容主要参考了《CSS权威指南》、《高流量网站CSS开发技术》，如果您不愿阅读二手文章可以查阅这2本书。
+
+我们知道编写 CSS 代码过程中，对于同一个元素可能有多种相互冲突的值，比如：
+
+``` html
+<head>
+<style>
+body p {
+  color: blue;
+}
+
+p {
+  color: #f0f0f0;
+}
+
+.test {
+  color: red;
+}
+</style>
+</head>
+
+<body>
+  <p class="test">test</p>
+</body>
+```
+
+当出现冲突时如何确定某项 CSS 属性的值呢？这个时候层叠就出场了，浏览器根据 CSS 代码的来源、子元素对父元素的继承、属性声明的特殊性和重要性等来决定 CSS 属性的值，这个过程就是层叠。
+
+层叠依赖于重要性、特殊性、继承等等。
+
+# 层叠规则
+
+## 1. 按照顺序决定属性值
+
+在不考虑特殊性、重要性等情况下，后出现的属性优先级高。比如以下代码`p`的`font-size`为 30px。
+
+``` html
+<head>
+<style>
+p {font-size: 20px;}
+p {font-size: 30px;}
+</style>
+</head>
+<body>
+  <p>test</p>
+</body>
+```
+
+## 2. 重要性 `!important`
+
+CSS 值可以添加`!important` 强调其重要性，提高其属性优先级。比如如下代码`p`的`font-size`为 20px。
+
+**加入`!important`后，CSS属性值的优先级是最大的，无视特殊性等等。**
+
+``` html
+<head>
+<style>
+p {font-size: 20px !important;}
+p {font-size: 30px;}
+</style>
+</head>
+<body>
+  <p>test</p>
+</body>
+```
+
+## 3. CSS代码来源
+
+CSS 样式并不止来源于开发者编写的代码，CSS 来源主要包括：
+1. 浏览器默认样式
+2. 用户自己的样式表
+3. 开发者设置的样式
+
+优先级而言，**开发者设置的样式 > 用户自己设置的样式 > 浏览器样式**。
+
+用户同样可以设置`!important`重要性，这个时候样式的优先级变为：
+
+**带有`!important`的用户样式 > 带有`!important`的开发者样式 > 开发者样式 > 用户样式 > 浏览器默认样式**
+
+## 4. 特殊性
+
+相对来说，特殊性是层叠规则里最重要的。
+
+为一个元素添加样式可以通过各种方式，`p`元素选择器、`#main`id选择器、`<p style="">`内联样式、`[href=]`属性选择器等等。
+
+比如
+
+``` html
+<head>
+<style>
+p.test {font-size: 20px;}
+p#context {font-size: 30px;}
+</style>
+</head>
+<body>
+  <p style="font-size: 10px;" id="context" class="test">test</p>
+</body>
+```
+
+如何确定那条样式设定胜出呢——**选择器的特殊性计算值**。
+
+### 特殊性计算值
+
+> w3c 上计算特殊性仅采用了3个值，不过本质上与本文一致。地址：
+> https://www.w3.org/TR/selectors/#specificity
+
+特殊性为4个数值，假设4个值为a,b,c,d
+
+1. 第一个值 a 代表内联样式的值，有内联样式时值为1否则为0。
+   
+    **只考虑特殊性的情况下，内联样式值的权重是最高的！**
+   
+    ``` html
+    <head>
+    <style>
+    p {font-size: 20px;}
+    body > p {font-size: 10px;}
+    </style>
+    </head>
+    <body>
+     <p style="font-size: 10px;">test</p>
+    </body>
+    ```
+   
+    以上代码只考虑特殊性，无论如何修改font-size必定为10px。因为内联样式的计算值为`a=1, b=0, c=0, d=0`，其 CSS 规则的内联值`a=0`。
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 第二个值 b 为id选择器数量的值，比如以下代码：
+   
+    ``` html
+    <head>
+    <style>
+    #outer #main {color: blue;}
+    #main {color: red;}
+    </style>
+    </head>
+    <body>
+     <div id="outer">
+       <div id="inner">
+         <p id="main">test</p>
+       </div>
+     </div>
+    </body>
+    ```
+
+    其中第一项的id选择器是`#outer #main`，计算值为`a=0,b=2,c=0,d=0`；第二项`#main`计算值为`a=0,b=1,c=0,d=0`。所以第一项胜出，p 的颜色为 blue 。
+
+    **b 的值就是 id 选择器数量的叠加，值高者胜出**。
+
+    注意：
+    1. **id 选择器的权重低于内联**
+
+      比如`<p id="main" style="color: #f8f8f8;">test</p>`没有`!important` 胜出的是`color: #f8f8f8;`。
+    2. **id 选择器权重高于c，d等计算值**。比如以下代码：
+
+        ``` html
+        <head>
+        <style>
+        #main {color: #f8f8f8;}
+        [id="inner"] {color: red;}
+        div div p {color: yellow;}
+        div > p {color: black;}
+        </style>
+        </head>
+        <body>
+        <div>
+          <div id="inner">
+            <p id="main">test</p>
+          </div>
+        </div>
+        </body>
+        ```
+
+        无论是属性选择器、元素选择器等等优先级都比 id 选择器低，`color`值为`#f8f8f8`。
+
+        `#main {color: #f8f8f8;}`的计算值为`a=0,b=1,c=0,d=0`，而其余CSS代码`b=0`，所以`#main`胜出。
+
+3. 第三个值 c 代表的是类选择器、属性选择器、伪类(:hover, :active等)
+   
+    例子 1：
+   
+    ``` html
+    <head>
+    <style>
+
+    .test {color: red;}
+    [class="outer"] [class="test"] {color: blue;}
+
+    </style>
+    </head>
+    <body>
+
+     <div class="outer">
+       <div class="inner">
+         <p class="test">test</p>
+       </div>
+     </div>
+
+    </body>
+    ```
+
+    第一项`.test` 的计算值为`a=0,b=0,c=1,d=0`，第二项计算值为`a=0,b=0,c=2,d=0`，因此第二项胜出。
+
+    例子 2：
+
+    ``` html
+    <head>
+    <style>
+
+    :focus {background-color: red;}
+    [name="username"]:focus {background-color: blue;}
+
+    </style>
+    </head>
+    <body>
+
+     <form>
+       <label>Username:</label>
+       <input name="username">
+     </form>
+
+    </body>
+    ```
+
+    `:focus`的计算值`a=0,b=0,c=1,d=0`,`[name="username"]:focus`的计算值`c=2`，因此后一项胜出。
+
+4. 第四个数值 d 表示元素和伪元素的数量相加
+   
+    ``` html
+    <head>
+    <style>
+
+    body p {color: red;}
+    p {color: black;}
+
+    </style>
+    </head>
+    <body>
+
+     <p>test</p>
+
+    </body>
+    ```
+
+    比如上例，`body p`的计算值`d=2`所以 p 的颜色为红色。
+
+5. `*` 和继承
+
+    1. **`*`通配符提供的计算值为0**
+      
+        ``` html
+        <head>
+        <style>
+
+        * p {font-size: 10px;}
+        p {font-size: 20px;}
+
+        </style>
+        </head>
+        <body>
+        <p>test</p>
+        </body>
+        ```
+
+        由于`*`的贡献值为0，所以`p`的`font-size`被替换为20px。
+        
+   2. **计算值为0并不意味着无价值，因为子元素继承并不能贡献计算值，连0也不行**
+      
+        ``` html
+        <head>
+        <style>
+
+        div {font-size: 20px;}
+        * {font-size: 10px;}
+
+        </style>
+        </head>
+        <body>
+        <div>
+          <p>test</p>
+        </div>
+        </body>
+        ```
+
+        比如以上代码`p`继承了`div`，`font-size`本该为20px，但`*`为选择器提供了0点计算值胜过了继承值，因此`font-size`变为 10px。
+        
+### 特殊性计算规则
+
+总结特殊性计算规则
+
+1. 比较内联样式：内联样式最优先
+2. 比较id选择器：含有 id 选择器的元素优先级大于无 id 选择器的元素，都含有 id 时比较选择器 id 数量
+3. 比较类选择器，属性选择器，伪类数量
+4. 比较元素，伪元素数量
+
+在实际开发中，选择器构成可能会更复杂一些，比如：
+
+``` html
+<head>
+<style>
+
+div.content #main-li {color: red;}
+ul#main .first {color: blue;}
+
+</style>
+</head>
+<body>
+  <div class="content"">
+    <ul id="main">
+      <li id="main-li" class="first">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+</body>
+```
+
+1. `div.content .first`的选择器计算值为：`div d=1` `.content c=1` `#main-li b=1` `a=0,b=1,c=1,d=1`
+2. `ul#main .first`的计算值为：`ul d=1` `#main b=1` `.first c=1`, `a=0,b=1,c=1,d=1`
+
+二者计算值一样，根据先后顺序选择后一项。
+
+## 5. 整个层叠的计算
+
+1. `!important`的用户样式
+2. `!important`的开发者样式
+3. 计算特殊性后的开发者样式
+4. 计算特殊性后的用户样式
+
+## 6. LVHA(link-visited-hover-active)
+
+LVHA 指的是超链接伪类，这些伪类的排列顺序是有讲究的。
+
+1. `:link`伪类指的是未访问的超链接
+2. `:visited`已访问的超链接
+3. `:hover`悬停鼠标的超链接
+4. `:active` 激活状态下的链接
+
+以下代码你可以可以看见所有的CSS样式
+
+``` html
+<head>
+<style>
+:link {color: black;}
+:visited {color: #f8f8f8;}
+:hover {color: red;}
+:active {color: blue;}
+</style>
+</head>
+<body>
+  <a href="#main">test</a>
+</body>
+```
+
+但我们调整一下代码:
+
+``` html
+<head>
+<style>
+:hover {color: red;}
+:link {color: black;}
+</style>
+</head>
+<body>
+  <a href="#main">test</a>
+</body>
+```
+
+我们会发现`:hover`代码失效了，**因为`:active` `:visited` `:link` `:hover`的特殊性计算值是一样的**，根据顺序后写的代码会覆盖之前的样式。
+
+另一组代码：
+
+``` html
+<head>
+<style>
+:hover {color: red;}
+:link {color: black;}
+</style>
+</head>
+<body>
+  <a href="#main">test</a>
+</body>
+```
+
+**`:link` `:visited`不会相互影响**
+
+``` html
+<head>
+<style>
+:hover {color: #f8f8f8;}
+:visited {color: red;}
+:link {color: black;}
+</style>
+</head>
+<body>
+  <a href="#main">test</a>
+</body>
+```
+
+**`:hover`会被`:link` `:visited`覆盖**
+
+``` html
+<head>
+<style>
+:active {colore: red;}
+:hover {color: #f8f8f8;}
+</style>
+</head>
+<body>
+  <a href="#main">test</a>
+</body>
+```
+
+**`:active`会被`:hover`覆盖**
+
+总结：
+1. `:link` `:visited`状态本身就包含`:hover` `:active`,前者会覆盖后者。
+2. `:hover`状态本身包含`:active`，悬浮包含点击状态，前者覆盖后者。
+3. 正确的顺序是 `link` `visited` `hover` `active` ，link和visited先后顺序其实不重要
+
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "css-chendie.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
