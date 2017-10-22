@@ -1,6 +1,5 @@
 <?php
 $curl = curl_init("https://api.github.com/repos/aunmro/aunmro.github.io/contents/blogs");
-$file = fopen('contents.json', 'w');
 
 //curl_setopt($curl, CURLOPT_FILE, $file);
 curl_setopt($curl, CURLOPT_HEADER, 0);
@@ -22,6 +21,7 @@ while($fc=$ul->firstChild) {
 
 foreach($blogs as $blog) {
     $blog_title = str_replace('-', ' ', $blog->name);
+    $blog_title = str_replace('.ipynb', '', $blog_title);
     $blog_title = ucfirst($blog_title);
     $ul_li = $doc->createElement('li');
     $ul_li = $ul->appendChild($ul_li);
