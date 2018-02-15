@@ -37,13 +37,13 @@
 </p>
 </blockquote>
 
-<div id="outline-container-org41446d3" class="outline-2">
-<h2 id="org41446d3">前置知识</h2>
-<div class="outline-text-2" id="text-org41446d3">
+<div id="outline-container-org5c8e981" class="outline-2">
+<h2 id="org5c8e981">前置知识</h2>
+<div class="outline-text-2" id="text-org5c8e981">
 </div>
-<div id="outline-container-org8ee0b65" class="outline-3">
-<h3 id="org8ee0b65">用户空间(user space), 内核与系统调用(system call)</h3>
-<div class="outline-text-3" id="text-org8ee0b65">
+<div id="outline-container-org5c2acfb" class="outline-3">
+<h3 id="org5c2acfb">用户空间(user space), 内核与系统调用(system call)</h3>
+<div class="outline-text-3" id="text-org5c2acfb">
 <p>
 现代操作系统划分了 <b>内核空间(kernel space)</b> 和 <b>用户空间(user space)</b>, 计算机使用者通过 Unix 内核与计算机硬件进行交互（读写文件、发送数据、分配内存、播放媒体文件等等），依赖内核的程序比如文件系统、驱动程序等等。鉴于内核强大的能力，程序不可以直接访问内核，所有与内核的交互都通过 <b>系统调用（System call）</b> 完成。不借助 System call 你仍可以写程序，比如科学计算、操作字符串、算法题等等，但有些情况你必须调用内核来完成，比如像 nginx mysql之类永远运行的后台程序。
 </p>
@@ -51,22 +51,22 @@
 </div>
 </div>
 
-<div id="outline-container-orgea0203c" class="outline-2">
-<h2 id="orgea0203c">进程</h2>
-<div class="outline-text-2" id="text-orgea0203c">
+<div id="outline-container-org439d978" class="outline-2">
+<h2 id="org439d978">进程</h2>
+<div class="outline-text-2" id="text-org439d978">
 </div>
-<div id="outline-container-org2d0b127" class="outline-3">
-<h3 id="org2d0b127">进程: Unix 基石</h3>
-<div class="outline-text-3" id="text-org2d0b127">
+<div id="outline-container-org9fbeb29" class="outline-3">
+<h3 id="org9fbeb29">进程: Unix 基石</h3>
+<div class="outline-text-3" id="text-org9fbeb29">
 <p>
 进程是 Unix 的核心，代码都是在进程中执行的。比如当你运行一个ruby程序时， <code>ruby example.rb</code> 你的代码就生成了一个新的进程，程序执行完毕，进程也随之退出。同样，运行 MySQL、PG 等数据库时，打开浏览器时，这些程序都运行在自己的进程中。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0c1ee8f" class="outline-3">
-<h3 id="org0c1ee8f">进程的标识符 pid</h3>
-<div class="outline-text-3" id="text-org0c1ee8f">
+<div id="outline-container-orgb2f01b2" class="outline-3">
+<h3 id="orgb2f01b2">进程的标识符 pid</h3>
+<div class="outline-text-3" id="text-orgb2f01b2">
 <p>
 每个进程都有唯一的进程标识符（pid），对内核来说只是一个数字。我们可以编写一个 ruby 脚本查看其pid。
 </p>
@@ -111,9 +111,9 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-org3eefde9" class="outline-3">
-<h3 id="org3eefde9">父进程</h3>
-<div class="outline-text-3" id="text-org3eefde9">
+<div id="outline-container-org94b1c46" class="outline-3">
+<h3 id="org94b1c46">父进程</h3>
+<div class="outline-text-3" id="text-org94b1c46">
 <p>
 系统中运行的每一个进程都有对应的父进程，每个进程都知道其父进程的标识符(ppid)。在 ruby 中查看父进程，使用 <code>Process.ppid</code> , 对应着system call 中的 <code>getppid()</code>
 </p>
@@ -129,8 +129,210 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-org1dc418d" class="outline-3">
-<h3 id="org1dc418d">文件描述符</h3>
+<div id="outline-container-org526bab3" class="outline-3">
+<h3 id="org526bab3">文件描述符</h3>
+<div class="outline-text-3" id="text-org526bab3">
+<p>
+Unix 世界中，除了将一般的文件视为文件外，也将设备、管道、socket 视为文件(和称为“资源”)。
+</p>
+
+<blockquote>
+<p>
+在Unix世界中，万物皆为文件
+</p>
+</blockquote>
+
+<p>
+在任何进程(程序)中，打开资源都会获得文件描述符。进程关闭后，该进程打开的资源会被一同关闭。
+</p>
+
+<p>
+ruby 中通过 <code>fileno</code> 获得文件描述符
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">passwd = File.open('/etc/passwd' )
+passwd.fileno
+</pre>
+</div>
+
+<p>
+输出: 7。进程打开的资源都会获得一个用于标识的唯一数字，内核通过这个数字追踪进程所用的资源。
+</p>
+
+<p>
+打开多文件时
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">file1 = File.open('/etc/passwd')
+file2 = File.open('/etc/hosts')
+
+puts file1.fileno # 7
+puts file2.fileno # 8
+
+file1.close
+file2.close
+
+file2 = File.open('/etc/hosts')
+
+puts file2.fileno # 7
+</pre>
+</div>
+
+<p>
+输出结果为：
+</p>
+<pre class="example">
+7
+8
+7
+</pre>
+
+<ol class="org-ol">
+<li>当我们打开第一个文件时获得描述符编号是7，即尚未使用的最小值。第二个文件描述符是8</li>
+<li>当我们关闭一个资源时，对应的文件描述符编号就关闭了。再次打开 <code>file2</code> ，文件描述符变为7</li>
+</ol>
+
+<p>
+这里我们可能会疑惑为什么第一个打开的资源描述符已经是 7 了，而不是 0 或者 1。在 ruby 中可以通过 <code>File.for_fd()</code> 查看标识符对应的资源：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">File.for_fd(3) 
+File.for_fd(4)  
+File.for_fd(5)  
+File.for_fd(6)  
+</pre>
+</div>
+
+<p>
+运行以上代码出现了错误，3-6 号文件描述符被 Ruby 解释器使用了，并不能被连接
+</p>
+
+<pre class="example">
+The given fd is not accessible because RubyVM reserves it
+</pre>
+</div>
+
+<div id="outline-container-org7076fca" class="outline-4">
+<h4 id="org7076fca">标准流</h4>
+<div class="outline-text-4" id="text-org7076fca">
+<p>
+再看 0-2 号文件描述符, 事实上0-2描述符代表了标准流 <code>STDIN</code> <code>STDOUT</code> <code>STDERR</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">puts STDIN.fileno
+puts STDOUT.fileno
+puts STDERR.fileno
+</pre>
+</div>
+
+<pre class="example">
+0
+1
+2
+</pre>
+
+<p>
+每个Unix进程都有三个必定打开的资源`STDIN` `STDOUT` `STDERR`（标准输入、标准输出、错误）。
+</p>
+
+<ol class="org-ol">
+<li>STDIN 提供了从键盘，管道中读取输入的通用方法</li>
+<li>STDOUT STDERR 提供了一种向显示器、文件、打印机等输出写入内容的通用方法</li>
+</ol>
+
+<blockquote>
+<p>
+在STDIN出现之前，为了能够支持键盘，你得在程序中列入一个键盘驱动程序
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+文件描述符和标准流是使用套接字、管道等进行网络编程的核心所在，也是文件系统操作的核心
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org393c107" class="outline-3">
+<h3 id="org393c107">进程的资源限制</h3>
+<div class="outline-text-3" id="text-org393c107">
+<p>
+一个问题：一个进程可以拥有多少个文件描述符？
+</p>
+
+<p>
+<b>一个进程拥有的文件描述符是有限的，内核为进程添加了某些资源限制。</b> 以下代码显示了所允许的文件描述符最大连接
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">p Process.getrlimit(:NOFILE)
+</pre>
+</div>
+
+<p>
+本人计算机的输出结果为：
+<code>[1024, 65536 ]</code> 第一个为文件描述符的软限制，第二个为文件描述符的硬限制
+</p>
+</div>
+
+<div id="outline-container-org0e46101" class="outline-4">
+<h4 id="org0e46101">软限制，硬限制</h4>
+<div class="outline-text-4" id="text-org0e46101">
+<ol class="org-ol">
+<li>软限制的是 <b>可以修改的</b> ，超出了软限制会抛出异常</li>
+<li>硬限制必须拥有超级用户权限才可以修改</li>
+</ol>
+
+<p>
+修改软限制
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">Process.setrlimit :NOFILE, 2048
+p Process.getrlimit(:NOFILE)  #[2048, 2048]
+</pre>
+</div>
+
+<p>
+输出: <code>[2048, 2048]</code>
+</p>
+
+<p>
+超出限制
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">Process.setrlimit(:NOFILE, 3)
+File.open( '/dev/null' )
+</pre>
+</div>
+
+<p>
+超出限制抛出异常 <code>Too many open files @ rb_sysopen - /dev/null (Errno::EMFILE)</code>
+</p>
+
+<p>
+<b>多数程序不需要修改资源限制，但有些情况会需要，比如网络压力测试时同时创建5000个并发连接。</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge53c43d" class="outline-4">
+<h4 id="orge53c43d">其他资源限制</h4>
+<div class="outline-text-4" id="text-orge53c43d">
+<div class="org-src-container">
+<pre class="src src-ruby">Process.getrlimit(:NPROC) # 当前用户所允许的最大并发进程数
+Process.getrlimit(:FSIZE) # 可以创建的最大的文件
+Process.getrlimit(:STACK) # 用于进程栈的最大段的大小
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 
