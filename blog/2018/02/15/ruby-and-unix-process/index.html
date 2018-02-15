@@ -37,33 +37,35 @@
 </p>
 </blockquote>
 
-<div id="outline-container-org6438cac" class="outline-2">
-<h2 id="org6438cac">前置知识</h2>
-<div class="outline-text-2" id="text-org6438cac">
+<div id="outline-container-orgfa327c3" class="outline-2">
+<h2 id="orgfa327c3">前置知识</h2>
+<div class="outline-text-2" id="text-orgfa327c3">
 </div>
-<div id="outline-container-org25fc3fc" class="outline-3">
-<h3 id="org25fc3fc">用户空间(user space), 内核与系统调用(system call)</h3>
-<div class="outline-text-3" id="text-org25fc3fc">
+<div id="outline-container-orgdce0c11" class="outline-3">
+<h3 id="orgdce0c11">用户空间(user space), 内核与系统调用(system call)</h3>
+<div class="outline-text-3" id="text-orgdce0c11">
 <p>
 现代操作系统划分了 <b>内核空间(kernel space)</b> 和 <b>用户空间(user space)</b>, 计算机使用者通过 Unix 内核与计算机硬件进行交互（读写文件、发送数据、分配内存、播放媒体文件等等），依赖内核的程序比如文件系统、驱动程序等等。鉴于内核强大的能力，程序不可以直接访问内核，所有与内核的交互都通过 <b>系统调用（System call）</b> 完成。不借助 System call 你仍可以写程序，比如科学计算、操作字符串、算法题等等，但有些情况你必须调用内核来完成，比如像 nginx mysql之类永远运行的后台程序。
 </p>
-
-<p>
-#+BEGIN_CENTER
-</p>
 </div>
 </div>
-</div>
-<div id="outline-container-org32d6844" class="outline-2">
-<h2 id="org32d6844">进程</h2>
-<div class="outline-text-2" id="text-org32d6844">
-<p>
-#+END_CENTER
-</p>
 </div>
 
-<div id="outline-container-org380a6d0" class="outline-3">
-<h3 id="org380a6d0">进程: Unix 基石</h3>
+<div id="outline-container-orga6105a7" class="outline-2">
+<h2 id="orga6105a7">进程</h2>
+<div class="outline-text-2" id="text-orga6105a7">
+</div>
+<div id="outline-container-orgfb54a3d" class="outline-3">
+<h3 id="orgfb54a3d">进程: Unix 基石</h3>
+<div class="outline-text-3" id="text-orgfb54a3d">
+<p>
+进程是 Unix 的核心，代码都是在进程中执行的。比如当你运行一个ruby程序时， <code>ruby example.rb</code> 你的代码就生成了一个新的进程，程序执行完毕，进程也随之退出。同样，运行 MySQL、PG 等数据库时，打开浏览器时，这些程序都运行在自己的进程中。
+</p>
+
+<p>
+此外，进程还可以生成并管理其他多个进程。
+</p>
+</div>
 </div>
 </div>
 
