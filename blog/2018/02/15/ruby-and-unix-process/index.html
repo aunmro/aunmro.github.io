@@ -37,13 +37,13 @@
 </p>
 </blockquote>
 
-<div id="outline-container-org5c8e981" class="outline-2">
-<h2 id="org5c8e981">前置知识</h2>
-<div class="outline-text-2" id="text-org5c8e981">
+<div id="outline-container-orgaded81b" class="outline-2">
+<h2 id="orgaded81b">前置知识</h2>
+<div class="outline-text-2" id="text-orgaded81b">
 </div>
-<div id="outline-container-org5c2acfb" class="outline-3">
-<h3 id="org5c2acfb">用户空间(user space), 内核与系统调用(system call)</h3>
-<div class="outline-text-3" id="text-org5c2acfb">
+<div id="outline-container-orgb6c5d47" class="outline-3">
+<h3 id="orgb6c5d47">用户空间(user space), 内核与系统调用(system call)</h3>
+<div class="outline-text-3" id="text-orgb6c5d47">
 <p>
 现代操作系统划分了 <b>内核空间(kernel space)</b> 和 <b>用户空间(user space)</b>, 计算机使用者通过 Unix 内核与计算机硬件进行交互（读写文件、发送数据、分配内存、播放媒体文件等等），依赖内核的程序比如文件系统、驱动程序等等。鉴于内核强大的能力，程序不可以直接访问内核，所有与内核的交互都通过 <b>系统调用（System call）</b> 完成。不借助 System call 你仍可以写程序，比如科学计算、操作字符串、算法题等等，但有些情况你必须调用内核来完成，比如像 nginx mysql之类永远运行的后台程序。
 </p>
@@ -51,22 +51,22 @@
 </div>
 </div>
 
-<div id="outline-container-org439d978" class="outline-2">
-<h2 id="org439d978">进程</h2>
-<div class="outline-text-2" id="text-org439d978">
+<div id="outline-container-org6424335" class="outline-2">
+<h2 id="org6424335">进程</h2>
+<div class="outline-text-2" id="text-org6424335">
 </div>
-<div id="outline-container-org9fbeb29" class="outline-3">
-<h3 id="org9fbeb29">进程: Unix 基石</h3>
-<div class="outline-text-3" id="text-org9fbeb29">
+<div id="outline-container-orga10d76d" class="outline-3">
+<h3 id="orga10d76d">进程: Unix 基石</h3>
+<div class="outline-text-3" id="text-orga10d76d">
 <p>
 进程是 Unix 的核心，代码都是在进程中执行的。比如当你运行一个ruby程序时， <code>ruby example.rb</code> 你的代码就生成了一个新的进程，程序执行完毕，进程也随之退出。同样，运行 MySQL、PG 等数据库时，打开浏览器时，这些程序都运行在自己的进程中。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb2f01b2" class="outline-3">
-<h3 id="orgb2f01b2">进程的标识符 pid</h3>
-<div class="outline-text-3" id="text-orgb2f01b2">
+<div id="outline-container-org134c6dd" class="outline-3">
+<h3 id="org134c6dd">进程的标识符 pid</h3>
+<div class="outline-text-3" id="text-org134c6dd">
 <p>
 每个进程都有唯一的进程标识符（pid），对内核来说只是一个数字。我们可以编写一个 ruby 脚本查看其pid。
 </p>
@@ -111,9 +111,9 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-org94b1c46" class="outline-3">
-<h3 id="org94b1c46">父进程</h3>
-<div class="outline-text-3" id="text-org94b1c46">
+<div id="outline-container-org64f854c" class="outline-3">
+<h3 id="org64f854c">父进程</h3>
+<div class="outline-text-3" id="text-org64f854c">
 <p>
 系统中运行的每一个进程都有对应的父进程，每个进程都知道其父进程的标识符(ppid)。在 ruby 中查看父进程，使用 <code>Process.ppid</code> , 对应着system call 中的 <code>getppid()</code>
 </p>
@@ -129,9 +129,9 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-org526bab3" class="outline-3">
-<h3 id="org526bab3">文件描述符</h3>
-<div class="outline-text-3" id="text-org526bab3">
+<div id="outline-container-org1c07573" class="outline-3">
+<h3 id="org1c07573">文件描述符</h3>
+<div class="outline-text-3" id="text-org1c07573">
 <p>
 Unix 世界中，除了将一般的文件视为文件外，也将设备、管道、socket 视为文件(和称为“资源”)。
 </p>
@@ -215,9 +215,9 @@ The given fd is not accessible because RubyVM reserves it
 </pre>
 </div>
 
-<div id="outline-container-org7076fca" class="outline-4">
-<h4 id="org7076fca">标准流</h4>
-<div class="outline-text-4" id="text-org7076fca">
+<div id="outline-container-orgd4c37b9" class="outline-4">
+<h4 id="orgd4c37b9">标准流</h4>
+<div class="outline-text-4" id="text-orgd4c37b9">
 <p>
 再看 0-2 号文件描述符, 事实上0-2描述符代表了标准流 <code>STDIN</code> <code>STDOUT</code> <code>STDERR</code>
 </p>
@@ -259,9 +259,9 @@ puts STDERR.fileno
 </div>
 </div>
 
-<div id="outline-container-org393c107" class="outline-3">
-<h3 id="org393c107">进程的资源限制</h3>
-<div class="outline-text-3" id="text-org393c107">
+<div id="outline-container-org1946932" class="outline-3">
+<h3 id="org1946932">进程的资源限制</h3>
+<div class="outline-text-3" id="text-org1946932">
 <p>
 一个问题：一个进程可以拥有多少个文件描述符？
 </p>
@@ -281,9 +281,9 @@ puts STDERR.fileno
 </p>
 </div>
 
-<div id="outline-container-org0e46101" class="outline-4">
-<h4 id="org0e46101">软限制，硬限制</h4>
-<div class="outline-text-4" id="text-org0e46101">
+<div id="outline-container-org4600deb" class="outline-4">
+<h4 id="org4600deb">软限制，硬限制</h4>
+<div class="outline-text-4" id="text-org4600deb">
 <ol class="org-ol">
 <li>软限制的是 <b>可以修改的</b> ，超出了软限制会抛出异常</li>
 <li>硬限制必须拥有超级用户权限才可以修改</li>
@@ -322,9 +322,9 @@ File.open( '/dev/null' )
 </div>
 </div>
 
-<div id="outline-container-orge53c43d" class="outline-4">
-<h4 id="orge53c43d">其他资源限制</h4>
-<div class="outline-text-4" id="text-orge53c43d">
+<div id="outline-container-org730d5ee" class="outline-4">
+<h4 id="org730d5ee">其他资源限制</h4>
+<div class="outline-text-4" id="text-org730d5ee">
 <div class="org-src-container">
 <pre class="src src-ruby">Process.getrlimit(:NPROC) # 当前用户所允许的最大并发进程数
 Process.getrlimit(:FSIZE) # 可以创建的最大的文件
@@ -334,6 +334,74 @@ Process.getrlimit(:STACK) # 用于进程栈的最大段的大小
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgbbac637" class="outline-3">
+<h3 id="orgbbac637">进程皆有环境</h3>
+<div class="outline-text-3" id="text-orgbbac637">
+<p>
+环境指的是环境变量，环境变量是包含进程数据的键值对，所有进程都从父进程处继承环境变量。
+</p>
+
+<p>
+在 shell 中设置环境变量传递给 ruby:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">MESSAGE='wing it' ruby -e "puts ENV['MESSAGE']"
+</pre>
+</div>
+
+<p>
+同样可以在ruby中设置环境变量被系统调用
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">ENV['MESSAGE'] = 'wing it'
+system 'echo $MESSAGE'
+</pre>
+</div>
+
+<p>
+<code>ENV</code> 是 Hasn 吗？
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">p ENV.has_key?('PATH')
+p ENV.is_a?(Hash)
+</pre>
+</div>
+
+<pre class="example">
+true
+false
+</pre>
+
+<blockquote>
+<p>
+<code>ENV</code> 实现了 Enumerable 和部分 Hash API，但并非全部
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb1584a3" class="outline-3">
+<h3 id="orgb1584a3">进程的参数</h3>
+<div class="outline-text-3" id="text-orgb1584a3">
+<p>
+Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组包含了参数。其他语言可能略有不同，但都会有 argv。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">ARGV.include?('--help')
+ARGV.include?('-c')
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7eb22a2" class="outline-3">
+<h3 id="org7eb22a2">进程名</h3>
+</div>
 </div>
 
 </div>
@@ -341,7 +409,7 @@ Process.getrlimit(:STACK) # 用于进程栈的最大段的大小
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-02-15</span>
-        <span title="last modification date" class="post-info">2018-02-15</span>
+        <span title="last modification date" class="post-info">2018-02-16</span>
         <span title="tags" class="post-info"><a href="/tags/ruby/">ruby</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
