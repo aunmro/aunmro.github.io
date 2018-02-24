@@ -37,13 +37,13 @@
 </p>
 </blockquote>
 
-<div id="outline-container-org057cdb8" class="outline-2">
-<h2 id="org057cdb8">前置知识</h2>
-<div class="outline-text-2" id="text-org057cdb8">
+<div id="outline-container-org77aa5f1" class="outline-2">
+<h2 id="org77aa5f1">前置知识</h2>
+<div class="outline-text-2" id="text-org77aa5f1">
 </div>
-<div id="outline-container-org26536a0" class="outline-3">
-<h3 id="org26536a0">用户空间(user space), 内核与系统调用(system call)</h3>
-<div class="outline-text-3" id="text-org26536a0">
+<div id="outline-container-orgae13a33" class="outline-3">
+<h3 id="orgae13a33">用户空间(user space), 内核与系统调用(system call)</h3>
+<div class="outline-text-3" id="text-orgae13a33">
 <p>
 现代操作系统划分了 <b>内核空间(kernel space)</b> 和 <b>用户空间(user space)</b>, 计算机使用者通过 Unix 内核与计算机硬件进行交互（读写文件、发送数据、分配内存、播放媒体文件等等），依赖内核的程序比如文件系统、驱动程序等等。鉴于内核强大的能力，程序不可以直接访问内核，所有与内核的交互都通过 <b>系统调用（System call）</b> 完成。不借助 System call 你仍可以写程序，比如科学计算、操作字符串、算法题等等，但有些情况你必须调用内核来完成，比如像 nginx mysql之类永远运行的后台程序。
 </p>
@@ -51,22 +51,22 @@
 </div>
 </div>
 
-<div id="outline-container-orgd2513e2" class="outline-2">
-<h2 id="orgd2513e2">进程</h2>
-<div class="outline-text-2" id="text-orgd2513e2">
+<div id="outline-container-org89794f1" class="outline-2">
+<h2 id="org89794f1">进程</h2>
+<div class="outline-text-2" id="text-org89794f1">
 </div>
-<div id="outline-container-org8e156c0" class="outline-3">
-<h3 id="org8e156c0">进程: Unix 基石</h3>
-<div class="outline-text-3" id="text-org8e156c0">
+<div id="outline-container-org16ccf88" class="outline-3">
+<h3 id="org16ccf88">进程: Unix 基石</h3>
+<div class="outline-text-3" id="text-org16ccf88">
 <p>
 进程是 Unix 的核心，代码都是在进程中执行的。比如当你运行一个ruby程序时， <code>ruby example.rb</code> 你的代码就生成了一个新的进程，程序执行完毕，进程也随之退出。同样，运行 MySQL、PG 等数据库时，打开浏览器时，这些程序都运行在自己的进程中。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org538795d" class="outline-3">
-<h3 id="org538795d">进程的标识符 pid</h3>
-<div class="outline-text-3" id="text-org538795d">
+<div id="outline-container-org7b7ebeb" class="outline-3">
+<h3 id="org7b7ebeb">进程的标识符 pid</h3>
+<div class="outline-text-3" id="text-org7b7ebeb">
 <p>
 每个进程都有唯一的进程标识符（pid），对内核来说只是一个数字。我们可以编写一个 ruby 脚本查看其pid。
 </p>
@@ -111,9 +111,9 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-org3283207" class="outline-3">
-<h3 id="org3283207">父进程</h3>
-<div class="outline-text-3" id="text-org3283207">
+<div id="outline-container-org449ef89" class="outline-3">
+<h3 id="org449ef89">父进程</h3>
+<div class="outline-text-3" id="text-org449ef89">
 <p>
 系统中运行的每一个进程都有对应的父进程，每个进程都知道其父进程的标识符(ppid)。在 ruby 中查看父进程，使用 <code>Process.ppid</code> , 对应着system call 中的 <code>getppid()</code>
 </p>
@@ -129,9 +129,9 @@ Ruby 的 <code>Proces.pid</code> 对应着 system call 的 C 函数 <code>getpid
 </div>
 </div>
 
-<div id="outline-container-orgacd29b8" class="outline-3">
-<h3 id="orgacd29b8">文件描述符</h3>
-<div class="outline-text-3" id="text-orgacd29b8">
+<div id="outline-container-org60c77a6" class="outline-3">
+<h3 id="org60c77a6">文件描述符</h3>
+<div class="outline-text-3" id="text-org60c77a6">
 <p>
 Unix 世界中，除了将一般的文件视为文件外，也将设备、管道、socket 视为文件(和称为“资源”)。
 </p>
@@ -215,9 +215,9 @@ The given fd is not accessible because RubyVM reserves it
 </pre>
 </div>
 
-<div id="outline-container-org369f042" class="outline-4">
-<h4 id="org369f042">标准流</h4>
-<div class="outline-text-4" id="text-org369f042">
+<div id="outline-container-org44fe732" class="outline-4">
+<h4 id="org44fe732">标准流</h4>
+<div class="outline-text-4" id="text-org44fe732">
 <p>
 再看 0-2 号文件描述符, 事实上0-2描述符代表了标准流 <code>STDIN</code> <code>STDOUT</code> <code>STDERR</code>
 </p>
@@ -259,9 +259,9 @@ puts STDERR.fileno
 </div>
 </div>
 
-<div id="outline-container-org42b1cba" class="outline-3">
-<h3 id="org42b1cba">进程的资源限制</h3>
-<div class="outline-text-3" id="text-org42b1cba">
+<div id="outline-container-orgb898988" class="outline-3">
+<h3 id="orgb898988">进程的资源限制</h3>
+<div class="outline-text-3" id="text-orgb898988">
 <p>
 一个问题：一个进程可以拥有多少个文件描述符？
 </p>
@@ -281,9 +281,9 @@ puts STDERR.fileno
 </p>
 </div>
 
-<div id="outline-container-orga494abe" class="outline-4">
-<h4 id="orga494abe">软限制，硬限制</h4>
-<div class="outline-text-4" id="text-orga494abe">
+<div id="outline-container-orgdd2b506" class="outline-4">
+<h4 id="orgdd2b506">软限制，硬限制</h4>
+<div class="outline-text-4" id="text-orgdd2b506">
 <ol class="org-ol">
 <li>软限制的是 <b>可以修改的</b> ，超出了软限制会抛出异常</li>
 <li>硬限制必须拥有超级用户权限才可以修改</li>
@@ -322,9 +322,9 @@ File.open( '/dev/null' )
 </div>
 </div>
 
-<div id="outline-container-orgaa111b1" class="outline-4">
-<h4 id="orgaa111b1">其他资源限制</h4>
-<div class="outline-text-4" id="text-orgaa111b1">
+<div id="outline-container-org7f1a2f1" class="outline-4">
+<h4 id="org7f1a2f1">其他资源限制</h4>
+<div class="outline-text-4" id="text-org7f1a2f1">
 <div class="org-src-container">
 <pre class="src src-ruby">Process.getrlimit(:NPROC) # 当前用户所允许的最大并发进程数
 Process.getrlimit(:FSIZE) # 可以创建的最大的文件
@@ -335,9 +335,9 @@ Process.getrlimit(:STACK) # 用于进程栈的最大段的大小
 </div>
 </div>
 
-<div id="outline-container-orgcc79eba" class="outline-3">
-<h3 id="orgcc79eba">进程皆有环境</h3>
-<div class="outline-text-3" id="text-orgcc79eba">
+<div id="outline-container-orgcb08844" class="outline-3">
+<h3 id="orgcb08844">进程皆有环境</h3>
+<div class="outline-text-3" id="text-orgcb08844">
 <p>
 环境指的是环境变量，环境变量是包含进程数据的键值对，所有进程都从父进程处继承环境变量。
 </p>
@@ -384,9 +384,9 @@ false
 </div>
 </div>
 
-<div id="outline-container-orga706069" class="outline-3">
-<h3 id="orga706069">进程的参数</h3>
-<div class="outline-text-3" id="text-orga706069">
+<div id="outline-container-orgc33b495" class="outline-3">
+<h3 id="orgc33b495">进程的参数</h3>
+<div class="outline-text-3" id="text-orgc33b495">
 <p>
 Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组包含了参数。其他语言可能略有不同，但都会有 argv。
 </p>
@@ -399,9 +399,9 @@ ARGV.include?('-c')
 </div>
 </div>
 
-<div id="outline-container-orgdebdf36" class="outline-3">
-<h3 id="orgdebdf36">进程名</h3>
-<div class="outline-text-3" id="text-orgdebdf36">
+<div id="outline-container-org2d2a12c" class="outline-3">
+<h3 id="org2d2a12c">进程名</h3>
+<div class="outline-text-3" id="text-org2d2a12c">
 <p>
 <i>未完</i>
 </p>
@@ -425,7 +425,7 @@ ARGV.include?('-c')
           //var disqus_developer = 1;
           var disqus_identifier = "/blog/2018/02/15/ruby-and-unix-process";
           var disqus_url = "https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process";
-          var disqus_shortname = 'aunmro_blog';
+          var disqus_shortname = 'aunmro-github-io';
           /* * * DON'T EDIT BELOW THIS LINE * * */
           (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
