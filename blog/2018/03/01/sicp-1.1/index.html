@@ -31,24 +31,37 @@
 <div>
 <div class="post">
 <h1>SICP(1)―程序设计的基本元素</h1>
+<blockquote>
 <p>
 <i>开个大坑，有生之年系列 눈_눈</i>
 </p>
 
 <p>
 这一系列博文是 <a href="https://book.douban.com/subject/1148282/">计算机程序的构造和解释</a> 的笔记，一篇文章是书里面一章节的一节。
-本文使用的解释器是 <a href="http://racket-lang.org/">Racket</a> ，所以在代码前加入了 <code>#lang racket</code> ，除了Racket，你还可以选择 <a href="https://github.com/cisco/ChezScheme">chez scheme</a> 或者 <a href="https://www.gnu.org/software/guile/">Guile</a> 。
 </p>
 
 <p>
-SICP 是讲述计算过程的书，这些计算过程是一种操作计算机中数据的抽象事物。
+本文使用的解释器是 <a href="http://racket-lang.org/">Racket</a> ，所以在代码前加入了 <code>#lang racket</code> 。除了Racket，你还可以选择 <a href="https://github.com/cisco/ChezScheme">chez scheme</a> 或者 <a href="https://www.gnu.org/software/guile/">Guile</a> 。
 </p>
 
-<div class="center">
 <p>
-1.1 程序设计的基本元素
+Racket 执行程序只需要 <code>racket example.rkt</code> 或者在 dracaket 里编写运行即可。
 </p>
-</div>
+</blockquote>
+
+<p>
+SICP 是讲述计算过程(一种操作计算机中数据的抽象事物)的书，而我们(计算机使用者)则编写程序来指导这些计算过程。良好设计的程序像汽车一样是 <b>模块化</b> 的，其中各个部分能够独立的构造、替换、排除错误。
+</p>
+
+<p>
+#+BEGIN_CENTER
+</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">1.1 程序设计的基本元素</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+#+END_CENTER
+</p>
 
 <div class="org-src-container">
 
@@ -60,6 +73,8 @@ SICP 是讲述计算过程的书，这些计算过程是一种操作计算机中
 <pre class="example">
 486
 </pre>
+</div>
+</div>
 
 </div>
 </div>
