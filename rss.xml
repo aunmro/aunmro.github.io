@@ -4,23 +4,23 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io/</link>
     <description>:用你的钻头突破天际啊</description>
-    <pubDate>Thu, 08 Mar 2018 09:09:05 DST</pubDate>
-    <lastBuildDate>Thu, 08 Mar 2018 09:09:05 DST</lastBuildDate>
+    <pubDate>Sat, 10 Mar 2018 00:25:58 DST</pubDate>
+    <lastBuildDate>Sat, 10 Mar 2018 00:25:58 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
-    <item>
-      <title>SICP(1)―程序设计的基本元素</title>
-      <link>https://aunmro.github.io/blog/2018/03/01/sicp-1.1</link>
-      <description><![CDATA[SICP 阅读笔记第1章第1节]]></description>
-      <pubDate>2018-03-08</pubDate>
-      <guid>https://aunmro.github.io/blog/2018/03/01/sicp-1.1</guid>
-    </item>
     <item>
       <title>Ruby Unix 进程实例</title>
       <link>https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process</link>
       <description><![CDATA[通过 ruby 代码讲解 Unix 进程相关的入门级知识，只是入门级 （－。－）]]></description>
-      <pubDate>2018-03-01</pubDate>
+      <pubDate>2018-03-10</pubDate>
       <guid>https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process</guid>
+    </item>
+    <item>
+      <title>SICP(1)―程序设计的基本元素</title>
+      <link>https://aunmro.github.io/blog/2018/03/01/sicp-1.1</link>
+      <description><![CDATA[SICP 阅读笔记第1章第1节]]></description>
+      <pubDate>2018-03-10</pubDate>
+      <guid>https://aunmro.github.io/blog/2018/03/01/sicp-1.1</guid>
     </item>
   </channel>
 </rss>

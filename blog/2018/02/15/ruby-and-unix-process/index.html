@@ -421,15 +421,85 @@ ARGV.include?('-c')
 <div id="outline-container-sec-2-8" class="outline-3">
 <h3 id="sec-2-8">进程名和退出码</h3>
 <div class="outline-text-3" id="text-2-8">
+</div><div id="outline-container-sec-2-8-1" class="outline-4">
+<h4 id="sec-2-8-1">进程名</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<p>
+<b>进程之间没什么办法进行信息交换，除了进程名和退出码</b> 。
+</p>
+
+<p>
+进程名可以通过 <code>$PROGRAM_NAME</code> 和 <code>$0</code> 获得，这两个值还可以被改写
+</p>
+
 <div class="org-src-container">
 
-<pre class="src src-ruby">p $0 == $PROGRAM_NAME
+<pre class="src src-ruby">p $PROGRAM_NAME == $0
+$0 = "undefined"
+p $PROGRAM_NAME
 </pre>
 </div>
 
 <pre class="example">
 : true
+: undefined
 </pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-8-2" class="outline-4">
+<h4 id="sec-2-8-2">退出码</h4>
+<div class="outline-text-4" id="text-2-8-2">
+<p>
+进程结束时会留下退出码(0-255的数字)，用于表明程序是否顺利结束。 <b>退出码0表示顺利进行</b> 。
+</p>
+
+<p>
+在 ruby 中，使用 <code>exit</code> 即可退出进程，你可以在 exit 后跟一个数字表示退出码。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">exit 22
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><code>at_exit</code> 让进程退出时可以执行一段代码块
+</li>
+</ol>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">at_exit {puts 'exit'}
+exit
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><code>exit!</code> 退出进程，退出码设置为 1，并且不调用 <code>at_exit</code>
+</li>
+<li><code>abort</code> 同样将退出码视为 1，可以直接输出消息，也可以调用 <code>at_exit</code>
+</li>
+</ol>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">abort "exit process"
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>出现异常时，并不会立即结束进程，但如果没有代码处理异常，进程就会被终结
+</li>
+</ol>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby">raise "raise hell"
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -439,7 +509,7 @@ ARGV.include?('-c')
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-02-15</span>
-        <span title="last modification date" class="post-info">2018-03-01</span>
+        <span title="last modification date" class="post-info">2018-03-10</span>
         <span title="tags" class="post-info"><a href="/tags/ruby/">ruby</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
