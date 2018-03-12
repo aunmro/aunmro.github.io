@@ -466,8 +466,6 @@ p $PROGRAM_NAME
 
 <ol class="org-ol">
 <li><code>at_exit</code> 让进程退出时可以执行一段代码块
-</li>
-</ol>
 
 <div class="org-src-container">
 
@@ -475,30 +473,28 @@ p $PROGRAM_NAME
 exit
 </pre>
 </div>
+</li>
 
-<ol class="org-ol">
 <li><code>exit!</code> 退出进程，退出码设置为 1，并且不调用 <code>at_exit</code>
 </li>
 <li><code>abort</code> 同样将退出码视为 1，可以直接输出消息，也可以调用 <code>at_exit</code>
-</li>
-</ol>
 
 <div class="org-src-container">
 
 <pre class="src src-ruby">abort "exit process"
 </pre>
 </div>
-
-<ol class="org-ol">
-<li>出现异常时，并不会立即结束进程，但如果没有代码处理异常，进程就会被终结
 </li>
-</ol>
+
+<li>出现异常时，并不会立即结束进程，但如果没有代码处理异常，进程就会被终结
 
 <div class="org-src-container">
 
 <pre class="src src-ruby">raise "raise hell"
 </pre>
 </div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -509,7 +505,7 @@ exit
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-02-15</span>
-        <span title="last modification date" class="post-info">2018-03-10</span>
+        <span title="last modification date" class="post-info">2018-03-12</span>
         <span title="tags" class="post-info"><a href="/tags/ruby/">ruby</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
