@@ -16,6 +16,7 @@
         <p>:用你的钻头突破天际啊</p>
         <ul>
           <li><a href="/blog/">Blog</a></li>
+          <li><a href="/notes/">Notes</a></li>
           <li><a href="/tags/">Tags</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="https://github.com/aunmro">GitHub</a></li>
@@ -206,22 +207,104 @@ Lisp 中的类型除了常用的
 
 <pre class="src src-emacs-lisp">(car '(+ 3 2))
 &gt; +
-#+END_QUOTE
+</pre>
+</div>
 
-*cdr* 取出剩余参数
+<p>
+<b>cdr</b> 取出剩余参数
+</p>
 
-#+BEGIN_SRC emacs-lisp
-(cdr '(+ 3 2))
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(cdr '(+ 3 2))
 &gt; (3 2)
-#+END_QUOTE
+</pre>
+</div>
 
+<p>
 car 配合 cdr 可以取出你想要的所有参数和操作符
+</p>
 
-#+BEGIN_SRC emacs-lisp
-(car (cdr (cdr '(a b c d))))
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(car (cdr (cdr '(a b c d))))
 &gt; c
 </pre>
 </div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">真与假</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+lisp 分别用 <code>t</code> 和 <code>nil</code> 表示真假
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">;; listp测试参数是否是list
+(listp '(a b c))
+&gt; t
+(listp 23)
+&gt; nil
+</pre>
+</div>
+
+<p>
+<b>not and or</b> 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(not nil)
+&gt; t
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">函数</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(defun our-third (x)
+    (car (cdr (cdr x))))
+
+(our-third '(+ 1 2 3 4))
+&gt; 2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">递归</h2>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">输入输出</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<code>format</code> <code>read</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">变量</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<b>let</b> 引入局部变量
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(let ((val1 1) (val2 2))
+   (* val1 val2))
+&gt; 2
+</pre>
 </div>
 </div>
 </div>
@@ -231,7 +314,7 @@ car 配合 cdr 可以取出你想要的所有参数和操作符
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-17</span>
-        <span title="last modification date" class="post-info">2018-03-17</span>
+        <span title="last modification date" class="post-info">2018-03-18</span>
         <span title="tags" class="post-info"><a href="/tags/lisp/">lisp</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
