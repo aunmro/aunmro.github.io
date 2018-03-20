@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>[note]C#本质论笔记(1)―C# 概述 - 屠龙术与废物们</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="aunmro" />
+    <meta name="description" content="c#本质论笔记" />
+    <meta name="keywords" content="csharp c#" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">屠龙术与废物们</a></h1>
+        <p>:用你的钻头突破天际啊</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/aunmro">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>[note]C#本质论笔记(1)―C# 概述</h1>
+<p>
+<i>Hello World</i>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">class Program {
+    static void Main() {
+	System.Console.Write("hello, world");
+    }
+}
+// hello, world
+</pre>
+</div>
+
+<p>
+编译 <code>csc File.cs = ,生成 File.exe ，File.exe 是一个 *程序集* 。=csc -target:library File.cs</code> 生成 File.dll 类库，dll(动态链接库)也是程序集。
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">1.2 C# 语法基础</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">1.2.3 类定义</h3>
+<div class="outline-text-3" id="text-1-1">
+<blockquote>
+<p>
+规范：类命名
+</p>
+<ol class="org-ol">
+<li>名词/名词短语
+</li>
+<li>Pascal 命名法：首字母大写
+</li>
+</ol>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">1.2.9 变量</h3>
+<div class="outline-text-3" id="text-1-2">
+<blockquote>
+<p>
+规范：局部变量使用驼峰命名法
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">1.3 控制台</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>C# 6.0字符串插值</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">class Program {
+    static void Main() {
+	string name = "foo";
+	int age = 10;
+
+	System.Console.Write($"{name}: {age}");
+    }
+}
+//foo: 10
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">1.3.3 注释</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li><code>/**注释**/</code> xml 多行注释，生成单独文件
+</li>
+<li><code>///</code> xml 单行注释
+</li>
+</ol>
+
+<blockquote>
+<p>
+编程史上有一段时间认为：代码应该有详细的注释。但时代变了， <b>可读性好代码比需要测试的代码更有价值</b> 。
+</p>
+
+<p>
+规范：
+</p>
+<ol class="org-ol">
+<li>不要使用注释，除非代码一言难尽
+</li>
+<li>编写清晰的代码，而不是通过注释澄清复杂的代码
+</li>
+</ol>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">1.3.5 CIL(公共中间语言)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+程序集不能直接运行，程序集运行在CIL上。
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2018-03-19</span>
+        <span title="last modification date" class="post-info">2018-03-20</span>
+        <span title="tags" class="post-info"><a href="/tags/csharp/">csharp</a></span>
+        <span title="author" class="post-info">aunmro</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2018/03/19/essential-cs-1/";
+          var disqus_url = "https://aunmro.github.io/blog/2018/03/19/essential-cs-1/";
+          var disqus_shortname = 'aunmro-github-io';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+       <div id="hashover"></div>
+       <script type="text/javascript" src="/hashover.php"></script>
+       <noscript>You must have JavaScript enabled to use the comments.</noscript>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-115377145-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
