@@ -330,201 +330,10 @@
 <i>默认情况下输入小数点字面量，被编译器解释为double类型；整数被解释为int类型。</i>
 </p>
 </div>
-</div>
-</div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">2.1 基本数值类型</h2>
-<div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1">2.1.1 整数</h3>
-<div class="outline-text-3" id="text-4-1">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="left" />
-
-<col  class="right" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">类型</th>
-<th scope="col" class="right">大小</th>
-<th scope="col" class="left">范围，包含边界</th>
-<th scope="col" class="left">基类库名/BCL</th>
-<th scope="col" class="left">有符号？</th>
-<th scope="col" class="left">后缀</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="left">sbyte</td>
-<td class="right">8</td>
-<td class="left">-128 ~ 127</td>
-<td class="left">System.SByte</td>
-<td class="left">y</td>
-<td class="left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="left">byte</td>
-<td class="right">8</td>
-<td class="left">0 ~ 255</td>
-<td class="left">System.Byte</td>
-<td class="left">n</td>
-<td class="left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="left">short</td>
-<td class="right">16</td>
-<td class="left">-32768 ~ 32767</td>
-<td class="left">System.Int16</td>
-<td class="left">y</td>
-<td class="left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="left">ushort</td>
-<td class="right">16</td>
-<td class="left">&#xa0;</td>
-<td class="left">System.UInt16</td>
-<td class="left">n</td>
-<td class="left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="left">int</td>
-<td class="right">32</td>
-<td class="left">&#xa0;</td>
-<td class="left">System.Int32</td>
-<td class="left">y</td>
-<td class="left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="left">uint</td>
-<td class="right">32</td>
-<td class="left">&#xa0;</td>
-<td class="left">System.UInt32</td>
-<td class="left">n</td>
-<td class="left">U/u</td>
-</tr>
-
-<tr>
-<td class="left">long</td>
-<td class="right">64</td>
-<td class="left">&#xa0;</td>
-<td class="left">System.Int64</td>
-<td class="left">y</td>
-<td class="left">L/l</td>
-</tr>
-
-<tr>
-<td class="left">ulong</td>
-<td class="right">64</td>
-<td class="left">&#xa0;</td>
-<td class="left">System.UIn64</td>
-<td class="left">n</td>
-<td class="left">UL/ul</td>
-</tr>
-</tbody>
-</table>
-
-<blockquote>
-<p>
-规范：
-使用 C# 关键字而不是 BCL 名
-</p>
-</blockquote>
-</div>
-</div>
-
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2">2.1.2 浮点类型</h3>
-<div class="outline-text-3" id="text-4-2">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="left" />
-
-<col  class="right" />
-
-<col  class="left" />
-
-<col  class="right" />
-
-<col  class="left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="left">类型</th>
-<th scope="col" class="right">大小</th>
-<th scope="col" class="left">BCL</th>
-<th scope="col" class="right">有效数字</th>
-<th scope="col" class="left">后缀</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="left">float</td>
-<td class="right">32</td>
-<td class="left">System.Single</td>
-<td class="right">7</td>
-<td class="left">F/f</td>
-</tr>
-
-<tr>
-<td class="left">doubel</td>
-<td class="right">64</td>
-<td class="left">System.Double</td>
-<td class="right">15-16</td>
-<td class="left">D/d(非必须)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3">2.1.3 decimal</h3>
-<div class="outline-text-3" id="text-4-3">
-<ol class="org-ol">
-<li><b>精确计算</b>
-</li>
-<li>有效数字 28-29
-</li>
-<li>后缀 m/M
-</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-sec-4-4" class="outline-3">
-<h3 id="sec-4-4">2.1.4 字面量</h3>
-<div class="outline-text-3" id="text-4-4">
-<p>
-源代码中的固定值，比如 <code>System.Console.WriteLine(42)</code> ，42就是字面量。
-</p>
-
-<p>
-<i>默认情况下输入小数点字面量，被编译器解释为double类型；整数被解释为int类型。</i>
-</p>
-</div>
-
-<div id="outline-container-sec-4-4-1" class="outline-4">
-<h4 id="sec-4-4-1">16进制</h4>
-<div class="outline-text-4" id="text-4-4-1">
+<div id="outline-container-sec-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1">16进制</h4>
+<div class="outline-text-4" id="text-3-4-1">
 <p>
 比如 <code>0x002A</code>
 </p>
@@ -548,8 +357,60 @@
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">2.2 更多类型</h2>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">2.2 更多类型</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">2.2.3 字符串</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<b>@对字符串不进行转义</b> ， =@"\n\r"=
+</p>
+</div>
+
+<div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">字符串方法</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+静态方法    
+</p>
+
+<ol class="org-ol">
+<li><code>string.Concat</code>
+</li>
+<li><code>string.Compare</code>
+</li>
+</ol>
+
+<p>
+<b>using static</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">using static System.Console;
+
+class Program {
+    static void Main(string[] args) =&gt; Write($"0x{42:X}");
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">属性</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+Length 等属性底层被编译为 set_xxxx get_xxxx
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3">字符串不可变</h4>
+</div>
+</div>
 </div>
 
 </div>
@@ -557,7 +418,7 @@
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-19</span>
-        <span title="last modification date" class="post-info">2018-03-21</span>
+        <span title="last modification date" class="post-info">2018-03-22</span>
         <span title="tags" class="post-info"><a href="/tags/csharp/">csharp</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
