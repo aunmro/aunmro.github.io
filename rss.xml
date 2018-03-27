@@ -4,10 +4,24 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io/</link>
     <description>:用你的钻头突破天际啊</description>
-    <pubDate>Sun, 25 Mar 2018 15:40:12 DST</pubDate>
-    <lastBuildDate>Sun, 25 Mar 2018 15:40:12 DST</lastBuildDate>
+    <pubDate>Tue, 27 Mar 2018 15:53:04 DST</pubDate>
+    <lastBuildDate>Tue, 27 Mar 2018 15:53:04 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>[draft]Concrete-Abstractions―属于凡人的SICP(1)</title>
+      <link>https://aunmro.github.io/blog/2018/03/25/concrete-abstrations-1/</link>
+      <description><![CDATA[Concrete Abstractions]]></description>
+      <pubDate>2018-03-27</pubDate>
+      <guid>https://aunmro.github.io/blog/2018/03/25/concrete-abstrations-1/</guid>
+    </item>
+    <item>
+      <title>[note]C#本质论笔记(1)</title>
+      <link>https://aunmro.github.io/blog/2018/03/19/essential-cs-1/</link>
+      <description><![CDATA[c#本质论笔记1-4章]]></description>
+      <pubDate>2018-03-27</pubDate>
+      <guid>https://aunmro.github.io/blog/2018/03/19/essential-cs-1/</guid>
+    </item>
     <item>
       <title>[draft]Emacs 入门</title>
       <link>https://aunmro.github.io/blog/2018/03/14/emacs-1/</link>
@@ -21,13 +35,6 @@
       <description><![CDATA[SICP 阅读笔记第1章第1节]]></description>
       <pubDate>2018-03-25</pubDate>
       <guid>https://aunmro.github.io/blog/2018/03/01/sicp-1.1/</guid>
-    </item>
-    <item>
-      <title>[note]C#本质论笔记(1)</title>
-      <link>https://aunmro.github.io/blog/2018/03/19/essential-cs-1/</link>
-      <description><![CDATA[c#本质论笔记1-4章]]></description>
-      <pubDate>2018-03-22</pubDate>
-      <guid>https://aunmro.github.io/blog/2018/03/19/essential-cs-1/</guid>
     </item>
     <item>
       <title>[note]Ansi Common Lisp 阅读笔记(1)</title>

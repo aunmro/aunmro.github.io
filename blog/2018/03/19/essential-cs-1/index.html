@@ -410,6 +410,214 @@ Length 等属性底层被编译为 set_xxxx get_xxxx
 <div id="outline-container-sec-4-1-3" class="outline-4">
 <h4 id="sec-4-1-3">字符串不可变</h4>
 </div>
+<div id="outline-container-sec-4-1-4" class="outline-4">
+<h4 id="sec-4-1-4"><code>StringBuilder</code></h4>
+<div class="outline-text-4" id="text-4-1-4">
+<p>
+<code>System.Text.StringBuilder</code> 当你需要大量字符串操作时，可以使用 StringBuilder 对象，可以直接修改字符串。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">  using System.Text;
+  using static System.Console;
+
+  class Program {
+      static void Main(string[] args) {
+	  var s = new StringBuilder("word");
+	  s.Remove(1, 3);
+	  WriteLine(s);
+      }
+  }
+// w
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">2.3 匿名类型</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-csharp">class Program {
+    static void Main() {
+	var person = new { Name="One" };
+	System.Console.Write(person.Name);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">2.4 类型的分类</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-0-1" class="outline-4">
+<h4 id="sec-6-0-1">引用类型</h4>
+<div class="outline-text-4" id="text-6-0-1">
+<p>
+引用类型指向内存中堆(heap)区域
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">2.5 可空修饰符</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<code>int? num = null</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">2.6 类型转换</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-0-1" class="outline-4">
+<h4 id="sec-8-0-1">2.6.1 显式转换</h4>
+<div class="outline-text-4" id="text-8-0-1">
+<div class="org-src-container">
+
+<pre class="src src-csharp">long num = 999999;
+int intNum = (int) num;
+</pre>
+</div>
+</div>
+
+<ul class="org-ul"><li><a id="sec-8-0-1-1" name="sec-8-0-1-1"></a><code>check</code> 和 <code>uncheck</code><br  /><div class="outline-text-5" id="text-8-0-1-1">
+<p>
+check 可以用于检查溢出
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">  class Program {
+      static void Main() {
+	  checked {
+	      int n = int.MaxValue;
+	      n = n + 1;
+	      System.Console.Write(n);
+	  }
+      }
+  }
+/*
+Unhandled Exception:
+System.OverflowException: Arithmetic operation resulted in an overflow.
+  at Program.Main () [0x00006] in &lt;7d1cf80b2b534001be779f23877b11fb&gt;:0 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.OverflowException: Arithmetic operation resulted in an overflow.
+  at Program.Main () [0x00006] in &lt;7d1cf80b2b534001be779f23877b11fb&gt;:0 
+*/
+</pre>
+</div>
+</div>
+</li></ul>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">2.7 数组</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<code>int[,] cels</code> 二维  
+</p>
+
+<p>
+<code>string[] name = {"C#", "ASP"}</code> 声明并赋值
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">3.1 操作符</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<code>+</code> 可用于字符串拼接
+</p>
+</div>
+
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1">浮点数计算</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+<b>float的精度只有7位</b>   
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">using static System.Console;
+
+class Program {
+    static void Main(string[] args) {
+	var num1 = 123456.7f;
+	var num2 = 0.1234567f;
+	Write(num1 + num2);
+    }
+}
+// 123456.8
+</pre>
+</div>
+
+<p>
+<b>浮点数实际上存储的是二进制分数</b>
+</p>
+
+<p>
+num=140.6 实际上num=1406/100=703/5 没法除以2 。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp">  class Program {
+      static void Main() {
+	  double num = 140.6f;
+	  System.Console.Write(num);
+      }
+  }
+// 140.600006103516
+</pre>
+</div>
+
+<p>
+<b>不要比较浮点数的值，要么比较2个值之差是否在一定范围内，要么使用decimal</b>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">3.5 bool 表达式</h2>
+<div class="outline-text-2" id="text-11">
+<ol class="org-ol">
+<li><code>||</code> or
+</li>
+<li><code>&amp;&amp;</code> and
+</li>
+<li><code>^</code> xor
+</li>
+</ol>
+</div>
+
+<div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1">3.5.5 空接合操作符</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+<code>expression1 ?? expression2</code> 第1个值为空，就换第2个值
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="todo TODO">TODO</span> 3.5.6 null操作符</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+<code>str[0]?.ToLower()</code>
+</p>
+</div>
 </div>
 </div>
 
@@ -418,7 +626,7 @@ Length 等属性底层被编译为 set_xxxx get_xxxx
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-19</span>
-        <span title="last modification date" class="post-info">2018-03-22</span>
+        <span title="last modification date" class="post-info">2018-03-27</span>
         <span title="tags" class="post-info"><a href="/tags/csharp/">csharp</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
