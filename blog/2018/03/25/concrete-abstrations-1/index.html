@@ -135,6 +135,18 @@ sqrt
 &gt; 9
 </pre>
 </div>
+
+<p>
+过程由一个用括号包裹的表达式列表组成。 第一个表达式的值是要应用的过程; 剩下的表达式的值是作为应用过程的参数。 应用程序本身就是表达式，因此它们可以嵌套：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(sqrt (+ 3 6))
+&gt; 3
+</pre>
+</div>
 </div>
 </div>
 
@@ -143,7 +155,7 @@ sqrt
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-25</span>
-        <span title="last modification date" class="post-info">2018-03-27</span>
+        <span title="last modification date" class="post-info">2018-03-28</span>
         <span title="tags" class="post-info"><a href="/tags/scheme/">scheme</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
