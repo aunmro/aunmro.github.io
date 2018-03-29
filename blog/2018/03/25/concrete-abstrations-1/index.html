@@ -60,7 +60,7 @@
 </ol>
 
 <p>
-以上就是一个计算过程。关于计算过程，有很多疑问：
+以上就是一个过程。关于计算过程，有很多疑问：
 </p>
 
 <ul class="org-ul">
@@ -166,11 +166,12 @@ sqrt
 <p>
 一些其他的计算过程: <code>+</code> <code>-</code> <code>*</code> <code>/</code>
 </p>
-</div>
 
-<div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1">练习1.1</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<blockquote>
+<p>
+练习1.1
+</p>
+
 <p>
 用 Scheme 计算下列值
 </p>
@@ -183,6 +184,7 @@ sqrt
 (/ (+ (* (- 17 14) 5) 6) 7)
 </pre>
 </div>
+</blockquote>
 
 <p>
 <b>复杂的表达式可以通过换行和缩进来阐明其结构</b> ，比如练习1.1的 <code>(/ (+ (* (- 17 14) 5) 6) 7)</code> ,可以改为：
@@ -199,7 +201,7 @@ sqrt
 </div>
 
 <p>
-我们还应该学会自己定义过程：
+我们还需要学会为过程定义名称：
 </p>
 
 <div class="org-src-container">
@@ -213,6 +215,35 @@ ark-volume ;; 450000
 <p>
 Scheme 解释器首先计算 <code>(* (* 300 50) 30)</code> 的值，得到 450000, 然后 <code>ark-volume</code> 便成了这个值的名称，你可以运行这个过程。
 </p>
+
+<p>
+仅仅为计算结果命名还不够。例如，假设我们要计算几个不同项目的成本，包括5％的销售税，我们可以考虑每件商品的价格，计算销售税，并将税额加到原价中：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(+ 1.29 (* 5/100 1.29))
+;; 1.3545
+(+ 2.40 (* 5/100 2.40))
+;; 2.52
+</pre>
+</div>
+
+<p>
+我们可以定义一个类似 <code>sqrt</code> 的过程，通过产品的价格，计算总成本。Scheme 里，通过 <b>lambda</b> 表达式指定一种计算方法：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(lambda (x) (+ x (* 5/100 x)))
+;; #&lt;procedure&gt;
+((lambda (x) (+ x (* 5/100 x))) 1.29)
+;; 1.3545
+((lambda (x) (+ x (* 5/100 x))) 2.40)
+;; 2.52
+</pre>
 </div>
 </div>
 </div>
@@ -223,7 +254,7 @@ Scheme 解释器首先计算 <code>(* (* 300 50) 30)</code> 的值，得到 4500
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-25</span>
-        <span title="last modification date" class="post-info">2018-03-28</span>
+        <span title="last modification date" class="post-info">2018-03-29</span>
         <span title="tags" class="post-info"><a href="/tags/scheme/">scheme</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
