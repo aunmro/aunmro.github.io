@@ -245,6 +245,53 @@ Scheme 解释器首先计算 <code>(* (* 300 50) 30)</code> 的值，得到 4500
 ;; 2.52
 </pre>
 </div>
+
+<p>
+lambda 表达式的格式为 <code>(lambda (参数) (计算过程))</code> 。我们可以直接把 lambda 表达式当作 sqrt 那样的过程名直接进行计算,如 <code>((lambda (x) (+ x (* 5/100 x))) 1.29)</code> 。
+</p>
+
+<p>
+每次都写一大段 lambda 很麻烦，我们可以为其命名
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(define f (lambda (x) (* x x)))
+
+(define square
+  (lambda (x) (* x x)))
+
+(square 3) ;; 9
+(square -10) ;; 100
+</pre>
+</div>
+
+<blockquote>
+<p>
+<b>Concrete Abstractions 写于1998年，现在我们可以直接定义带有参数的过程</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(define (square x) (* x x))
+(square 10) ;; 100
+</pre>
+</div>
+</blockquote>
+
+<blockquote>
+<p>
+练习1.2
+</p>
+<ol class="org-ol">
+<li>为税收计算过程 <code>(lambda (x) (+ x (* 5/100 x)))</code> 命名
+</li>
+<li>计算 $1.29 和 $2.40 时的总成本
+</li>
+</ol>
+</blockquote>
 </div>
 </div>
 </div>
@@ -254,7 +301,7 @@ Scheme 解释器首先计算 <code>(* (* 300 50) 30)</code> 的值，得到 4500
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-25</span>
-        <span title="last modification date" class="post-info">2018-03-29</span>
+        <span title="last modification date" class="post-info">2018-03-30</span>
         <span title="tags" class="post-info"><a href="/tags/scheme/">scheme</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
