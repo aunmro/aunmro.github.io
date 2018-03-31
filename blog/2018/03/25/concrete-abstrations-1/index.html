@@ -351,7 +351,7 @@ square
 </div>
 
 <p>
-下图以图形表示了计算过程：
+下图以图形表示了计算过程：我们可以看出 Scheme 运行计算过程就是在不停的替换
 </p>
 
 
@@ -359,6 +359,94 @@ square
 <p><img src="/assets/blog/2018/03/25/concrete-abstrations-1/scheme-ti-huan.png" alt="scheme-ti-huan.png" />
 </p>
 </div>
+
+<p>
+程序为我们提供了一种对不同值进行相同计算的方法，但有时候，我们希望根据不同条件选择特定的计算。 例如，一个简化的所得税，收入在10,000美元以下的人根本不需要支付任何税款，超过 10000 美元 需要交纳收入的百分之二十。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">#lang racket
+(define tax 
+  (lambda (income)
+     (if (&lt; income 10000)
+	 0
+	 (* 20/100 income))))
+
+(tax 30000)
+;; 6000
+</pre>
+</div>
+
+<p>
+上面例子需要注意的有
+</p>
+
+<ol class="org-ol">
+<li><b>&lt;*，它会计算参数的大小，返回布尔值 true 或者 false 。类似这样的过程还包括 *&gt;, =, &lt;=, &gt;=, even?, odd?</b> 等，它们被称为 *谓词*。
+</li>
+<li><b>if</b> 表达式，=(if () () ())= 第一个参数为判断条件，后面2个参数分别为判断结果 true 和 false 时进行的计算过程
+</li>
+</ol>
+
+<p>
+收入为 30000 时，交税金额的计算过程：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">(tax 30000)
+(if (&lt; 30000 10000) 0 (* 20/100 30000))
+(if #f 0 (* 20/100 30000))
+(* 20/100 30000)
+6000
+</pre>
+</div>
+
+<p>
+<code>(&lt; 30000 10000)</code> 的计算结果为 <b>#f</b> ，即 false，接下来执行第三个表达式。如果计算结果是 <b>#t</b> 则是运行第二个表达式。
+</p>
+
+<blockquote>
+<p>
+练习1.5
+</p>
+
+<p>
+上面的税收例子十分愚蠢，当你收入10000时，需要交2000税，但当你收入9999时并不需要交税。
+</p>
+
+<p>
+改写这个程序，当你的收入超过 10000 时，超过部分需要交纳 20% 的税
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+练习1.7
+</p>
+
+<p>
+描述下面两个程序的效果
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-racket">(define puzzle1
+  (lambda (a b c)
+    (+ a (if (&gt; b c)
+	     b
+	     c))))
+
+(define puzzle2
+  (lambda (x)
+    ((if (&lt; x 0)
+	 -
+	 +)
+    0 x)))
+</pre>
+</div>
+</blockquote>
 </div>
 </div>
 </div>
@@ -368,7 +456,7 @@ square
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-25</span>
-        <span title="last modification date" class="post-info">2018-03-30</span>
+        <span title="last modification date" class="post-info">2018-03-31</span>
         <span title="tags" class="post-info"><a href="/tags/scheme/">scheme</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
