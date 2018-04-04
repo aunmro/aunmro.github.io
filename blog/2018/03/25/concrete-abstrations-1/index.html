@@ -34,16 +34,16 @@
 
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Part 1 过程抽象</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Chapter 1 计算机科学与编程</h3>
 </div>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">计算过程</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Chapter 1 计算机科学与编程</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">计算过程</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
-计算机科学是围绕计算过程的科学。当计算机忙于做某些事时，一个过程就在它的内部进行。计算过程远不止算术计算那么简单，那么什么是计算过程？
+计算机科学是围绕计算过程的科学。当计算机忙于做某些事时，一个过程就在它的内部进行计算。计算过程远不止算术计算那么简单，那么什么是计算过程？
 </p>
 
 <p>
@@ -55,12 +55,16 @@
 </li>
 <li>再根据i确定 fi 的位置
 </li>
-<li>接下来直接向后查找 fiduciary
+<li>接下来一个一个词地直接向后查找 fiduciary
 </li>
 </ol>
 
 <p>
-以上就是一个过程。关于计算过程，有很多疑问：
+以上就是一个过程。
+</p>
+
+<p>
+关于计算过程，你可能有很多疑问：
 </p>
 
 <ul class="org-ul">
@@ -75,17 +79,23 @@
 </ul>
 
 <p>
-等等，接下来我们将讨论这些问题。
+接下来我们将讨论这些问题。
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3">Scheme</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Scheme</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
-描述计算过程需要一门编程语言，这里我们将使用 Scheme(<i>Racket</i>) 语言。
+描述计算过程需要一门编程语言，这里我们将使用 Scheme 语言。
 </p>
+
+<blockquote>
+<p>
+运行 Scheme 编写的程序需要一个解释器，本文使用的是 <a href="https://racket-lang.org/">Racket</a> 。
+</p>
+</blockquote>
 
 <p>
 最简单的 Scheme 程序是一个数字，输入一个数字，Scheme 将返回这个数字。
@@ -98,6 +108,12 @@
 ;; 12
 </pre>
 </div>
+
+<blockquote>
+<p>
+<code>;;</code> 在 Scheme 表示注释
+</p>
+</blockquote>
 
 <p>
 同样可以输入负数，分数，小数。Scheme 中，小数是不精确的近似值，分数是精确的有理数。
@@ -116,7 +132,7 @@
 </div>
 
 <p>
-Scheme 预先定义了很多过程，输入过程名过程名即可查阅，比如 <code>+</code> <code>sqrt</code>
+Scheme 预先定义了很多过程，输入过程名过程名即可显示，比如 <code>+</code> <code>sqrt</code>
 </p>
 
 <div class="org-src-container">
@@ -142,7 +158,7 @@ sqrt
 </div>
 
 <p>
-过程由一个用括号包裹的表达式列表组成。 第一个表达式的值是要应用的过程; 剩下的表达式的值是作为应用过程的参数。 应用程序本身就是表达式，因此它们可以嵌套：
+过程是由一个用括号包裹的表达式列表组成。 第一个表达式的值是要应用的过程; 剩下的表达式的值是作为应用过程的参数。 应用程序本身就是表达式，因此它们可以嵌套：
 </p>
 
 <div class="org-src-container">
@@ -449,19 +465,16 @@ square
 </blockquote>
 </div>
 </div>
+</div>
 
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4">Chapter 2 递归和归纳</h3>
-<div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-sec-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1">递归(Recursion)</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Chapter 2 递归和归纳</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">递归(Recursion)</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
-从前面的程序我们可以看出一点，我们编写的程序都会调用计算过程，并且调用的过程数量都是一样的。比如 <code>(square 3)</code> 进行了一次乘法计算，不管是 <code>(square 3)</code> 还是 <code>(square 999)</code> 都是如此。再比如 <code>(+ 1 (square 3))</code> 进行了2次计算。我们编写的程序越复杂，其计算过程就越复杂。 
-</p>
-
-<p>
-但当我们使用 <b>递归</b> 时，计算的参数值会生成不同大小的计算过程。 <i>递归实际上是指在函数能调用函数自身</i> 。最能直观显示展示递归例子是阶乘，比如我们求阶乘 <code>n!</code>
+递归实际上是指在在一个计算过程能调用它自身。听起来很玄乎，我们可以通过例子来理解，最能直观显示展示递归例子是阶乘，比如我们求阶乘 <code>n!</code>
 </p>
 
 <div class="org-src-container">
@@ -480,14 +493,13 @@ square
 </div>
 </div>
 </div>
-</div>
 
 </div>
 </div>
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-03-25</span>
-        <span title="last modification date" class="post-info">2018-04-04</span>
+        <span title="last modification date" class="post-info">2018-04-05</span>
         <span title="tags" class="post-info"><a href="/tags/scheme/">scheme</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
