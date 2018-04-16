@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Java婴儿知识(1) - 屠龙术与废物们</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="aunmro" />
+    <meta name="description" content="Java婴儿级知识" />
+    <meta name="keywords" content="java" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">屠龙术与废物们</a></h1>
+        <p>:用你的钻头突破天际啊</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/aunmro">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Java婴儿知识(1)</h1>
+<p>
+<i>怎样弄一个Java开发环境</i>
+</p>
+
+<p>
+开发环境
+</p>
+
+<ul class="org-ul">
+<li>jdk
+<ol class="org-ol">
+<li>下载jdk
+</li>
+<li>设置 <code>JAVA_HOME</code> 环境变量
+</li>
+<li><code>jdk/bin</code> 放入环境变量 path
+</li>
+</ol>
+</li>
+<li>eclipse
+<ol class="org-ol">
+<li>下载
+</li>
+<li>使用开源镜像汉化 <a href="http://mirrors.ustc.edu.cn/eclipse/technology/babel/update-site/R0.15.1/oxygen/">Exlipse汉化</a>
+</li>
+</ol>
+</li>
+</ul>
+
+<hr  />
+
+<p>
+<b>Hello World</b>
+</p>
+
+<ol class="org-ol">
+<li>Eclipse中创建项目 =&gt; 项目名 firstblood
+</li>
+<li>创建类：文件=&gt;新建=&gt;类
+<ol class="org-ol">
+<li>包：类所在的包，包名一般是公司域名的倒置，可以没有。这里选择=com.firstblood=
+</li>
+<li>名称：类名 <code>HelloWorld</code>
+</li>
+<li>创建方法存根 <code>public staic void main(String[] args)</code>
+</li>
+</ol>
+</li>
+<li>自动生成了代码，在最中央加入 <code>System.out.print("Hello World.");</code>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;
+
+ public class HelloWorld {
+     public static void main(String[] args) {
+	 System.out.print("hello world");
+     }
+ }
+</pre>
+</div>
+</li>
+
+<li>点击运行
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>如何用命令行生成带目录的class文件</b>
+</p>
+
+<p>
+<code>javac -d target.java</code>
+</p>
+
+<hr  />
+
+<p>
+<b>解释一下Hello World</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;  //包名，即生成的目录
+
+public class HelloWorld {   //java程序必须被包裹在类中
+    public static void main(String[] args) {    //静态main方法，程序的入口
+	System.out.print("hello world");  //java的输出流
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>怎样声明变量</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;
+
+public class HelloWorld {
+    int y; //成员变量
+
+    public static void main(String[] args) {
+	int x;
+	float f = 4.5f;
+	System.out.print(x); //错误,未初始化
+	System.out.print(f);
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>那常量呢</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;
+
+public class HelloWorld {
+    public static final double PI = 3.14;  //HelloWorld.PI 直接访问
+
+    public static void main(String[] args) {
+	final int num = 10;
+	System.out.println(PI);
+	System.out.println(num);
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2018-04-16</span>
+        <span title="last modification date" class="post-info">2018-04-17</span>
+        <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
+        <span title="author" class="post-info">aunmro</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2018/04/16/java-basic-1/";
+          var disqus_url = "https://aunmro.github.io/blog/2018/04/16/java-basic-1/";
+          var disqus_shortname = 'aunmro-github-io';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+       <div id="hashover"></div>
+       <script type="text/javascript" src="/hashover.php"></script>
+       <noscript>You must have JavaScript enabled to use the comments.</noscript>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-115377145-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
