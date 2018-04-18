@@ -79,6 +79,7 @@
 </li>
 </ol>
 </li>
+
 <li>自动生成了代码，在最中央加入 <code>System.out.print("Hello World.");</code>
 
 <div class="org-src-container">
@@ -173,12 +174,150 @@ public class HelloWorld {
 
 <hr  />
 
+<p>
+<b>怎么给变量，常量取名</b>
+</p>
+
+<p>
+这涉及到编码规范，统一的规范便于团队合作，便于阅读其他人的代码。
+</p>
+
+<p>
+一份简单的规范：
+</p>
+
+<ol class="org-ol">
+<li>包名：全部是小写字母，然后由 <code>.</code> 分隔。包名作为命名空间，具有唯一性，推荐使用公司或组织域名的倒置，比如 <code>com.apple.quicktime.v2</code> 。但Java核心库不采用这种方式。
+</li>
+<li>类名、接口名：帕斯卡命名法， <code>SplitViewController</code>
+</li>
+<li>文件名：帕斯卡命名法 <code>BlockOperation.java</code>
+</li>
+<li>变量名：驼峰命名法 <code>studentNumber</code>
+</li>
+<li>方法名：驼峰命名法
+</li>
+<li>常量名：大写字母，可用下划线分开 <code>year</code> <code>WEEK_OF_MONTH</code>
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>注释有哪些?</b>
+</p>
+
+<ol class="org-ol">
+<li><code>//</code> 大家都懂的单行注释 <code>/**/</code> 和多行注释
+</li>
+<li>在文件开头添加多行注释 版权信息、文件名、所在模块、作者信息、历史版本信息、文件内容和作用
+</li>
+<li>文档注释 <code>/** .. */</code>
+   生成API帮助文档，JDK中javadoc命令能够提取这些注释信息并生成HTML文件。
+<div class="org-src-container">
+
+<pre class="src src-java">package com.test;
+
+/**
+ * 自定义的日期类，具有日期基本功能，继承java.util.Date
+ * &lt;p&gt;实现日期对象和字符串之间的转换&lt;/p&gt;
+ * @author unknown
+ */
+public class Date extends java.util.Date {
+    public int size;
+
+    /**
+     * 将字符串转换为Date日期对象
+     * @param s 要转换的字符串
+     * @return Date日期对象
+     */
+    public static Date valueOf(String s) {
+	//...
+    }
+
+    /**
+     * 将日期转换为yyyy-mm-dd格式的字符串
+     * @return yyyy-mm-dd格式的字符串
+     */
+    public String toString () {
+	//...
+    }
+}
+</pre>
+</div>
+<p>
+文档注释标签
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">标签</th>
+<th scope="col" class="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">@author</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">@deprecated</td>
+<td class="left">类，接口已废弃</td>
+</tr>
+
+<tr>
+<td class="left">@param</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">@return</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">@version</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">@see</td>
+<td class="left">参考另一个主题链接</td>
+</tr>
+
+<tr>
+<td class="left">@exception</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">@throws</td>
+<td class="left">同@exception</td>
+</tr>
+</tbody>
+</table>
+<p>
+javadoc可以生成文档
+</p>
+</li>
+<li>IDE中的特殊注释： <code>TODO</code> <code>FIXME</code>
+</li>
+</ol>
+
 </div>
 </div>
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-04-16</span>
-        <span title="last modification date" class="post-info">2018-04-17</span>
+        <span title="last modification date" class="post-info">2018-04-18</span>
         <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
