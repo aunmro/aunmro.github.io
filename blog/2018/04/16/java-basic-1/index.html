@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>Java婴儿知识(1) - 屠龙术与废物们</title>
+    <title>Java基础(1) - 屠龙术与废物们</title>
     <meta charset="utf-8" />
     <meta name="author" content="aunmro" />
     <meta name="description" content="Java婴儿级知识" />
@@ -30,7 +30,7 @@
 
 <div>
 <div class="post">
-<h1>Java婴儿知识(1)</h1>
+<h1>Java基础(1)</h1>
 <p>
 <i>怎样弄一个Java开发环境</i>
 </p>
@@ -312,12 +312,160 @@ javadoc可以生成文档
 </li>
 </ol>
 
+<hr  />
+
+<p>
+<b>有哪些基本类型</b>
+</p>
+
+<ol class="org-ol">
+<li>布尔类型 boolean
+</li>
+<li>数值类型
+<ol class="org-ol">
+<li>整数类型
+<ol class="org-ol">
+<li>byte
+</li>
+<li>short
+</li>
+<li>int
+</li>
+<li>long
+</li>
+</ol>
+</li>
+<li>浮点类型
+<ol class="org-ol">
+<li>float
+</li>
+<li>double
+</li>
+</ol>
+</li>
+<li>字符类型 char
+</li>
+</ol>
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>整数有多大呢</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">类型</th>
+<th scope="col" class="left">宽度</th>
+<th scope="col" class="left">范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">byte</td>
+<td class="left">1字节(8位)</td>
+<td class="left">-128~127</td>
+</tr>
+
+<tr>
+<td class="left">short</td>
+<td class="left">2字节(16位)</td>
+<td class="left">-2^15~2^15-1</td>
+</tr>
+
+<tr>
+<td class="left">int</td>
+<td class="left">4字节(32位)</td>
+<td class="left">-2^31~2^31-1</td>
+</tr>
+
+<tr>
+<td class="left">long</td>
+<td class="left">8字节(64位)</td>
+<td class="left">-2^63~2^63-1</td>
+</tr>
+</tbody>
+</table>
+
+<hr  />
+
+<p>
+<b>整数类型有哪些需要注意的</b>
+</p>
+
+<ul class="org-ul">
+<li>long类型需要在数值后加 <code>l</code> 或者 <code>L</code>
+</li>
+<li>数值的默认类型是 int
+</li>
+</ul>
+
+<hr  />
+
+<p>
+<b>浮点数的范围呢</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">类型</th>
+<th scope="col" class="left">宽度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">float</td>
+<td class="left">4字节(32位)</td>
+</tr>
+
+<tr>
+<td class="left">double</td>
+<td class="left">8字节(64位)</td>
+</tr>
+</tbody>
+</table>
+
+<hr  />
+
+<p>
+<b>浮点有哪些需要注意的</b>
+</p>
+
+<ul class="org-ul">
+<li>浮点默认 double 类型
+</li>
+<li>float 需要在数值默尾添加 <code>f</code> 或 <code>F</code>
+</li>
+</ul>
+
+<hr  />
+
 </div>
 </div>
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-04-16</span>
-        <span title="last modification date" class="post-info">2018-04-18</span>
+        <span title="last modification date" class="post-info">2018-04-20</span>
         <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
