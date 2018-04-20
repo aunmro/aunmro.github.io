@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>Java基础(1) - 屠龙术与废物们</title>
+    <title>[note]Java基础(1) - 屠龙术与废物们</title>
     <meta charset="utf-8" />
     <meta name="author" content="aunmro" />
     <meta name="description" content="Java婴儿级知识" />
@@ -30,7 +30,7 @@
 
 <div>
 <div class="post">
-<h1>Java基础(1)</h1>
+<h1>[note]Java基础(1)</h1>
 <p>
 <i>怎样弄一个Java开发环境</i>
 </p>
@@ -459,6 +459,267 @@ javadoc可以生成文档
 </ul>
 
 <hr  />
+
+<p>
+<b>进制那些东西在java中是什么样</b>
+</p>
+
+<ul class="org-ul">
+<li>二进制 <code>0b1100</code> <code>0B1100</code>
+</li>
+<li>八进制 以 <code>0</code> 为前缀
+</li>
+<li>16进制 <code>0x</code> <code>0X</code> 为前缀
+</li>
+<li>指数 <code>double myMoney = 3.1e2;</code>
+</li>
+</ul>
+
+<hr  />
+
+<p>
+<b>字符类型怎么用</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+	char c1 = 'A';
+	char c2 = '\u0041';
+	char c3 = '花';
+
+	System.out.println(c1);
+	System.out.println(c2);
+	System.out.println(c3);
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>常用转义符有哪些</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">字符</th>
+<th scope="col" class="left">Unicode</th>
+<th scope="col" class="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\t</td>
+<td class="left">\u0009</td>
+<td class="left">tab制表符</td>
+</tr>
+
+<tr>
+<td class="left">\n</td>
+<td class="left">\u000a</td>
+<td class="left">换行</td>
+</tr>
+
+<tr>
+<td class="left">\r</td>
+<td class="left">\u000d</td>
+<td class="left">回车</td>
+</tr>
+
+<tr>
+<td class="left">\" \' \\</td>
+<td class="left">&#xa0;</td>
+<td class="left">双引号，单引号，反斜线</td>
+</tr>
+</tbody>
+</table>
+
+<hr  />
+
+<p>
+<b>最后，boolean</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">boolean isMan = true;
+boolean isWoman = false;
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>据说数值类型可以相互转化?</b>
+</p>
+
+<p>
+总的来说是 <b>小范围数据类型可以自动转换为大范围数据类型</b> 。
+</p>
+
+<p>
+自动类型转换发生在计算过程中，具体过程如下及表格
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">byte =&gt; short =&gt; int =&gt; long =&gt; float =&gt; double
+char =&gt; int
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">操作数1</th>
+<th scope="col" class="left">操作数2</th>
+<th scope="col" class="left">转换后类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">byte short char</td>
+<td class="left">int</td>
+<td class="left">int</td>
+</tr>
+
+<tr>
+<td class="left">byte short char int</td>
+<td class="left">long</td>
+<td class="left">long</td>
+</tr>
+
+<tr>
+<td class="left">byte short char int long</td>
+<td class="left">float</td>
+<td class="left">float</td>
+</tr>
+
+<tr>
+<td class="left">byte short char int long float</td>
+<td class="left">double</td>
+<td class="left">double</td>
+</tr>
+</tbody>
+</table>
+
+<hr  />
+
+<p>
+<b>还可以强制转换类型?</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">int i = 10;
+byte b = (byte) i;
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>引用类型?</b>
+</p>
+
+<p>
+除了基本数据类型外，其他数据类型全部都是 <b>引用（reference）数据类型</b> ,包括 类 接口 数组。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">package com.firstblood;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+	String name = "name";
+	String name2 = name; //指向同一块内存
+	System.out.println(name2);
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>运算符有哪些?</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">运算符</th>
+<th scope="col" class="left">名称</th>
+<th scope="col" class="left">说明</th>
+<th scope="col" class="left">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">-</td>
+<td class="left">取反</td>
+<td class="left">&#xa0;</td>
+<td class="left">b=-a</td>
+</tr>
+
+<tr>
+<td class="left">++</td>
+<td class="left">自增</td>
+<td class="left">&#xa0;</td>
+<td class="left">a++ ++a</td>
+</tr>
+
+<tr>
+<td class="left">--</td>
+<td class="left">自减</td>
+<td class="left">&#xa0;</td>
+<td class="left">a-- --a</td>
+</tr>
+
+<tr>
+<td class="left">+ - * / %</td>
+<td class="left">加减乘除 取余</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
