@@ -787,7 +787,7 @@ public class HelloWorld {
 <hr  />
 
 <p>
-<b>有哪些控制结构</b>
+<b>控制结构有哪些?</b>
 </p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -844,12 +844,225 @@ public class HelloWorld {
 </tbody>
 </table>
 
+<hr  />
+
+<p>
+<b>数组?</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">//元素数据类型[] 数组变量名;
+//元素数据类型 数组变量名[];
+int[] nums1;
+int nums2[];
+nums1 = {1,2,3,4,5};
+int nums3[] = {1, 2, 3};
+int nums4[] = new int[10];
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>新建数组的默认值是?</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">基本类型</th>
+<th scope="col" class="left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">byte short int</td>
+<td class="left">0</td>
+</tr>
+
+<tr>
+<td class="left">long</td>
+<td class="left">0L</td>
+</tr>
+
+<tr>
+<td class="left">float</td>
+<td class="left">0.0f</td>
+</tr>
+
+<tr>
+<td class="left">double</td>
+<td class="left">0.0d</td>
+</tr>
+
+<tr>
+<td class="left">char</td>
+<td class="left">'\u0000'</td>
+</tr>
+
+<tr>
+<td class="left">boolean</td>
+<td class="left">false</td>
+</tr>
+
+<tr>
+<td class="left">引用</td>
+<td class="left">null</td>
+</tr>
+</tbody>
+</table>
+
+<hr  />
+
+<p>
+<b>二维数组?</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">int nums[][] = {
+    {1, 2},
+    {3, 4}
+};
+
+int nums2[][] = new int[3][3];
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>数组必须齐齐整整的?</b>
+</p>
+
+<p>
+不是，可以有不规则数组
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">int nums[][] = {
+    {1, 2},
+    {3, 4, 5}
+};
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>那么动态不规则数组呢?</b>
+</p>
+
+<p>
+有点麻烦，先创建一个数组再一个一个创建数组元素。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">int nums[][] = new int[4][];
+nums[0] = new int[1];
+nums[1] = new int[3];
+nums[2] = new int[5];
+nums[3] = new int[7];
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>字符串?</b>
+</p>
+
+<p>
+一串由 =""= 双引号包起来的字符。 ="Hello World"= ="你好世界"= ="\u0048\u0065\u006c\u006c\u006f\u0020\u0057\u006f\u0072\u006c\u0064"=
+</p>
+
+<hr  />
+
+<p>
+<b>字符串是类?</b>
+</p>
+
+<p>
+是，String、StringBuffer和StringBuilder 都是字符串类，String是不可变字符串，StringBuffer和StringBuilder是可变字符串。
+</p>
+
+<hr  />
+
+<p>
+<b>不可变?可变?</b>
+</p>
+
+<p>
+先从不可变开始，Java中不可变类是 <code>String</code>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">String emptyStr = new String("");
+String str = new String("str");
+
+char chars[] = {'c', 'h', 'a', 'r', 's', 't', 'r'};
+String charstr = new String(chars);                 //charstr
+String charstrWithLength = new String(chars, 1, 2); //ha
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>String s="s" 和 String s=new String("s")怎么不一样</b>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">String s1 = "str"; //字符串常量
+String s2 = new String("str");
+</pre>
+</div>
+
+<p>
+二者之间有细微的区别
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">public class HelloWorld {
+    public static void main(String[] args) {
+	String s1 = "str";
+	String s2 = "str";
+	String s3 = new String("str");
+	String s4 = new String("str");
+
+	System.out.println(s3 == s4);  //false
+	System.out.println(s1 == s2);  //true
+
+	System.out.println(s3 == s1); //false
+	System.out.println(s2 == s3); //false
+    }
+}
+</pre>
+</div>
+
+<p>
+== 运算符号比较的是两个对象的引用是否一致，所以 s1, s2 引用了同一格对象，s3, s4 引用不同对象。出现不同是因为java使用了 <b>字符串(String Pool)</b> 。
+</p>
+
 </div>
 </div>
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-04-16</span>
-        <span title="last modification date" class="post-info">2018-04-22</span>
+        <span title="last modification date" class="post-info">2018-04-26</span>
         <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
