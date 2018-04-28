@@ -1054,15 +1054,160 @@ String s2 = new String("str");
 </div>
 
 <p>
-== 运算符号比较的是两个对象的引用是否一致，所以 s1, s2 引用了同一格对象，s3, s4 引用不同对象。出现不同是因为java使用了 <b>字符串(String Pool)</b> 。
+== 运算符号比较的是两个对象的引用是否一致，所以 s1, s2 引用了同一格对象，s3, s4 引用不同对象。出现不同是因为java使用了 <b>字符串池(String Pool)</b> 。
 </p>
+
+<p>
+=String s1 = "str"= 在字符串池创建 "str" 并被s1引用，创建s2时再次引用 "str"。但 new 方法创建的对象是不同的。
+</p>
+
+<hr  />
+
+<p>
+<b>String字符串不可变，那要合并字符串呢?</b>
+</p>
+
+<p>
+虽然不可变，但可以拼接，因为可以生成一个新的字符串对象，使用以下方式进行拼接：
+</p>
+
+<ol class="org-ol">
+<li><code>+</code> 不仅可以连接 String 类型，还可以连接其他类型，+ 号的左右操作数调用期 <code>toString</code> 方法。
+<div class="org-src-container">
+
+<pre class="src src-java">public class HelloWorld {
+    public static void main(String[] args) {
+	String s1 = "str";
+	String s2 = "str";
+	String s3 = s1 + s2;
+	System.out.println(s3);  //strstr
+
+	int n1 = 1;
+	String s4 = s1 + n1;
+	System.out.println(s4); //str1
+    }
+}
+</pre>
+</div>
+</li>
+
+<li><code>concat</code>
+<div class="org-src-container">
+
+<pre class="src src-java">public class HelloWorld {
+    public static void main(String[] args) {
+	String s1 = "str";
+	String s2 = s1.concat("str2");
+	System.out.println(s2);  //strstr2
+    }
+}
+</pre>
+</div>
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>怎么在字符串中查找一部分字符串</b>
+</p>
+
+<ol class="org-ol">
+<li><code>indexOf</code>
+</li>
+<li><code>lastIndexOf</code> 从后向前查找
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>判断两个字符串相等呢?大小?前缀后缀?</b>
+</p>
+
+<ol class="org-ol">
+<li>相等 <code>equals</code> <code>equalsIgnoreCase</code> 忽略大小写
+</li>
+<li>比较 <code>compareTo</code> <code>compareToIgnoreCase</code>
+</li>
+<li>后缀 <code>endsWith</code> 前缀 <code>startsWith</code> 
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>截取一段字符串呢?</b>
+</p>
+
+<ol class="org-ol">
+<li><code>substring(int beginIndex[, int endIndex])</code>
+</li>
+<li><code>split</code> 切割字符串
+</li>
+</ol>
+
+<hr  />
+
+<p>
+<b>可变字符串哪里特殊?</b>
+</p>
+
+<p>
+追加、删除、修改、插入和拼接等操作不会产生新的对象，称为 <b>字符串缓冲区</b>
+</p>
+
+<hr  />
+
+<p>
+<b>StringBuffer StringBuilder,为什么有2个可变对象</b>
+</p>
+
+<p>
+StringBuffer 是线程安全的，方法支持线程同步，在单线程环境下会影响效率会影响效率；StringBuilder 是单线程版本。二者拥有相同的 api 。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">public class HelloWorld {
+    public static void main(String[] args) {
+	StringBuffer s1 = new StringBuffer();
+	System.out.println(s1.length());   // 0
+	System.out.println(s1.capacity()); // 缓冲区长度为16
+	s1.append("StringBuffer");
+	System.out.println(s1);            // StringBuffer
+	System.out.println(s1.capacity()); // 缓冲区长度为16
+	s1.append(s1);
+	System.out.println(s1);            // StringBufferStringBuffer
+	System.out.println(s1.capacity()); // 缓冲区长度为34
+    }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+<b>可变字符串对象有哪些常用方法?</b>
+</p>
+
+<ol class="org-ol">
+<li><code>append</code> 追加 <code>s1.append("end").append("end")</code>
+</li>
+<li><code>insert</code> 插入
+</li>
+<li><code>delete</code> 删除
+</li>
+<li><code>replace</code> 替换
+</li>
+</ol>
 
 </div>
 </div>
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2018-04-16</span>
-        <span title="last modification date" class="post-info">2018-04-26</span>
+        <span title="last modification date" class="post-info">2018-04-28</span>
         <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
         <span title="author" class="post-info">aunmro</span>
       </div>
