@@ -4,16 +4,23 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io/</link>
     <description>:用你的钻头突破天际啊</description>
-    <pubDate>Sat, 28 Apr 2018 14:14:34 DST</pubDate>
-    <lastBuildDate>Sat, 28 Apr 2018 14:14:34 DST</lastBuildDate>
+    <pubDate>Sat, 28 Apr 2018 21:46:26 DST</pubDate>
+    <lastBuildDate>Sat, 28 Apr 2018 21:46:26 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
       <title>[note]Java基础(1)</title>
       <link>https://aunmro.github.io/blog/2018/04/16/java-basic-1/</link>
-      <description><![CDATA[Java婴儿级知识]]></description>
+      <description><![CDATA[Java婴儿级知识(1)]]></description>
       <pubDate>2018-04-28</pubDate>
       <guid>https://aunmro.github.io/blog/2018/04/16/java-basic-1/</guid>
+    </item>
+    <item>
+      <title>[note]Java基础(2)</title>
+      <link>https://aunmro.github.io/blog/2018/04/28/java-basic-2/</link>
+      <description><![CDATA[java婴儿级知识(2)]]></description>
+      <pubDate>2018-04-28</pubDate>
+      <guid>https://aunmro.github.io/blog/2018/04/28/java-basic-2/</guid>
     </item>
     <item>
       <title>[note]Ruby Unix By Example</title>
