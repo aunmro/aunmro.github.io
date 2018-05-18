@@ -1,36 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <title>[note]Java基础(1) - 屠龙术与废物们</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="aunmro" />
-    <meta name="description" content="Java婴儿级知识(1)" />
-    <meta name="keywords" content="java" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
-  <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">屠龙术与废物们</a></h1>
-        <p>:用你的钻头突破天际啊</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/aunmro">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="//www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
-        </form>
-      </header>
-    </div>
+<html lang="en">
+<head>
+  <title>[note]Java基础(1) - 屠龙术与废物们</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="aunmro" />
+  <meta name="description" content="Java婴儿级知识(1)" />
+  <meta name="keywords" content="java" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://aunmro.github.io/">屠龙术与废物们</a></h1>
+    <p>可上九天揽月,可下五洋捉鳖</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://aunmro.github.io/years/">Years</a></li>
+        <li><a href="https://aunmro.github.io/authors/">Authors</a></li>
+        <li><a href="https://aunmro.github.io/tags/">Tags</a></li>
+        <li><a href="https://aunmro.github.io/about/">About</a></li>
+        <li><a href="https://github.com/aunmro/aunmro.github.com">Github</a></li>
+        <li><a href="https://aunmro.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
+    </form>
+  </header>
+</div>
 
 <div>
 <div class="post">
-<h1>[note]Java基础(1)</h1>
+<h1 class="title">[note]Java基础(1)</h1>
 <p>
 <i>怎样弄一个Java开发环境</i>
 </p>
@@ -84,11 +104,11 @@
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;
 
- public class HelloWorld {
-     public static void main(String[] args) {
-	 System.out.print("hello world");
+ <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+     <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+         System.out.print(<span style="color: #2aa198;">"hello world"</span>);
      }
  }
 </pre>
@@ -117,11 +137,11 @@
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;  //包名，即生成的目录
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#21253;&#21517;&#65292;&#21363;&#29983;&#25104;&#30340;&#30446;&#24405;</span>
 
-public class HelloWorld {   //java程序必须被包裹在类中
-    public static void main(String[] args) {    //静态main方法，程序的入口
-	System.out.print("hello world");  //java的输出流
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {   <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">java&#31243;&#24207;&#24517;&#39035;&#34987;&#21253;&#35065;&#22312;&#31867;&#20013;</span>
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {    <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#38745;&#24577;main&#26041;&#27861;&#65292;&#31243;&#24207;&#30340;&#20837;&#21475;</span>
+        System.out.print(<span style="color: #2aa198;">"hello world"</span>);  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">java&#30340;&#36755;&#20986;&#27969;</span>
     }
 }
 </pre>
@@ -135,16 +155,16 @@ public class HelloWorld {   //java程序必须被包裹在类中
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;
 
-public class HelloWorld {
-    int y; //成员变量
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #b58900;">int</span> <span style="color: #268bd2;">y</span>; <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#25104;&#21592;&#21464;&#37327;</span>
 
-    public static void main(String[] args) {
-	int x;
-	float f = 4.5f;
-	System.out.print(x); //错误,未初始化
-	System.out.print(f);
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">int</span> <span style="color: #268bd2;">x</span>;
+        <span style="color: #b58900;">float</span> <span style="color: #268bd2;">f</span> = 4.5f;
+        System.out.print(x); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#38169;&#35823;,&#26410;&#21021;&#22987;&#21270;</span>
+        System.out.print(f);
     }
 }
 </pre>
@@ -158,15 +178,15 @@ public class HelloWorld {
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;
 
-public class HelloWorld {
-    public static final double PI = 3.14;  //HelloWorld.PI 直接访问
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #859900; font-weight: bold;">final</span> <span style="color: #b58900;">double</span> <span style="color: #268bd2;">PI</span> = 3.14;  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">HelloWorld.PI &#30452;&#25509;&#35775;&#38382;</span>
 
-    public static void main(String[] args) {
-	final int num = 10;
-	System.out.println(PI);
-	System.out.println(num);
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #859900; font-weight: bold;">final</span> <span style="color: #b58900;">int</span> <span style="color: #268bd2;">num</span> = 10;
+        System.out.println(PI);
+        System.out.println(num);
     }
 }
 </pre>
@@ -216,31 +236,31 @@ public class HelloWorld {
    生成API帮助文档，JDK中javadoc命令能够提取这些注释信息并生成HTML文件。
 <div class="org-src-container">
 
-<pre class="src src-java">package com.test;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">test</span>;
 
-/**
- * 自定义的日期类，具有日期基本功能，继承java.util.Date
- * &lt;p&gt;实现日期对象和字符串之间的转换&lt;/p&gt;
- * @author unknown
- */
-public class Date extends java.util.Date {
-    public int size;
+<span style="color: #2aa198;">/**</span>
+<span style="color: #2aa198;"> * &#33258;&#23450;&#20041;&#30340;&#26085;&#26399;&#31867;&#65292;&#20855;&#26377;&#26085;&#26399;&#22522;&#26412;&#21151;&#33021;&#65292;&#32487;&#25215;java.util.Date</span>
+<span style="color: #2aa198;"> * </span><span style="color: #268bd2; font-weight: bold;">&lt;p&gt;</span><span style="color: #2aa198;">&#23454;&#29616;&#26085;&#26399;&#23545;&#35937;&#21644;&#23383;&#31526;&#20018;&#20043;&#38388;&#30340;&#36716;&#25442;</span><span style="color: #268bd2; font-weight: bold;">&lt;/p&gt;</span>
+<span style="color: #2aa198;"> * </span><span style="color: #268bd2; font-weight: bold;">@author</span><span style="color: #2aa198;"> unknown</span>
+<span style="color: #2aa198;"> */</span>
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Date</span> <span style="color: #859900; font-weight: bold;">extends</span> <span style="color: #268bd2; font-weight: bold;">java</span>.<span style="color: #268bd2; font-weight: bold;">util</span>.<span style="color: #b58900;">Date</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #b58900;">int</span> <span style="color: #268bd2;">size</span>;
 
-    /**
-     * 将字符串转换为Date日期对象
-     * @param s 要转换的字符串
-     * @return Date日期对象
-     */
-    public static Date valueOf(String s) {
-	//...
+    <span style="color: #2aa198;">/**</span>
+<span style="color: #2aa198;">     * &#23558;&#23383;&#31526;&#20018;&#36716;&#25442;&#20026;Date&#26085;&#26399;&#23545;&#35937;</span>
+<span style="color: #2aa198;">     * </span><span style="color: #268bd2; font-weight: bold;">@param</span><span style="color: #2aa198;"> s &#35201;&#36716;&#25442;&#30340;&#23383;&#31526;&#20018;</span>
+<span style="color: #2aa198;">     * </span><span style="color: #268bd2; font-weight: bold;">@return</span><span style="color: #2aa198;"> Date&#26085;&#26399;&#23545;&#35937;</span>
+<span style="color: #2aa198;">     */</span>
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">Date</span> <span style="color: #268bd2;">valueOf</span>(<span style="color: #b58900;">String</span> <span style="color: #268bd2;">s</span>) {
+        <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">...</span>
     }
 
-    /**
-     * 将日期转换为yyyy-mm-dd格式的字符串
-     * @return yyyy-mm-dd格式的字符串
-     */
-    public String toString () {
-	//...
+    <span style="color: #2aa198;">/**</span>
+<span style="color: #2aa198;">     * &#23558;&#26085;&#26399;&#36716;&#25442;&#20026;yyyy-mm-dd&#26684;&#24335;&#30340;&#23383;&#31526;&#20018;</span>
+<span style="color: #2aa198;">     * </span><span style="color: #268bd2; font-weight: bold;">@return</span><span style="color: #2aa198;"> yyyy-mm-dd&#26684;&#24335;&#30340;&#23383;&#31526;&#20018;</span>
+<span style="color: #2aa198;">     */</span>
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #b58900;">String</span> <span style="color: #268bd2;">toString</span> () {
+        <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">...</span>
     }
 }
 </pre>
@@ -483,17 +503,17 @@ javadoc可以生成文档
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;
 
-public class HelloWorld {
-    public static void main(String[] args) {
-	char c1 = 'A';
-	char c2 = '\u0041';
-	char c3 = '花';
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">char</span> <span style="color: #268bd2;">c1</span> = <span style="color: #2aa198;">'A'</span>;
+        <span style="color: #b58900;">char</span> <span style="color: #268bd2;">c2</span> = <span style="color: #2aa198;">'\u0041'</span>;
+        <span style="color: #b58900;">char</span> <span style="color: #268bd2;">c3</span> = <span style="color: #2aa198;">'&#33457;'</span>;
 
-	System.out.println(c1);
-	System.out.println(c2);
-	System.out.println(c3);
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
     }
 }
 </pre>
@@ -557,8 +577,8 @@ public class HelloWorld {
 
 <div class="org-src-container">
 
-<pre class="src src-java">boolean isMan = true;
-boolean isWoman = false;
+<pre class="src src-java"><span style="color: #b58900;">boolean</span> <span style="color: #268bd2;">isMan</span> = <span style="color: #268bd2; font-weight: bold;">true</span>;
+<span style="color: #b58900;">boolean</span> <span style="color: #268bd2;">isWoman</span> = <span style="color: #268bd2; font-weight: bold;">false</span>;
 </pre>
 </div>
 
@@ -578,8 +598,8 @@ boolean isWoman = false;
 
 <div class="org-src-container">
 
-<pre class="src src-java">byte =&gt; short =&gt; int =&gt; long =&gt; float =&gt; double
-char =&gt; int
+<pre class="src src-java"><span style="color: #b58900;">byte</span> =&gt; <span style="color: #b58900;">short</span> =&gt; <span style="color: #b58900;">int</span> =&gt; <span style="color: #b58900;">long</span> =&gt; <span style="color: #b58900;">float</span> =&gt; <span style="color: #b58900;">double</span>
+<span style="color: #b58900;">char</span> =&gt; <span style="color: #b58900;">int</span>
 </pre>
 </div>
 
@@ -635,8 +655,8 @@ char =&gt; int
 
 <div class="org-src-container">
 
-<pre class="src src-java">int i = 10;
-byte b = (byte) i;
+<pre class="src src-java"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span> = 10;
+<span style="color: #b58900;">byte</span> <span style="color: #268bd2;">b</span> = (<span style="color: #b58900;">byte</span>) i;
 </pre>
 </div>
 
@@ -652,13 +672,13 @@ byte b = (byte) i;
 
 <div class="org-src-container">
 
-<pre class="src src-java">package com.firstblood;
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">package</span> com.<span style="color: #268bd2; font-weight: bold;">firstblood</span>;
 
-public class HelloWorld {
-    public static void main(String[] args) {
-	String name = "name";
-	String name2 = name; //指向同一块内存
-	System.out.println(name2);
+<span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">"name"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">name2</span> = name; <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#25351;&#21521;&#21516;&#19968;&#22359;&#20869;&#23384;</span>
+        System.out.println(name2);
     }
 }
 </pre>
@@ -852,13 +872,13 @@ public class HelloWorld {
 
 <div class="org-src-container">
 
-<pre class="src src-java">//元素数据类型[] 数组变量名;
-//元素数据类型 数组变量名[];
-int[] nums1;
-int nums2[];
+<pre class="src src-java"><span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#20803;&#32032;&#25968;&#25454;&#31867;&#22411;[] &#25968;&#32452;&#21464;&#37327;&#21517;;</span>
+<span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#20803;&#32032;&#25968;&#25454;&#31867;&#22411; &#25968;&#32452;&#21464;&#37327;&#21517;[];</span>
+<span style="color: #b58900;">int</span>[] <span style="color: #268bd2;">nums1</span>;
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums2</span>[];
 nums1 = {1,2,3,4,5};
-int nums3[] = {1, 2, 3};
-int nums4[] = new int[10];
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums3</span>[] = {1, 2, 3};
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums4</span>[] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[10];
 </pre>
 </div>
 
@@ -928,12 +948,12 @@ int nums4[] = new int[10];
 
 <div class="org-src-container">
 
-<pre class="src src-java">int nums[][] = {
+<pre class="src src-java"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums</span>[][] = {
     {1, 2},
     {3, 4}
 };
 
-int nums2[][] = new int[3][3];
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums2</span>[][] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[3][3];
 </pre>
 </div>
 
@@ -949,7 +969,7 @@ int nums2[][] = new int[3][3];
 
 <div class="org-src-container">
 
-<pre class="src src-java">int nums[][] = {
+<pre class="src src-java"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums</span>[][] = {
     {1, 2},
     {3, 4, 5}
 };
@@ -968,11 +988,11 @@ int nums2[][] = new int[3][3];
 
 <div class="org-src-container">
 
-<pre class="src src-java">int nums[][] = new int[4][];
-nums[0] = new int[1];
-nums[1] = new int[3];
-nums[2] = new int[5];
-nums[3] = new int[7];
+<pre class="src src-java"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">nums</span>[][] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[4][];
+nums[0] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[1];
+nums[1] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[3];
+nums[2] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[5];
+nums[3] = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">int</span>[7];
 </pre>
 </div>
 
@@ -1008,12 +1028,12 @@ nums[3] = new int[7];
 
 <div class="org-src-container">
 
-<pre class="src src-java">String emptyStr = new String("");
-String str = new String("str");
+<pre class="src src-java"><span style="color: #b58900;">String</span> <span style="color: #268bd2;">emptyStr</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(<span style="color: #2aa198;">""</span>);
+<span style="color: #b58900;">String</span> <span style="color: #268bd2;">str</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(<span style="color: #2aa198;">"str"</span>);
 
-char chars[] = {'c', 'h', 'a', 'r', 's', 't', 'r'};
-String charstr = new String(chars);                 //charstr
-String charstrWithLength = new String(chars, 1, 2); //ha
+<span style="color: #b58900;">char</span> <span style="color: #268bd2;">chars</span>[] = {<span style="color: #2aa198;">'c'</span>, <span style="color: #2aa198;">'h'</span>, <span style="color: #2aa198;">'a'</span>, <span style="color: #2aa198;">'r'</span>, <span style="color: #2aa198;">'s'</span>, <span style="color: #2aa198;">'t'</span>, <span style="color: #2aa198;">'r'</span>};
+<span style="color: #b58900;">String</span> <span style="color: #268bd2;">charstr</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(chars);                 <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">charstr</span>
+<span style="color: #b58900;">String</span> <span style="color: #268bd2;">charstrWithLength</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(chars, 1, 2); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">ha</span>
 </pre>
 </div>
 
@@ -1025,8 +1045,8 @@ String charstrWithLength = new String(chars, 1, 2); //ha
 
 <div class="org-src-container">
 
-<pre class="src src-java">String s1 = "str"; //字符串常量
-String s2 = new String("str");
+<pre class="src src-java"><span style="color: #b58900;">String</span> <span style="color: #268bd2;">s1</span> = <span style="color: #2aa198;">"str"</span>; <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#23383;&#31526;&#20018;&#24120;&#37327;</span>
+<span style="color: #b58900;">String</span> <span style="color: #268bd2;">s2</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(<span style="color: #2aa198;">"str"</span>);
 </pre>
 </div>
 
@@ -1036,18 +1056,18 @@ String s2 = new String("str");
 
 <div class="org-src-container">
 
-<pre class="src src-java">public class HelloWorld {
-    public static void main(String[] args) {
-	String s1 = "str";
-	String s2 = "str";
-	String s3 = new String("str");
-	String s4 = new String("str");
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s1</span> = <span style="color: #2aa198;">"str"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s2</span> = <span style="color: #2aa198;">"str"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s3</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(<span style="color: #2aa198;">"str"</span>);
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s4</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">String</span>(<span style="color: #2aa198;">"str"</span>);
 
-	System.out.println(s3 == s4);  //false
-	System.out.println(s1 == s2);  //true
+        System.out.println(s3 == s4);  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">false</span>
+        System.out.println(s1 == s2);  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">true</span>
 
-	System.out.println(s3 == s1); //false
-	System.out.println(s2 == s3); //false
+        System.out.println(s3 == s1); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">false</span>
+        System.out.println(s2 == s3); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">false</span>
     }
 }
 </pre>
@@ -1075,16 +1095,16 @@ String s2 = new String("str");
 <li><code>+</code> 不仅可以连接 String 类型，还可以连接其他类型，+ 号的左右操作数调用期 <code>toString</code> 方法。
 <div class="org-src-container">
 
-<pre class="src src-java">public class HelloWorld {
-    public static void main(String[] args) {
-	String s1 = "str";
-	String s2 = "str";
-	String s3 = s1 + s2;
-	System.out.println(s3);  //strstr
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s1</span> = <span style="color: #2aa198;">"str"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s2</span> = <span style="color: #2aa198;">"str"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s3</span> = s1 + s2;
+        System.out.println(s3);  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">strstr</span>
 
-	int n1 = 1;
-	String s4 = s1 + n1;
-	System.out.println(s4); //str1
+        <span style="color: #b58900;">int</span> <span style="color: #268bd2;">n1</span> = 1;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s4</span> = s1 + n1;
+        System.out.println(s4); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">str1</span>
     }
 }
 </pre>
@@ -1094,11 +1114,11 @@ String s2 = new String("str");
 <li><code>concat</code>
 <div class="org-src-container">
 
-<pre class="src src-java">public class HelloWorld {
-    public static void main(String[] args) {
-	String s1 = "str";
-	String s2 = s1.concat("str2");
-	System.out.println(s2);  //strstr2
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s1</span> = <span style="color: #2aa198;">"str"</span>;
+        <span style="color: #b58900;">String</span> <span style="color: #268bd2;">s2</span> = s1.concat(<span style="color: #2aa198;">"str2"</span>);
+        System.out.println(s2);  <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">strstr2</span>
     }
 }
 </pre>
@@ -1169,17 +1189,17 @@ StringBuffer 是线程安全的，方法支持线程同步，在单线程环境�
 
 <div class="org-src-container">
 
-<pre class="src src-java">public class HelloWorld {
-    public static void main(String[] args) {
-	StringBuffer s1 = new StringBuffer();
-	System.out.println(s1.length());   // 0
-	System.out.println(s1.capacity()); // 缓冲区长度为16
-	s1.append("StringBuffer");
-	System.out.println(s1);            // StringBuffer
-	System.out.println(s1.capacity()); // 缓冲区长度为16
-	s1.append(s1);
-	System.out.println(s1);            // StringBufferStringBuffer
-	System.out.println(s1.capacity()); // 缓冲区长度为34
+<pre class="src src-java"><span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">HelloWorld</span> {
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">main</span>(<span style="color: #b58900;">String</span>[] <span style="color: #268bd2;">args</span>) {
+        <span style="color: #b58900;">StringBuffer</span> <span style="color: #268bd2;">s1</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">StringBuffer</span>();
+        System.out.println(s1.length());   <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">0</span>
+        System.out.println(s1.capacity()); <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#32531;&#20914;&#21306;&#38271;&#24230;&#20026;16</span>
+        s1.append(<span style="color: #2aa198;">"StringBuffer"</span>);
+        System.out.println(s1);            <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">StringBuffer</span>
+        System.out.println(s1.capacity()); <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#32531;&#20914;&#21306;&#38271;&#24230;&#20026;16</span>
+        s1.append(s1);
+        System.out.println(s1);            <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">StringBufferStringBuffer</span>
+        System.out.println(s1.capacity()); <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#32531;&#20914;&#21306;&#38271;&#24230;&#20026;34</span>
     }
 }
 </pre>
@@ -1204,58 +1224,69 @@ StringBuffer 是线程安全的，方法支持线程同步，在单线程环境�
 
 </div>
 </div>
-    <div>
-      <div class="post-meta">
-        <span title="post date" class="post-info">2018-04-16</span>
-        <span title="last modification date" class="post-info">2018-04-28</span>
-        <span title="tags" class="post-info"><a href="/tags/java/">java</a></span>
-        <span title="author" class="post-info">aunmro</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-04-16</span>
+            <span title="last modification date" class="post-info">2018-04-28</span>
+            <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/java">java</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a></span>
+        </div>
+    <script src="https://aunmro.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-          //var disqus_developer = 1;
-          var disqus_identifier = "/blog/2018/04/16/java-basic-1/";
-          var disqus_url = "https://aunmro.github.io/blog/2018/04/16/java-basic-1/";
-          var disqus_shortname = 'aunmro-github-io';
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/2018/04/16/java-basic-1/";
+         var disqus_url = "https://aunmro.github.io/blog/2018/04/16/java-basic-1/";
+         var disqus_shortname = 'aunmro-github-io';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-       <div id="hashover"></div>
-       <script type="text/javascript" src="/hashover.php"></script>
-       <noscript>You must have JavaScript enabled to use the comments.</noscript>
-      </section>
-      <script src="//code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-115377145-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://aunmro.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x(<a href="http://orgmode.org">Org mode</a> 8.x)</p>
         <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
         </p>
-      </div>
     </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
 
-  </body>
+  </div></body>
 </html>
