@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <meta name="author" content="aunmro" />
   <meta name="description" content="通过 ruby 代码讲解 Unix 进程相关的入门级知识，只是入门级 （－。－）" />
-  <meta name="keywords" content="ruby" />
+  <meta name="keywords" content="ruby, 进程" />
   <style>
    #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
    #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
@@ -57,28 +57,41 @@
 <li><a href="#sec-1">进程</a>
 <ul>
 <li><a href="#sec-1-1">进程是什么鬼?</a></li>
-<li><a href="#sec-1-2">pid?</a></li>
-<li><a href="#sec-1-3">$$又是什么鬼</a></li>
-<li><a href="#sec-1-4">有没有法子看看别的程序的pid</a></li>
-<li><a href="#sec-1-5">pid在真正的开发中有用吗?</a></li>
-<li><a href="#sec-1-6">进程, whosyourdaddy?</a></li>
-<li><a href="#sec-1-7">文件描述符</a>
+<li><a href="#sec-1-2">pid?</a>
 <ul>
-<li><a href="#sec-1-7-1">标准流</a></li>
+<li><a href="#sec-1-2-1"><code>$$</code> 又是什么鬼</a></li>
+<li><a href="#sec-1-2-2">有没有法子看看别的程序的pid</a></li>
+<li><a href="#sec-1-2-3">pid在真正的开发中有用吗?</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-8">进程的资源限制</a>
-<ul>
-<li><a href="#sec-1-8-1">软限制，硬限制</a></li>
-<li><a href="#sec-1-8-2">其他资源限制</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-9">进程皆有环境</a></li>
-<li><a href="#sec-1-10">进程的参数</a></li>
-<li><a href="#sec-1-11">进程名和退出码</a>
+<li><a href="#sec-2">与进程有关的概念</a>
 <ul>
-<li><a href="#sec-1-11-1">进程名</a></li>
-<li><a href="#sec-1-11-2">退出码</a></li>
+<li><a href="#sec-2-1">whosyourdaddy?</a></li>
+<li><a href="#sec-2-2">资源</a></li>
+<li><a href="#sec-2-3">文件描述符</a>
+<ul>
+<li><a href="#sec-2-3-1">那0-2号文件描述符去哪了？</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-4">一个进程可以打开多少资源呢？</a>
+<ul>
+<li><a href="#sec-2-4-1">软限制，硬限制的区别是什么？</a></li>
+<li><a href="#sec-2-4-2">其他资源限制</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-5">进程皆有环境</a>
+<ul>
+<li><a href="#sec-2-5-1"><code>ENV</code> 是 Hash 吗？</a></li>
+<li><a href="#sec-2-5-2"><code>ENV</code> 有哪些具体用法</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-6">进程的参数</a></li>
+<li><a href="#sec-2-7">进程名和退出码</a>
+<ul>
+<li><a href="#sec-2-7-1">进程名</a></li>
+<li><a href="#sec-2-7-2">退出码</a></li>
 </ul>
 </li>
 </ul>
@@ -88,7 +101,7 @@
 </div>
 <blockquote>
 <p>
-这篇博文是<a href="http://www.ituring.com.cn/book/1081">理解 Unix 进程</a>的笔记，如果你不想阅读二手文章，请看原版书。看完这篇文章或者《理解 Unix 进程》并不能让您深入理解进程，您还是需要阅读操作系统相关书籍。
+这篇博文是<a href="http://www.ituring.com.cn/book/1081">《理解 Unix 进程》</a>的笔记，如果你不想阅读二手文章，请看原版书。看完这篇文章或者《理解 Unix 进程》并不能让您深入理解进程，您还是需要阅读操作系统相关书籍。
 </p>
 </blockquote>
 
@@ -122,11 +135,10 @@
 
 <hr  />
 </div>
-</div>
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3">$$又是什么鬼</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><code>$$</code> 又是什么鬼</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <p>
 <code>p $$</code> 等同于 <code>p Process.pid</code> ， <code>$$</code> 这种用法来源于 perl 和 bash。
 </p>
@@ -135,20 +147,20 @@
 </div>
 </div>
 
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4">有没有法子看看别的程序的pid</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">有没有法子看看别的程序的pid</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <p>
-我们可以通过 <code>ps</code> 命令查看进程及相关信息，比如 <code>ps -l</code> 显示当前真进程， <code>ps -al</code> 列出其他用户进程信息， 等等其他用法。
+我们可以通过 <code>ps</code> 命令查看进程及相关信息，比如 <code>ps -l</code> 显示当前进程， <code>ps -al</code> 列出其他用户进程信息， 等等其他用法。
 </p>
 
 <hr  />
 </div>
 </div>
 
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5">pid在真正的开发中有用吗?</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3">pid在真正的开发中有用吗?</h4>
+<div class="outline-text-4" id="text-1-2-3">
 <p>
 实际应用过程中，我们常常会在日志文件中发现pid。比如 apache 服务器的错误日志 <code>/var/log/apache2/error.log</code> 。
 </p>
@@ -160,10 +172,15 @@
 <hr  />
 </div>
 </div>
+</div>
+</div>
 
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6">进程, whosyourdaddy?</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">与进程有关的概念</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">whosyourdaddy?</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 系统中运行的每一个进程都有对应的 <b>父进程</b> ，每个进程都知道其父进程的标识符(ppid)。在 ruby 中查看父进程，使用 <code>Process.ppid</code> 。
 </p>
@@ -182,11 +199,11 @@
 </div>
 </div>
 
-<div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7">文件描述符</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">资源</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
-Unix 世界中，除了将一般的文件视为文件外，也将设备、管道、socket 视为文件(和称为“资源”)。
+Unix 世界中，除了将一般的文件视为文件外，也将设备、管道、socket 视为文件(或者称为“资源”)。
 </p>
 
 <blockquote>
@@ -196,7 +213,18 @@ Unix 世界中，除了将一般的文件视为文件外，也将设备、管道
 </blockquote>
 
 <p>
-在任何进程(程序)中，打开资源都会获得文件描述符。进程关闭后，该进程打开的资源会被一同关闭。
+理所当然，我们可以在进程中操作资源。 <b>进程关闭后，该进程打开的资源会被一同关闭。</b>
+</p>
+
+<hr  />
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">文件描述符</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+在任何进程(程序)中，打开资源都会获得文件描述符。
 </p>
 
 <p>
@@ -206,12 +234,12 @@ ruby 中通过 <code>fileno</code> 获得文件描述符
 <div class="org-src-container">
 
 <pre class="src src-ruby">passwd = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa198;">'/etc/passwd'</span> )
-passwd.fileno
+<span style="color: #657b83; font-weight: bold;">p</span> passwd.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">8</span>
 </pre>
 </div>
 
 <p>
-输出: 7。进程打开的资源都会获得一个用于标识的唯一数字，内核通过这个数字追踪进程所用的资源。
+输出: 8。进程打开的资源都会获得一个用于标识的唯一数字，内核通过这个数字追踪进程所用的资源。
 </p>
 
 <p>
@@ -223,15 +251,15 @@ passwd.fileno
 <pre class="src src-ruby">file1 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa198;">'/etc/passwd'</span>)
 file2 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa198;">'/etc/hosts'</span>)
 
-<span style="color: #657b83; font-weight: bold;">puts</span> file1.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">7</span>
-<span style="color: #657b83; font-weight: bold;">puts</span> file2.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">8</span>
+<span style="color: #657b83; font-weight: bold;">p</span> file1.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">8</span>
+<span style="color: #657b83; font-weight: bold;">p</span> file2.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">9</span>
 
 file1.close
 file2.close
 
 file2 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa198;">'/etc/hosts'</span>)
 
-<span style="color: #657b83; font-weight: bold;">puts</span> file2.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">7</span>
+<span style="color: #657b83; font-weight: bold;">p</span> file2.fileno <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">8</span>
 </pre>
 </div>
 
@@ -239,20 +267,20 @@ file2 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa1
 输出结果为：
 </p>
 <pre class="example">
-7
 8
-7
+9
+8
 </pre>
 
 <ol class="org-ol">
-<li>当我们打开第一个文件时获得描述符编号是7，即尚未使用的最小值。第二个文件描述符是8
+<li>当我们打开第一个文件时获得描述符编号是8，即尚未使用的最小值。第二个文件描述符是9
 </li>
-<li>当我们关闭一个资源时，对应的文件描述符编号就关闭了。再次打开 <code>file2</code> ，文件描述符变为7
+<li>当我们关闭一个资源时，对应的文件描述符编号就关闭了。再次打开 <code>file2</code> ，文件描述符变为8
 </li>
 </ol>
 
 <p>
-这里我们可能会疑惑为什么第一个打开的资源描述符已经是 7 了，而不是 0 或者 1。在 ruby 中可以通过 <code>File.for_fd()</code> 查看标识符对应的资源：
+这里我们可能会疑惑为什么第一个打开的资源描述符已经是 8 了，而不是 0 或者 1。在 ruby 中可以通过 <code>File.for_fd()</code> 查看标识符对应的资源：
 </p>
 
 <div class="org-src-container">
@@ -260,12 +288,13 @@ file2 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa1
 <pre class="src src-ruby"><span style="color: #b58900;">File</span>.for_fd(3) 
 <span style="color: #b58900;">File</span>.for_fd(4)  
 <span style="color: #b58900;">File</span>.for_fd(5)  
-<span style="color: #b58900;">File</span>.for_fd(6)
+<span style="color: #b58900;">File</span>.for_fd(6)  
+<span style="color: #b58900;">File</span>.for_fd(7)
 </pre>
 </div>
 
 <p>
-运行以上代码出现了错误，3-6 号文件描述符被 Ruby 解释器使用了，并不能被连接
+运行以上代码出现了错误，3-7 号文件描述符被 Ruby 解释器使用了。
 </p>
 
 <pre class="example">
@@ -273,9 +302,13 @@ The given fd is not accessible because RubyVM reserves it
 </pre>
 </div>
 
-<div id="outline-container-sec-1-7-1" class="outline-4">
-<h4 id="sec-1-7-1">标准流</h4>
-<div class="outline-text-4" id="text-1-7-1">
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">那0-2号文件描述符去哪了？</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+<b>标准流</b>
+</p>
+
 <p>
 再看 0-2 号文件描述符, 事实上0-2描述符代表了标准流 <code>STDIN</code> <code>STDOUT</code> <code>STDERR</code>
 </p>
@@ -295,7 +328,7 @@ The given fd is not accessible because RubyVM reserves it
 </pre>
 
 <p>
-每个Unix进程都有三个必定打开的资源`STDIN` `STDOUT` `STDERR`（标准输入、标准输出、错误）。
+每个Unix进程都有三个必定打开的资源 <code>STDIN</code> <code>STDOUT</code> =STDERR=（标准输入、标准输出、错误）。
 </p>
 
 <ol class="org-ol">
@@ -311,24 +344,22 @@ The given fd is not accessible because RubyVM reserves it
 </p>
 </blockquote>
 
-<blockquote>
 <p>
-文件描述符和标准流是使用套接字、管道等进行网络编程的核心所在，也是文件系统操作的核心
+<b>文件描述符和标准流是使用套接字、管道等进行网络编程的核心所在，也是文件系统操作的核心。</b>
 </p>
-</blockquote>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-1-8" class="outline-3">
-<h3 id="sec-1-8">进程的资源限制</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">一个进程可以打开多少资源呢？</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
-一个问题：一个进程可以拥有多少个文件描述符？
+<b>一个进程拥有的文件描述符是有限的，内核为进程添加了某些资源限制。</b> 
 </p>
 
 <p>
-<b>一个进程拥有的文件描述符是有限的，内核为进程添加了某些资源限制。</b> 以下代码显示了所允许的文件描述符最大连接
+以下代码显示了所允许的文件描述符最大连接:
 </p>
 
 <div class="org-src-container">
@@ -338,18 +369,17 @@ The given fd is not accessible because RubyVM reserves it
 </div>
 
 <p>
-本人计算机的输出结果为：
-<code>[1024, 65536 ]</code> 第一个为文件描述符的软限制，第二个为文件描述符的硬限制
+本人计算机的输出结果为：=[1024, 65536]= 第一个为文件描述符的软限制，第二个为文件描述符的硬限制。
 </p>
 </div>
 
-<div id="outline-container-sec-1-8-1" class="outline-4">
-<h4 id="sec-1-8-1">软限制，硬限制</h4>
-<div class="outline-text-4" id="text-1-8-1">
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1">软限制，硬限制的区别是什么？</h4>
+<div class="outline-text-4" id="text-2-4-1">
 <ol class="org-ol">
 <li>软限制的是 <b>可以修改的</b> ，超出了软限制会抛出异常
 </li>
-<li>硬限制必须拥有超级用户权限才可以修改
+<li>硬限制必须拥有 <b>超级用户权限</b> 才可以修改
 </li>
 </ol>
 
@@ -382,15 +412,17 @@ The given fd is not accessible because RubyVM reserves it
 超出限制抛出异常 <code>Too many open files @ rb_sysopen - /dev/null (Errno::EMFILE)</code>
 </p>
 
+<blockquote>
 <p>
 <b>多数程序不需要修改资源限制，但有些情况会需要，比如网络压力测试时同时创建5000个并发连接。</b>
 </p>
+</blockquote>
 </div>
 </div>
 
-<div id="outline-container-sec-1-8-2" class="outline-4">
-<h4 id="sec-1-8-2">其他资源限制</h4>
-<div class="outline-text-4" id="text-1-8-2">
+<div id="outline-container-sec-2-4-2" class="outline-4">
+<h4 id="sec-2-4-2">其他资源限制</h4>
+<div class="outline-text-4" id="text-2-4-2">
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #b58900;">Process</span>.getrlimit(<span style="color: #268bd2; font-weight: bold;">:NPROC</span>) <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">&#24403;&#21069;&#29992;&#25143;&#25152;&#20801;&#35768;&#30340;&#26368;&#22823;&#24182;&#21457;&#36827;&#31243;&#25968;</span>
@@ -402,11 +434,11 @@ The given fd is not accessible because RubyVM reserves it
 </div>
 </div>
 
-<div id="outline-container-sec-1-9" class="outline-3">
-<h3 id="sec-1-9">进程皆有环境</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">进程皆有环境</h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
-环境指的是环境变量，环境变量是包含进程数据的键值对，所有进程都从父进程处继承环境变量。
+环境指的是环境变量，环境变量是包含进程数据的键值对， <b>所有进程都从父进程处继承环境变量</b> 。
 </p>
 
 <p>
@@ -429,11 +461,11 @@ The given fd is not accessible because RubyVM reserves it
 <span style="color: #657b83; font-weight: bold;">system</span> <span style="color: #2aa198;">'echo $MESSAGE'</span>
 </pre>
 </div>
+</div>
 
-<p>
-<code>ENV</code> 是 Hash 吗？
-</p>
-
+<div id="outline-container-sec-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1"><code>ENV</code> 是 Hash 吗？</h4>
+<div class="outline-text-4" id="text-2-5-1">
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #b58900;">ENV</span>.has_key?(<span style="color: #2aa198;">'PATH'</span>)
@@ -446,19 +478,37 @@ true
 false
 </pre>
 
+<p>
+<b><code>ENV</code> 实现了 Enumerable 和部分 Hash API，但并非全部。</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5-2" class="outline-4">
+<h4 id="sec-2-5-2"><code>ENV</code> 有哪些具体用法</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<div class="org-src-container">
+
+<pre class="src src-bash">RAILS_ENV=production rails server
+EDITOR=mate bundle open actionpack
+QUEUE=default rake resque:work
+</pre>
+</div>
+
 <blockquote>
 <p>
-<code>ENV</code> 实现了 Enumerable 和部分 Hash API，但并非全部
+比起解析命令行选项，使用环境变量的开销通常更小一些。
 </p>
 </blockquote>
 </div>
 </div>
+</div>
 
-<div id="outline-container-sec-1-10" class="outline-3">
-<h3 id="sec-1-10">进程的参数</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6">进程的参数</h3>
+<div class="outline-text-3" id="text-2-6">
 <p>
-Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组包含了参数。其他语言可能略有不同，但都会有 argv。
+Ruby 中，所有进程都可以访问 <code>ARGV</code> 的 <b>数组</b> ，该数组包含了参数。其他语言可能略有不同，但都会有 argv。
 </p>
 
 <div class="org-src-container">
@@ -470,16 +520,17 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组�
 </div>
 </div>
 
-<div id="outline-container-sec-1-11" class="outline-3">
-<h3 id="sec-1-11">进程名和退出码</h3>
-<div class="outline-text-3" id="text-1-11">
-</div><div id="outline-container-sec-1-11-1" class="outline-4">
-<h4 id="sec-1-11-1">进程名</h4>
-<div class="outline-text-4" id="text-1-11-1">
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7">进程名和退出码</h3>
+<div class="outline-text-3" id="text-2-7">
 <p>
 <b>进程之间没什么办法进行信息交换，除了进程名和退出码</b> 。
 </p>
+</div>
 
+<div id="outline-container-sec-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1">进程名</h4>
+<div class="outline-text-4" id="text-2-7-1">
 <p>
 进程名可以通过 <code>$PROGRAM_NAME</code> 和 <code>$0</code> 获得，这两个值还可以被改写
 </p>
@@ -493,15 +544,15 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组�
 </div>
 
 <pre class="example">
-: true
-: undefined
+true
+undefined
 </pre>
 </div>
 </div>
 
-<div id="outline-container-sec-1-11-2" class="outline-4">
-<h4 id="sec-1-11-2">退出码</h4>
-<div class="outline-text-4" id="text-1-11-2">
+<div id="outline-container-sec-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2">退出码</h4>
+<div class="outline-text-4" id="text-2-7-2">
 <p>
 进程结束时会留下退出码(0-255的数字)，用于表明程序是否顺利结束。 <b>退出码0表示顺利进行</b> 。
 </p>
@@ -518,7 +569,6 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组�
 
 <ol class="org-ol">
 <li><code>at_exit</code> 让进程退出时可以执行一段代码块
-
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">at_exit</span> {<span style="color: #657b83; font-weight: bold;">puts</span> <span style="color: #2aa198;">'exit'</span>}
@@ -526,28 +576,22 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组�
 </pre>
 </div>
 </li>
-
 <li><code>exit!</code> 退出进程，退出码设置为 1，并且不调用 <code>at_exit</code>
 </li>
 <li><code>abort</code> 同样将退出码视为 1，可以直接输出消息，也可以调用 <code>at_exit</code>
-
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">abort</span> <span style="color: #2aa198;">"exit process"</span>
 </pre>
 </div>
 </li>
-
 <li>出现异常时，并不会立即结束进程，但如果没有代码处理异常，进程就会被终结
-
 <div class="org-src-container">
 
 <pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">raise</span> <span style="color: #2aa198;">"raise hell"</span>
 </pre>
 </div>
 </li>
-
-<li></li>
 </ol>
 </div>
 </div>
@@ -560,7 +604,7 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的数组，该数组�
         <div class="post-meta">
             <span title="post date" class="post-info">2018-02-15</span>
             <span title="last modification date" class="post-info">2018-05-23</span>
-            <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/ruby">ruby</a>:</span>
+            <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/ruby">ruby</a> : <a href="https://aunmro.github.io/tags/进程">进程</a>:</span>
             <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a></span>
         </div>
     <script src="https://aunmro.github.io/media/js/jquery-2.1.3.min.js"></script>

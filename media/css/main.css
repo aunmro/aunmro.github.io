@@ -133,10 +133,10 @@ code {
     border-radius: 5px;
     color: #ffa0f0;
 }
-/*code:before, code:after {
+code:before, code:after {
     content: "=";
     color: #cfc;
-}*/
+}
 pre {
     display: block;
     margin: 0 0 14px;
