@@ -96,6 +96,16 @@
 </li>
 </ul>
 </li>
+<li><a href="#sec-3">fork</a>
+<ul>
+<li><a href="#sec-3-1">在一个进程中如何创建进程？</a>
+<ul>
+<li><a href="#sec-3-1-1">fork 块</a></li>
+<li><a href="#sec-3-1-2">fork 到底是如何运行的？</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -300,6 +310,8 @@ file2 = <span style="color: #b58900;">File</span>.open(<span style="color: #2aa1
 <pre class="example">
 The given fd is not accessible because RubyVM reserves it
 </pre>
+
+<hr  />
 </div>
 
 <div id="outline-container-sec-2-3-1" class="outline-4">
@@ -347,6 +359,8 @@ The given fd is not accessible because RubyVM reserves it
 <p>
 <b>文件描述符和标准流是使用套接字、管道等进行网络编程的核心所在，也是文件系统操作的核心。</b>
 </p>
+
+<hr  />
 </div>
 </div>
 </div>
@@ -371,6 +385,8 @@ The given fd is not accessible because RubyVM reserves it
 <p>
 本人计算机的输出结果为：=[1024, 65536]= 第一个为文件描述符的软限制，第二个为文件描述符的硬限制。
 </p>
+
+<hr  />
 </div>
 
 <div id="outline-container-sec-2-4-1" class="outline-4">
@@ -417,6 +433,8 @@ The given fd is not accessible because RubyVM reserves it
 <b>多数程序不需要修改资源限制，但有些情况会需要，比如网络压力测试时同时创建5000个并发连接。</b>
 </p>
 </blockquote>
+
+<hr  />
 </div>
 </div>
 
@@ -430,6 +448,8 @@ The given fd is not accessible because RubyVM reserves it
 <span style="color: #b58900;">Process</span>.getrlimit(<span style="color: #268bd2; font-weight: bold;">:STACK</span>) <span style="color: #93a1a1;"># </span><span style="color: #93a1a1;">&#29992;&#20110;&#36827;&#31243;&#26632;&#30340;&#26368;&#22823;&#27573;&#30340;&#22823;&#23567;</span>
 </pre>
 </div>
+
+<hr  />
 </div>
 </div>
 </div>
@@ -461,6 +481,8 @@ The given fd is not accessible because RubyVM reserves it
 <span style="color: #657b83; font-weight: bold;">system</span> <span style="color: #2aa198;">'echo $MESSAGE'</span>
 </pre>
 </div>
+
+<hr  />
 </div>
 
 <div id="outline-container-sec-2-5-1" class="outline-4">
@@ -481,6 +503,8 @@ false
 <p>
 <b><code>ENV</code> 实现了 Enumerable 和部分 Hash API，但并非全部。</b>
 </p>
+
+<hr  />
 </div>
 </div>
 
@@ -500,6 +524,8 @@ QUEUE=default rake resque:work
 比起解析命令行选项，使用环境变量的开销通常更小一些。
 </p>
 </blockquote>
+
+<hr  />
 </div>
 </div>
 </div>
@@ -517,6 +543,8 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的 <b>数组</b> ，�
 <span style="color: #b58900;">ARGV</span>.include?(<span style="color: #2aa198;">'-c'</span>)
 </pre>
 </div>
+
+<hr  />
 </div>
 </div>
 
@@ -547,6 +575,8 @@ Ruby 中，所有进程都可以访问 <code>ARGV</code> 的 <b>数组</b> ，�
 true
 undefined
 </pre>
+
+<hr  />
 </div>
 </div>
 
@@ -593,6 +623,104 @@ undefined
 </div>
 </li>
 </ol>
+
+<hr  />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">fork</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">在一个进程中如何创建进程？</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+通过 <code>fork</code> ，=fork= 允许进程创建新的进程。fork过程中， <b>原进程作为父进程，新创建进程为子进程</b> 。 
+</p>
+</div>
+
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">fork 块</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+一个 fork 的例子：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"&#29238;&#36827;&#31243;</span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span>
+
+<span style="color: #657b83; font-weight: bold;">fork</span> <span style="color: #859900; font-weight: bold;">do</span>
+  <span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"&#23376;&#36827;&#31243;</span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span> 
+<span style="color: #859900; font-weight: bold;">end</span>
+
+<span style="color: #657b83; font-weight: bold;">sleep</span> 1
+
+<span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"&#29238;&#36827;&#31243;</span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span>
+</pre>
+</div>
+
+<p>
+执行结果：
+</p>
+
+<pre class="example">
+父进程4760
+子进程4762
+父进程4760
+</pre>
+
+<p>
+<b>fork 块会运行只在子进程中执行的代码。</b>
+</p>
+
+<hr  />
+</div>
+</div>
+
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">fork 到底是如何运行的？</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+另外一个例子：    
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-ruby"><span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"&#29238;&#36827;&#31243;</span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span>
+
+<span style="color: #859900; font-weight: bold;">if</span> <span style="color: #657b83; font-weight: bold;">fork</span>
+  <span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"if block </span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span>
+<span style="color: #859900; font-weight: bold;">else</span>
+  <span style="color: #657b83; font-weight: bold;">p</span> <span style="color: #2aa198;">"else block </span><span style="color: #268bd2;">#{Process.pid}</span><span style="color: #2aa198;">"</span>
+<span style="color: #859900; font-weight: bold;">end</span>
+</pre>
+</div>
+
+<p>
+执行结果：
+</p>
+
+<pre class="example">
+父进程4483
+if block 4483
+else block 4485
+</pre>
+
+<p>
+执行过程：
+</p>
+
+<ol class="org-ol">
+<li>fork 得到一个子进程，
+</li>
+
+<li><b>子进程从父进程处继承了其所占用内存中的所有内容，以及所有属于父进程的已打开的文件描述符。</b>
+</li>
+<li></li>
+</ol>
 </div>
 </div>
 </div>
@@ -603,7 +731,7 @@ undefined
 <div>
         <div class="post-meta">
             <span title="post date" class="post-info">2018-02-15</span>
-            <span title="last modification date" class="post-info">2018-05-23</span>
+            <span title="last modification date" class="post-info">2018-05-26</span>
             <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/ruby">ruby</a> : <a href="https://aunmro.github.io/tags/进程">进程</a>:</span>
             <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a></span>
         </div>
