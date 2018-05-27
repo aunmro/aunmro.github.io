@@ -4,23 +4,30 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io</link>
     <description>上九天揽月,下五洋捉鳖</description>
-    <pubDate>Sat, 26 May 2018 14:13:46 DST</pubDate>
-    <lastBuildDate>Sat, 26 May 2018 14:13:46 DST</lastBuildDate>
+    <pubDate>Sun, 27 May 2018 21:49:59 DST</pubDate>
+    <lastBuildDate>Sun, 27 May 2018 21:49:59 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>微积分笔记(1)―函数</title>
+<link>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</link>
+<description>微积分笔记(1)</description>
+<pubDate>2018-05-27</pubDate>
+<guid>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</guid>
+</item>
+<item>
+<title>CPA经济法</title>
+<link>https://aunmro.github.io/note/2018/05/27/cpa-jjf-1/</link>
+<description>No Description</description>
+<pubDate>2018-05-27</pubDate>
+<guid>https://aunmro.github.io/note/2018/05/27/cpa-jjf-1/</guid>
+</item>
 <item>
 <title>Ruby Unix By Example</title>
 <link>https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process/</link>
 <description>通过 ruby 代码讲解 Unix 进程相关的入门级知识，只是入门级 （－。－）</description>
 <pubDate>2018-05-26</pubDate>
 <guid>https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process/</guid>
-</item>
-<item>
-<title>微积分笔记(1)―函数</title>
-<link>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</link>
-<description>微积分笔记(1)</description>
-<pubDate>2018-05-26</pubDate>
-<guid>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</guid>
 </item>
 <item>
 <title>[note]Java基础(1)</title>
