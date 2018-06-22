@@ -52,7 +52,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. <span class="todo TODO">TODO</span> c#的开发环境</a></li>
+<li><a href="#sec-1">1. c#的开发环境</a></li>
 <li><a href="#sec-2">2. C#可以开发哪些程序</a>
 <ul>
 <li><a href="#sec-2-1">2.1. 1. 控制台程序</a></li>
@@ -113,12 +113,46 @@
 <li><a href="#sec-6-3">6.3. 枚举</a></li>
 </ul>
 </li>
+<li><a href="#sec-7">7. 类与对象</a>
+<ul>
+<li><a href="#sec-7-1">7.1. 字段</a></li>
+<li><a href="#sec-7-2">7.2. 属性</a></li>
+<li><a href="#sec-7-3">7.3. 方法</a></li>
+<li><a href="#sec-7-4">7.4. 静态成员</a></li>
+<li><a href="#sec-7-5">7.5. 匿名类型</a></li>
+<li><a href="#sec-7-6">7.6. 构造函数</a></li>
+<li><a href="#sec-7-7">7.7. 析构函数</a></li>
+<li><a href="#sec-7-8">7.8. 参数</a>
+<ul>
+<li><a href="#sec-7-8-1">7.8.1. 值传递和引用传递</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-9">7.9. struct</a></li>
+<li><a href="#sec-7-10">7.10. 分部类</a></li>
+<li><a href="#sec-7-11">7.11. 继承</a>
+<ul>
+<li><a href="#sec-7-11-1">7.11.1. <code>base</code></a></li>
+</ul>
+</li>
+<li><a href="#sec-7-12">7.12. 多态</a>
+<ul>
+<li><a href="#sec-7-12-1">7.12.1. <code>virtual</code> <code>override</code> 重写方法</a></li>
+<li><a href="#sec-7-12-2">7.12.2. 方法重载</a></li>
+<li><a href="#sec-7-12-3">7.12.3. 方法重写</a></li>
+<li><a href="#sec-7-12-4">7.12.4. 方法隐藏 TODO</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-13">7.13. 接口</a></li>
+<li><a href="#sec-7-14">7.14. <code>sealed</code> 类</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. 委托</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> <span class="todo TODO">TODO</span> c#的开发环境</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> c#的开发环境</h2>
 </div>
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> C#可以开发哪些程序</h2>
@@ -490,12 +524,206 @@
 </div>
 </div>
 
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 类与对象</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> 字段</h3>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> 属性</h3>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> 方法</h3>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> 静态成员</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+与类相关, <code>类.静态成员</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> 匿名类型</h3>
+<div class="outline-text-3" id="text-7-5">
+<div class="org-src-container">
+
+<pre class="src src-csharp"><span style="color: #859900; font-weight: bold;">var</span> <span style="color: #268bd2;">obj</span> = <span style="color: #859900; font-weight: bold;">new</span> {x=0, y=0};
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> 构造函数</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+与类同名
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-7" class="outline-3">
+<h3 id="sec-7-7"><span class="section-number-3">7.7</span> 析构函数</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+类名前加 <code>~</code> ，比如 <code>~MyClass</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-8" class="outline-3">
+<h3 id="sec-7-8"><span class="section-number-3">7.8</span> 参数</h3>
+<div class="outline-text-3" id="text-7-8">
+</div><div id="outline-container-sec-7-8-1" class="outline-4">
+<h4 id="sec-7-8-1"><span class="section-number-4">7.8.1</span> 值传递和引用传递</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-7-9" class="outline-3">
+<h3 id="sec-7-9"><span class="section-number-3">7.9</span> struct</h3>
+<div class="outline-text-3" id="text-7-9">
+<p>
+结构，值类型
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-10" class="outline-3">
+<h3 id="sec-7-10"><span class="section-number-3">7.10</span> 分部类</h3>
+</div>
+
+<div id="outline-container-sec-7-11" class="outline-3">
+<h3 id="sec-7-11"><span class="section-number-3">7.11</span> 继承</h3>
+<div class="outline-text-3" id="text-7-11">
+</div><div id="outline-container-sec-7-11-1" class="outline-4">
+<h4 id="sec-7-11-1"><span class="section-number-4">7.11.1</span> <code>base</code></h4>
+<div class="outline-text-4" id="text-7-11-1">
+<p>
+继承父类构造函数
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Person</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> Person() {
+        Console.Write(<span style="color: #2aa198;">"Person"</span>);
+    }
+}
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Coder</span> : <span style="color: #b58900;">Person</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> Coder():<span style="color: #859900; font-weight: bold;">base</span>() {}
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-12" class="outline-3">
+<h3 id="sec-7-12"><span class="section-number-3">7.12</span> 多态</h3>
+<div class="outline-text-3" id="text-7-12">
+</div><div id="outline-container-sec-7-12-1" class="outline-4">
+<h4 id="sec-7-12-1"><span class="section-number-4">7.12.1</span> <code>virtual</code> <code>override</code> 重写方法</h4>
+<div class="outline-text-4" id="text-7-12-1">
+<div class="org-src-container">
+
+<pre class="src src-csharp"><span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Person</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">virtual</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">Test</span>() { }
+}
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Coder</span> : <span style="color: #b58900;">Person</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">override</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">Test</span>() { } 
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-12-2" class="outline-4">
+<h4 id="sec-7-12-2"><span class="section-number-4">7.12.2</span> 方法重载</h4>
+<div class="outline-text-4" id="text-7-12-2">
+<p>
+写多个不同参数的方法
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-12-3" class="outline-4">
+<h4 id="sec-7-12-3"><span class="section-number-4">7.12.3</span> 方法重写</h4>
+</div>
+
+<div id="outline-container-sec-7-12-4" class="outline-4">
+<h4 id="sec-7-12-4"><span class="section-number-4">7.12.4</span> 方法隐藏 TODO</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-7-13" class="outline-3">
+<h3 id="sec-7-13"><span class="section-number-3">7.13</span> 接口</h3>
+</div>
+
+<div id="outline-container-sec-7-14" class="outline-3">
+<h3 id="sec-7-14"><span class="section-number-3">7.14</span> <code>sealed</code> 类</h3>
+<div class="outline-text-3" id="text-7-14">
+<p>
+不能继承的类
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> 委托</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<i>委托，也叫代理，把事情交给别人办</i>
+</p>
+
+<p>
+可以将一个方法代理给一个对象，这个对象即可全权代理这个方法的执行
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-csharp"><span style="color: #859900; font-weight: bold;">using</span> <span style="color: #268bd2; font-weight: bold;">System</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Program</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">delegate</span> <span style="color: #b58900;">void</span> ConsoleTestDelegate(); <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#23450;&#20041;&#22996;&#25176;</span>
+
+    <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">Main</span>()
+    {
+        <span style="color: #859900; font-weight: bold;">var</span> <span style="color: #268bd2;">myDelegate</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">ConsoleTestDelegate</span>(Test.<span style="color: #b58900;">ConsoleTest</span>);
+        myDelegate();
+        Console.Read();
+    }
+}
+
+<span style="color: #859900; font-weight: bold;">class</span> <span style="color: #b58900;">Test</span>
+{
+    <span style="color: #859900; font-weight: bold;">public</span> <span style="color: #859900; font-weight: bold;">static</span> <span style="color: #b58900;">void</span> <span style="color: #268bd2;">ConsoleTest</span>()
+    {
+        Console.Write(<span style="color: #2aa198;">"ConsoleTest"</span>);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 <div>
         <div class="post-meta">
             <span title="post date" class="post-info">2018-06-06</span>
-            <span title="last modification date" class="post-info">2018-06-19</span>
+            <span title="last modification date" class="post-info">2018-06-22</span>
             <span title="tags" class="post-info">:N/A:</span>
             <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; aunmro-pc">aunmro-pc</a></span>
         </div>
