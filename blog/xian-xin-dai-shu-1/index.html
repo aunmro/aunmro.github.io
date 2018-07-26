@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>线性代数笔记(1) - 屠龙术与废物们</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="aunmro" />
+  <meta name="description" content="线性代数笔记(1)" />
+  <meta name="keywords" content="线性代数" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://aunmro.github.io/">屠龙术与废物们</a></h1>
+    <p>上九天揽月,下五洋捉鳖</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://aunmro.github.io/blogs/">Blogs</a></li>
+        <li><a href="https://aunmro.github.io/tags/">Tags</a></li>
+        <li><a href="https://aunmro.github.io/about/">About</a></li>
+        <li><a href="https://github.com/aunmro/aunmro.github.io">Github</a></li>
+        <li><a href="https://aunmro.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
+    </form>
+  </header>
+</div>
+
+<div>
+<div class="post">
+<h1 class="title">线性代数笔记(1)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. <span class="todo TODO">TODO</span> 向量</a>
+<ul>
+<li><a href="#sec-1-1">1.1. 向量的加法和数乘</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. 向量在平面坐标和三维中的图像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 方程组到矩阵</a>
+<ul>
+<li><a href="#sec-2-1">2.1. 行图像</a></li>
+<li><a href="#sec-2-2">2.2. 列图像</a></li>
+<li><a href="#sec-2-3">2.3. 改变 x，y</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. 三个未知数的方程组</a>
+<ul>
+<li><a href="#sec-3-1">3.1. 线性组合</a></li>
+<li><a href="#sec-3-2">3.2. 从方程组到三维图像</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. 矩阵乘向量</a></li>
+</ul>
+</div>
+</div>
+<p>
+<i>这一系列笔记主要来源于《Introduction to Linear Algebra》，MIT线性代数公开课，《线性代数讲稿》，《线性代数的本质》。</i><br  />
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <span class="todo TODO">TODO</span> 向量</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+一切从向量开始<br  />
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 向量的加法和数乘</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> 向量在平面坐标和三维中的图像</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 方程组到矩阵</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+线性代数的应用之一就是求解方程组，我们从一个简单方程组开始。<br  />
+</p>
+
+<p>
+\(\begin{cases}2x&amp;-y&amp;=0\\-x&amp;+2y&amp;=3\end{cases}\)<br  />
+</p>
+
+<p>
+我们按行(<b>row</b>)的方式将方程组改写 \(\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}\)<br  />
+</p>
+
+<ol class="org-ol">
+<li>将系数提取出来变为一个系数矩阵A， \(\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\) ， <i>现阶段你可以把矩阵理解为一个用中括号括起来的数表</i> 。<br  />
+</li>
+<li>将未知数提取出来，按列构成一个未知向量x， \(\begin{bmatrix}x\\y\end{bmatrix}\)<br  />
+</li>
+<li>将右侧结果提取为向量b， \(\begin{bmatrix}0\\3\end{bmatrix}\)<br  />
+</li>
+</ol>
+
+<p>
+整个方程组可以写为 \(A\overrightarrow{x} = \overrightarrow{b}\) 或者 \(Ax=b\)<br  />
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 行图像</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+根据矩阵形式，画出 <b>行图像</b><br  />
+</p>
+
+<p>
+<b>行图像</b> ：一次取一行构成方程，即初等数学中作图求解方程<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/xian-xin-dai-shu-hang-tu-xiang.png" alt="xian-xin-dai-shu-hang-tu-xiang.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 列图像</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+再次根据 \(\begin{cases}2x&amp;-y&amp;=0\\-x&amp;+2y&amp;=3\end{cases}\) 按列提取<br  />
+</p>
+
+<p>
+\(x\begin{bmatrix}2\\-1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}\) 要使得该式子成立，即寻找合适的 \(x, y\) 值使等式成立，图形如下：<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/xian-xin-dai-shu-lie-tu-xiang-1.png" alt="xian-xin-dai-shu-lie-tu-xiang-1.png" /><br  />
+</p>
+</div>
+
+<p>
+显然，1 倍 (2,-1) + 2 倍 (-1,2) 满足条件。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/xian-xin-dai-shu-lie-tu-xiang-2.png" alt="xian-xin-dai-shu-lie-tu-xiang-2.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 改变 x，y</h3>
+<div class="outline-text-3" id="text-2-3">
+<blockquote>
+<p>
+\(x\begin{bmatrix}2\\-1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}= ?\)<br  />
+</p>
+
+<p>
+注意上式中的 \(x, y\) ，改变它们的值，我们可以得到什么？<br  />
+</p>
+
+<p>
+得到平面上所有的向量，得到整个平面。<br  />
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 三个未知数的方程组</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+\(\begin{cases}2x&-y&&=0\\-x&+2y&-z&=-1\\&-3y&+4z&=4\end{cases}\)<br  />
+写为矩阵形式：<br  />
+\(\begin{bmatrix}2&-1&0\\-1&2&-1\\0&-3&4\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}\)<br  />
+在平面图像中 \(2x-y=0\) 是一条直线，但在三维中，它是一个平面：<br  />
+<img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/xian-xin-dai-shu-3-wei-hang-tu-xiang-1.png" alt="xian-xin-dai-shu-3-wei-hang-tu-xiang-1.png" /><br  />
+画出另外2个平面<br  />
+<img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/xian-xin-dai-shu-3-wei-hang-tu-xiang-2.png" alt="xian-xin-dai-shu-3-wei-hang-tu-xiang-2.png" /><br  />
+三个平面交于一点，这个点就是方程组的解。<br  />
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> 线性组合</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+我们还可以将方程组写为列图像的方式：<br  />
+\(x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\-3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}\)<br  />
+绘制图像<br  />
+<img src="https://aunmro.github.io/assets/blog/xian-xin-dai-shu-1/3-wei-lie-tu-xiang-1.png" alt="3-wei-lie-tu-xiang-1.png" /><br  />
+\(x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\-3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}\) 左侧被称为线性组合 <i>它们都是一个个向量组合起来的，向量是空间中的线</i> <br  />
+右侧 \(\begin{bmatrix}0\\-1\\4\end{bmatrix}\) 为线性组合的结果，解这个方程即是求一组向量 \([x, y, z]\)<br  />
+注意这里的特例, z的向量和线性组合的结果是一样的，我们可以轻易得到需要的线性组合 \(x=0,y=0,z=1\)<br  />
+</p>
+
+<p>
+<i>显然方程组不是永远都有特例给你，所以后文会介绍系统的解法―消元法</i><br  />
+</p>
+
+<hr  />
+
+<p>
+比较2种求解方式<br  />
+</p>
+
+<ol class="org-ol">
+<li>通过行图像，在三维中我们仍然可以绘制图像，但4个未知数呢，5个呢？我们很难想象三维以上的图像<br  />
+</li>
+<li>通过列图像，在多个未知数存在的情况下，我们仍然可以求解方程组<br  />
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 从方程组到三维图像</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+对于三个未知数的方程组 \(Ax=b\) 能否到达三维空间的所有地方？<br  />
+</p>
+
+<ol class="org-ol">
+<li>一般情况下可以<br  />
+</li>
+<li>但有例外，比如其中1个向量可以用另外2个向量表示，它们的线性组合结果落在一个平面上，无法达到三维，当 \(b\) 也在该平面上，那么方程组就有解否则就无解<br  />
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 矩阵乘向量</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li>采用列向量的线性组合 \(\begin{bmatrix}2&5\\1&3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}\)<br  />
+</li>
+<li>向量内积，矩阵第一行向量点乘 \(x\) 向量 \(\begin{bmatrix}2&5\end{bmatrix}\cdot\begin{bmatrix}1&2\end{bmatrix}^T=12,\ \begin{bmatrix}1&3\end{bmatrix}\cdot\begin{bmatrix}1&2\end{bmatrix}^T=7\)<br  />
+</li>
+</ol>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-07-19</span>
+            <span title="last modification date" class="post-info">2018-07-26</span>
+            <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/线性代数">线性代数</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a></span>
+        </div>
+    <script src="https://aunmro.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/xian-xin-dai-shu-1/";
+         var disqus_url = "https://aunmro.github.io/blog/xian-xin-dai-shu-1/";
+         var disqus_shortname = 'aunmro-github-io';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://aunmro.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x(<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; qq &lt;dot&gt; com">aunmro</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>

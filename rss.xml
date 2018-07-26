@@ -4,10 +4,17 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io</link>
     <description>上九天揽月,下五洋捉鳖</description>
-    <pubDate>Mon, 16 Jul 2018 08:24:28 DST</pubDate>
-    <lastBuildDate>Mon, 16 Jul 2018 08:24:28 DST</lastBuildDate>
+    <pubDate>Thu, 26 Jul 2018 20:11:21 DST</pubDate>
+    <lastBuildDate>Thu, 26 Jul 2018 20:11:21 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>线性代数笔记(1)</title>
+<link>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</link>
+<description>线性代数笔记(1)</description>
+<pubDate>2018-07-26</pubDate>
+<guid>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</guid>
+</item>
 <item>
 <title>Ruby Unix By Example</title>
 <link>https://aunmro.github.io/blog/2018/02/15/ruby-and-unix-process/</link>
@@ -70,13 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-06-17</pubDate>
 <guid>https://aunmro.github.io/note/lian-zi-zhong-wen/</guid>
-</item>
-<item>
-<title>多巴胺 =&gt; 内啡肽：成就感</title>
-<link>https://aunmro.github.io/note/chen-jiu-gan-note/</link>
-<description>No Description</description>
-<pubDate>2018-06-01</pubDate>
-<guid>https://aunmro.github.io/note/chen-jiu-gan-note/</guid>
 </item>
 </channel>
 </rss>
