@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>算法、数据结构笔记(1) - 屠龙术与废物们</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="author" content="aunmro" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="算法, 数据结构" />
+  <style>
+   #ds-thread #ds-reset .ds-comment-body p {color: #ffffff;}
+   #ds-thread #ds-reset .ds-comment-body p a {color: #ff0;}
+   #ds-thread #ds-reset .ds-comment-body p a:hover {color: #0ff;}
+   #disqus_thread a {color: #00ffff;}
+  </style>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://aunmro.github.io/media/css/comment.css" type="text/css"/>
+</head>
+
+  <body><div class="container">
+<div>
+  <header class="masthead">
+    <h1 class="masthead-title"><a href="https://aunmro.github.io/">屠龙术与废物们</a></h1>
+    <p>上九天揽月,下五洋捉鳖</p>
+    <nav class="site-nav">
+      <div class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z" fill="#ffff00"/>
+          <path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z" fill="#ffff00"/>
+          <path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z" fill="#ffff00"/>
+        </svg>
+      </div>
+      <ul class="trigger">
+        <li><a href="https://aunmro.github.io/blogs/">Blogs</a></li>
+        <li><a href="https://aunmro.github.io/tags/">Tags</a></li>
+        <li><a href="https://aunmro.github.io/about/">About</a></li>
+        <li><a href="https://github.com/aunmro/aunmro.github.io">Github</a></li>
+        <li><a href="https://aunmro.github.io/rss.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <form method="get" id="searchform" action="http://www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="aunmro.github.io">
+    </form>
+  </header>
+</div>
+
+<div>
+<div class="post">
+<h1 class="title">算法、数据结构笔记(1)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 算法分析</a>
+<ul>
+<li><a href="#sec-1-1">1.1. 到底什么是算法分析？</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 大O表示法和时间复杂度</a>
+<ul>
+<li><a href="#sec-2-1">2.1. 如何计算时间复杂度</a></li>
+<li><a href="#sec-2-2">2.2. 常见的时间复杂度</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1. 常数阶</a></li>
+<li><a href="#sec-2-2-2">2.2.2. 线性阶</a></li>
+<li><a href="#sec-2-2-3">2.2.3. 对数阶</a></li>
+<li><a href="#sec-2-2-4">2.2.4. 平方阶</a></li>
+<li><a href="#sec-2-2-5">2.2.5. 常见时间复杂度比较</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-3">2.3. 最坏情况与平均情况</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 算法分析</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 到底什么是算法分析？</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+算法分析是为了分析程序所使用的计算资源，主要分为2个方面：<br  />
+</p>
+
+<ol class="org-ol">
+<li>分析程序所占用的空间（内存），不过程序需要解决问题的空间一般由问题本身决定<br  />
+</li>
+<li>分析程序执行所需要的时间<br  />
+</li>
+</ol>
+
+<p>
+先看一个求和程序，从1加100<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;stdio.h&gt;</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">main</span>() {
+    <span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>, <span style="color: #268bd2;">sum</span> = 0, <span style="color: #268bd2;">n</span> = 100;
+    <span style="color: #859900; font-weight: bold;">for</span>(i=1; i&lt;=n; i++) {
+        sum = sum + i;
+    }
+
+    printf(<span style="color: #2aa198;">"%d"</span>, sum);
+    <span style="color: #859900; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+上面一个程序使用了最笨的方法求和，一个数一个数累加起来。我们再编写一个通过等差数列公式求和的函数来与此函数进行比较：<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;stdio.h&gt;</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">main</span>() {
+    <span style="color: #b58900;">int</span> <span style="color: #268bd2;">sum</span> = 0, <span style="color: #268bd2;">n</span> = 100;
+    sum = (1+n)*n/2;
+    printf(<span style="color: #2aa198;">"%d"</span>, sum);
+    <span style="color: #859900; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+毫无疑问，程序2优于程序1，但我们得说明为什么程序2优于程序1，因此我们需要一种方法来比较这两个程序―大O表示法。<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 大O表示法和时间复杂度</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+以程序1为例，我们分析一下这个程序所进行的计算：<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;stdio.h&gt;</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">main</span>() {
+    <span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>, <span style="color: #268bd2;">sum</span> = 0, <span style="color: #268bd2;">n</span> = 100;  <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#25191;&#34892;1&#27425;</span>
+    <span style="color: #859900; font-weight: bold;">for</span>(i=1; i&lt;=n; i++) {     <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#25191;&#34892;1&#27425;</span>
+        sum = sum + i;        <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#25191;&#34892;n&#27425;</span>
+    }
+    <span style="color: #93a1a1;">//</span><span style="color: #93a1a1;">&#25972;&#20010;for &#24490;&#29615;&#25191;&#34892;&#20026; n+1</span>
+
+    printf(<span style="color: #2aa198;">"%d"</span>, sum);        <span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">&#25191;&#34892;1&#27425;</span>
+}
+</pre>
+</div>
+
+<p>
+整个程序进行了 n+3 次程序执行，而程序 2 进行了3次程序执行操作。<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;stdio.h&gt;</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">main</span>() {
+    <span style="color: #b58900;">int</span> <span style="color: #268bd2;">sum</span> = 0, <span style="color: #268bd2;">n</span> = 100;
+    sum = (1+n)*n/2;
+    printf(<span style="color: #2aa198;">"%d"</span>, sum);
+    <span style="color: #859900; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div>
+
+<p>
+当我们需要累加到 1000 时，程序1需要执行 1000+3 次操作，而程序2还是只需要执行3次操作，所以程序2优于程序1。<br  />
+</p>
+
+<p>
+当求和的 n 足够大时，我们可以无视程序1中 n+3 的 3，把程序1的时间复杂度表示为 <code>O(n)</code> 。而对于程序2，执行操作3次，当我们遇到常数时，直接将时间复杂度记为1，即 <code>O(1)</code> 。<br  />
+</p>
+
+<hr  />
+
+<p>
+归纳一下计算时间复杂度的方法<br  />
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 如何计算时间复杂度</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>用常数1代替所有加法常数<br  />
+</li>
+<li>只保留n的最高阶<br  />
+</li>
+<li>最高接n的系数变为1<br  />
+</li>
+</ol>
+
+<hr  />
+
+<p>
+另一个例子：一共2次循环， <code>n*n</code> ，时间复杂度为 <code>n^2</code> 。<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>, <span style="color: #268bd2;">j</span>, <span style="color: #268bd2;">x</span>=0, <span style="color: #268bd2;">sum</span>=0, <span style="color: #268bd2;">n</span>=100;
+
+<span style="color: #859900; font-weight: bold;">for</span>(i=1; i&lt;=n; i++) {
+    <span style="color: #859900; font-weight: bold;">for</span>(j=1; j&lt;=n; j++) {
+        x++;
+        sum = sum + x;
+    }
+}
+<span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">for i=&gt; n &#27425;</span>
+<span style="color: #93a1a1;">// </span><span style="color: #93a1a1;">for j=&gt; n &#27425;</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 常见的时间复杂度</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> 常数阶</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+时间复杂度 <code>O(1)</code><br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">sum</span> = 0;
+sum = (1+n)*n/2;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> 线性阶</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+时间复杂度 <code>O(n)</code><br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>;
+<span style="color: #859900; font-weight: bold;">for</span>(i=0; i&lt;n; i++) {
+    <span style="color: #93a1a1;">// </span>
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3"><span class="section-number-4">2.2.3</span> 对数阶</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">count</span> = 1;
+<span style="color: #859900; font-weight: bold;">while</span>(count &lt; n) {
+    count = count * 2;
+}
+</pre>
+</div>
+
+<p>
+count 初始值为1，在循环中每次乘2，即 \(2^x\) 次方 。判断条件为直到 \(2^x = n\) , 即 \(x=log_2 n\) ，时间复杂度为 \(O(log n)\) 。<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-4" class="outline-4">
+<h4 id="sec-2-2-4"><span class="section-number-4">2.2.4</span> 平方阶</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+时间复杂度 <code>O(n^2)</code><br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>, <span style="color: #268bd2;">j</span>;
+<span style="color: #859900; font-weight: bold;">for</span>(i=0; i&lt;n; i++) {
+  <span style="color: #859900; font-weight: bold;">for</span>(j=0; j&lt;n; j++) {
+
+  }
+}
+</pre>
+</div>
+
+<hr  />
+
+<p>
+试着分析下段代码的时间复杂度：<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #b58900;">int</span> <span style="color: #268bd2;">i</span>,<span style="color: #268bd2;">j</span>;
+<span style="color: #859900; font-weight: bold;">for</span>(i=0; i&lt;n; i++) {
+     <span style="color: #859900; font-weight: bold;">for</span>(j=i; j&lt;n; j++) {
+         <span style="color: #93a1a1;">//</span>
+     }
+}
+</pre>
+</div>
+
+<p>
+i 层循环中进行 n 次操作； 但在 j 循环中初始条件为 <code>j=i</code> ，即每次执行循环的次数是 n-i 次。总共执行操作为 <code>n+(1)+(n-2)+...+1</code> 即 \(\frac{n(n+1)}{2} = \frac{n^2}{2} + \frac{n}{2}\) ,即 \(O(n^2)\)<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-5" class="outline-4">
+<h4 id="sec-2-2-5"><span class="section-number-4">2.2.5</span> 常见时间复杂度比较</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">阶</th>
+<th scope="col" class="left">称呼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">12</td>
+<td class="left">O(1)</td>
+<td class="left">常数阶</td>
+</tr>
+
+<tr>
+<td class="left">2n+3</td>
+<td class="left">O(n)</td>
+<td class="left">线性阶</td>
+</tr>
+
+<tr>
+<td class="left">\(3n^2+2n+1\)</td>
+<td class="left">\(O(n^2)\)</td>
+<td class="left">平凡阶</td>
+</tr>
+
+<tr>
+<td class="left">\(5\log_{2}n+20\)</td>
+<td class="left">\(O(\log{n})\)</td>
+<td class="left">对数阶</td>
+</tr>
+
+<tr>
+<td class="left">\(2n+3n\log_2 n+19\)</td>
+<td class="left">\(O(n\log{n})\)</td>
+<td class="left">nlogn阶</td>
+</tr>
+
+<tr>
+<td class="left">\(6n^3+2n\)</td>
+<td class="left">\(O(n^3)\)</td>
+<td class="left">立方阶</td>
+</tr>
+
+<tr>
+<td class="left">\(2^n\)</td>
+<td class="left">\(O(2^n)\)</td>
+<td class="left">指数阶</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+比较这些复杂度 \(O(1) < O(logn) < O(n) < O(nlogn) < O(n^2) < O(n^3) < O(2^n)\)<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 最坏情况与平均情况</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+举个例子：一个 n 位的 int 数组，我们需要查找其中一个数字，从数组第一个值开始查找，如果第一个就是我们要找的值，这种情况就是最好情况 \(O(1)\) ；我们在最后一个位置找到 =&gt; 最坏情况 \(O(n)\) 。<br  />
+</p>
+
+<p>
+从概率的角度来将，平均时间 n/2 能找到这个数字，即平均情况，即期望的运行时间。<br  />
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+        <div class="post-meta">
+            <span title="post date" class="post-info">2018-08-18</span>
+            <span title="last modification date" class="post-info">2018-08-18</span>
+            <span title="tags" class="post-info">:<a href="https://aunmro.github.io/tags/算法">算法</a> : <a href="https://aunmro.github.io/tags/数据结构">数据结构</a>:</span>
+            <span title="author" class="post-info"><a href="mailto:aunmro &lt;at&gt; aunmro">aunmro</a></span>
+        </div>
+    <script src="https://aunmro.github.io/media/js/jquery-2.1.3.min.js"></script>
+        <section>
+            <h1>Comments</h1>
+            <div id="comment-wrap">
+                    <a class="disqus_label">使用 Disqus 评论</a>
+    </ul>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+         //var disqus_developer = 1;
+         var preempt_signal=false;
+         var disqus_identifier = "/blog/storm-cat-1/";
+         var disqus_url = "https://aunmro.github.io/blog/storm-cat-1/";
+         var disqus_shortname = 'aunmro-github-io';
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             $('#disqus_thread').css('display','none');
+         })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script>
+     /* comments */
+     var ego_disqus_thread=$('#disqus_thread');
+     var ego_ds_label=$('.ds-thread');
+     $('.disqus_label').click(function(){
+         ego_disqus_thread.show();
+         ego_ds_label.hide();
+     });
+     $('.ds-label').click(function(){
+         ego_disqus_thread.hide();
+         ego_ds_label.show();
+     });
+    </script>
+        </section>
+    <script src="https://aunmro.github.io/media/js/main.js"></script>
+    <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x(<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+            Copyright &copy; 2014 - <span id="footerYear"></span> <a href="mailto:aunmro &lt;at&gt; aunmro">aunmro</a>
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            Powered by <a href="https://github.com/emacs-china/ego" target="_blank">EGO</a><br/>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License" class="center"></a>
+            <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+    </div>
+            </div>
+            <script type="text/javascript"
+                    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+            </script>
+            <script type="text/x-mathjax-config">
+             MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+            </script>
+</div>
+
+  </div></body>
+</html>
