@@ -4,16 +4,44 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io</link>
     <description>上九天揽月,下五洋捉鳖</description>
-    <pubDate>Thu, 23 Aug 2018 21:37:43 DST</pubDate>
-    <lastBuildDate>Thu, 23 Aug 2018 21:37:43 DST</lastBuildDate>
+    <pubDate>Fri, 31 Aug 2018 08:30:08 DST</pubDate>
+    <lastBuildDate>Fri, 31 Aug 2018 08:30:08 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
+<item>
+<title>英语语法笔记(2)－时态</title>
+<link>https://aunmro.github.io/blog/english-grammer-2/</link>
+<description>&lt;Add description here&gt;</description>
+<pubDate>2018-08-31</pubDate>
+<guid>https://aunmro.github.io/blog/english-grammer-2/</guid>
+</item>
+<item>
+<title>英语语法笔记(n+2)－名词性从句</title>
+<link>https://aunmro.github.io/blog/english-grammer-n-2/</link>
+<description>&lt;Add description here&gt;</description>
+<pubDate>2018-08-31</pubDate>
+<guid>https://aunmro.github.io/blog/english-grammer-n-2/</guid>
+</item>
 <item>
 <title>英语语法笔记(1)－简单句</title>
 <link>https://aunmro.github.io/blog/emglish-grammer-1/</link>
 <description></description>
-<pubDate>2018-08-23</pubDate>
+<pubDate>2018-08-28</pubDate>
 <guid>https://aunmro.github.io/blog/emglish-grammer-1/</guid>
+</item>
+<item>
+<title>英语语法笔记(n+1)－标点符号</title>
+<link>https://aunmro.github.io/blog/english-grammer-n-1/</link>
+<description>&lt;Add description here&gt;</description>
+<pubDate>2018-08-26</pubDate>
+<guid>https://aunmro.github.io/blog/english-grammer-n-1/</guid>
+</item>
+<item>
+<title>线性代数笔记(1)</title>
+<link>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</link>
+<description>线性代数笔记(1)</description>
+<pubDate>2018-08-26</pubDate>
+<guid>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</guid>
 </item>
 <item>
 <title>算法、数据结构笔记(1)</title>
@@ -21,13 +49,6 @@
 <description></description>
 <pubDate>2018-08-18</pubDate>
 <guid>https://aunmro.github.io/blog/storm-cat-1/</guid>
-</item>
-<item>
-<title>线性代数笔记(1)</title>
-<link>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</link>
-<description>线性代数笔记(1)</description>
-<pubDate>2018-08-18</pubDate>
-<guid>https://aunmro.github.io/blog/xian-xin-dai-shu-1/</guid>
 </item>
 <item>
 <title>Ruby Unix By Example</title>
@@ -56,27 +77,6 @@
 <description>No Description</description>
 <pubDate>2018-06-22</pubDate>
 <guid>https://aunmro.github.io/note/</guid>
-</item>
-<item>
-<title>[note]Java基础(1)</title>
-<link>https://aunmro.github.io/blog/2018/04/16/java-basic-1/</link>
-<description>Java婴儿级知识(1)</description>
-<pubDate>2018-05-23</pubDate>
-<guid>https://aunmro.github.io/blog/2018/04/16/java-basic-1/</guid>
-</item>
-<item>
-<title>[note]Java基础(2)</title>
-<link>https://aunmro.github.io/blog/2018/04/28/java-basic-2/</link>
-<description>java婴儿级知识(2)</description>
-<pubDate>2018-05-23</pubDate>
-<guid>https://aunmro.github.io/blog/2018/04/28/java-basic-2/</guid>
-</item>
-<item>
-<title>[draft]SICP(1)―程序设计的基本元素</title>
-<link>https://aunmro.github.io/blog/2018/03/01/sicp-1.1/</link>
-<description>SICP 阅读笔记第1章第1节</description>
-<pubDate>2018-05-18</pubDate>
-<guid>https://aunmro.github.io/blog/2018/03/01/sicp-1.1/</guid>
 </item>
 </channel>
 </rss>
