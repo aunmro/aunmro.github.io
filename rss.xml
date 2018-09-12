@@ -4,16 +4,23 @@
     <title>屠龙术与废物们</title>
     <link>https://aunmro.github.io</link>
     <description>上九天揽月,下五洋捉鳖</description>
-    <pubDate>Sun, 09 Sep 2018 20:19:34 DST</pubDate>
-    <lastBuildDate>Sun, 09 Sep 2018 20:19:34 DST</lastBuildDate>
+    <pubDate>Wed, 12 Sep 2018 17:49:51 DST</pubDate>
+    <lastBuildDate>Wed, 12 Sep 2018 17:49:51 DST</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>ego static site generator (https://github.com/emacs-china/ego)</generator>
 <item>
 <title>英语语法笔记(n+2)－名词性从句</title>
 <link>https://aunmro.github.io/blog/english-grammer-n-2/</link>
 <description>&lt;Add description here&gt;</description>
-<pubDate>2018-09-09</pubDate>
+<pubDate>2018-09-12</pubDate>
 <guid>https://aunmro.github.io/blog/english-grammer-n-2/</guid>
+</item>
+<item>
+<title>英语语法笔记(n-3)―定语从句</title>
+<link>https://aunmro.github.io/blog/english-grammer-n-3/</link>
+<description>&lt;Add description here&gt;</description>
+<pubDate>2018-09-12</pubDate>
+<guid>https://aunmro.github.io/blog/english-grammer-n-3/</guid>
 </item>
 <item>
 <title>英语语法笔记(1)－简单句</title>
@@ -70,13 +77,6 @@
 <description></description>
 <pubDate>2018-08-18</pubDate>
 <guid>https://aunmro.github.io/blog/storm-cat-1/</guid>
-</item>
-<item>
-<title>微积分笔记(1)―函数</title>
-<link>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</link>
-<description>微积分笔记(1)</description>
-<pubDate>2018-07-15</pubDate>
-<guid>https://aunmro.github.io/blog/2018/05/21/wei-ji-fen-1/</guid>
 </item>
 </channel>
 </rss>
