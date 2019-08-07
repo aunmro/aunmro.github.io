@@ -8,9 +8,9 @@
         },
         {
             "text": "Blogs",
-            "target": "blog/_vnote.json",
+            "target": "#!blog/_vnote.json",
             "navi": true,
-            "navi_index": "one.md"
+            "navi_index": "blog/one.md"
         }
     ],
     "actions":
