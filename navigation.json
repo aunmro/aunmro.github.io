@@ -2,11 +2,6 @@
     "navigation":
     [
         {
-            "text": "Home",
-            "target": "index.md",
-            "toc": false
-        },
-        {
             "text": "blog",
             "target": "blog/_vnote.json",
             "navi": true,
