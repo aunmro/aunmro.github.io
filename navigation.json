@@ -5,7 +5,7 @@
             "text": "blog",
             "target": "blog/_vnote.json",
             "navi": true,
-            "navi_index": "c_by_example/1.md"
+            "navi_index": "cByExample/1.md"
         }
     ],
     "actions":
