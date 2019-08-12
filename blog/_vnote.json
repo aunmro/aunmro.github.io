@@ -18,6 +18,9 @@
     "sub_directories": [
         {
             "name": "cByExample"
+        },
+        {
+            "name": "日志"
         }
     ],
     "tags": [
