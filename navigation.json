@@ -2,8 +2,8 @@
     "navigation":
     [
         {
-            "text": "blog",
-            "target": "#!blog/_vnote.json",
+            "text": "博客",
+            "target": "blog/_vnote.json",
             "navi": true,
             "navi_index": "index.md"
         }
