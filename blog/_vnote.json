@@ -17,19 +17,10 @@
     "recycle_bin_folder": "_v_recycle_bin",
     "sub_directories": [
         {
-            "name": "C学习笔记"
-        },
-        {
             "name": "日志"
         },
         {
-            "name": "英语语法"
-        },
-        {
             "name": "py101"
-        },
-        {
-            "name": "设计"
         },
         {
             "name": "笔记"

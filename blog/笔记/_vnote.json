@@ -5,6 +5,15 @@
     "sub_directories": [
         {
             "name": "数学"
+        },
+        {
+            "name": "C学习笔记"
+        },
+        {
+            "name": "英语"
+        },
+        {
+            "name": "设计"
         }
     ],
     "version": "1"
