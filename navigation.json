@@ -12,6 +12,7 @@
     [
         {
             "text": "rss",
+            "icon": "css/rss.svg",
             "target": "https://github.com/aunmro/aunmro.github.io/commits.atom"
         },
         {
