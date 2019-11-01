@@ -11,7 +11,7 @@
     "actions":
     [
         {
-            "text": "rss"
+            "text": "rss",
             "target": "https://github.com/aunmro/aunmro.github.io/commits.atom"
         },
         {
