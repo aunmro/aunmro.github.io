@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "单变量微积分"
+        },
+        {
+            "name": "线性代数"
         }
     ],
     "version": "1"
