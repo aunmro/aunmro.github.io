@@ -4,6 +4,13 @@
 
 ---
 
+[Beat The Devil's Tattoo](http://music.163.com/m/song?id=16835619)
+
+Your soul is able
+Death is all you cradle
+
+---
+
 12-10
 
 谁来拯救我的腰
@@ -16,13 +23,13 @@
 
 11-22
 
-[相见欢](http://music.163.com/m/song?id=132479&userid=16832924)
+[相见欢](http://music.163.com/m/song?id=132479)
 
 ---
 
 11-6
 
-像我这样碌碌无为的人，[像我这样的人](http://music.163.com/m/song?id=569213220&userid=16832924)
+像我这样碌碌无为的人，[像我这样的人](http://music.163.com/m/song?id=569213220)
 
 ---
 
