@@ -4,6 +4,12 @@
 
 ---
 
+[http://www.bilibili.com/video/av78982108](http://www.bilibili.com/video/av78982108)
+
+也令平凡的你有了推动时代进步的非凡力量
+
+---
+
 [Beat The Devil's Tattoo](http://music.163.com/m/song?id=16835619)
 
 Your soul is able
