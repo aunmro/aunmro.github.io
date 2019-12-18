@@ -35,7 +35,7 @@ Death is all you cradle
 
 11-6
 
-像我这样碌碌无为的人，[像我这样的人](http://music.163.com/m/song?id=569213220)
+[像我这样的人](http://music.163.com/m/song?id=569213220)
 
 ---
 
@@ -51,6 +51,6 @@ Death is all you cradle
 
 10-30
 
-一条大路分两边，随你要走哪一边。[大田後生仔](http://music.163.com/m/song?id=1383403530&userid=16832924)
+[大田後生仔](http://music.163.com/m/song?id=1383403530&userid=16832924)
 
 ---
