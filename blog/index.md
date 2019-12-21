@@ -4,11 +4,35 @@
 
 ---
 
+12-21
+
+一朝悲歌成金曲
+
+---
+
+12-21
+
+I'm alive
+
+---
+
+12-21
+
+[http://music.163.com/m/song?id=27571374](http://music.163.com/m/song?id=27571374)
+
+卖血无法救贫穷
+
+---
+
+12-14
+
 [http://www.bilibili.com/video/av78982108](http://www.bilibili.com/video/av78982108)
 
 也令平凡的你有了推动时代进步的非凡力量
 
 ---
+
+12-14
 
 [Beat The Devil's Tattoo](http://music.163.com/m/song?id=16835619)
 
