@@ -13,6 +13,9 @@
         }
     ],
     "sub_directories": [
+        {
+            "name": "飞絮"
+        }
     ],
     "version": "1"
 }
