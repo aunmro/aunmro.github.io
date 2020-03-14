@@ -17,10 +17,10 @@
     "recycle_bin_folder": "_v_recycle_bin",
     "sub_directories": [
         {
-            "name": "日志"
+            "name": "笔记"
         },
         {
-            "name": "笔记"
+            "name": "飞絮"
         }
     ],
     "tags": [
