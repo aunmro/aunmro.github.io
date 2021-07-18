@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head>
-<!-- 2021-07-18 Sun 15:27 -->
+<!-- 2021-07-18 Sun 15:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>屠龙术与废物们</title>
+<title>《数据结构与算法图解》笔记</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="hi10x" />
+<meta name="author" content="aunmro" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -223,10 +223,81 @@
  |
  <a accesskey="H" href="/"> HOME </a>
 </div><div id="content">
-<h1 class="title">屠龙术与废物们</h1>
-<ul class="org-ul">
-<li><a href="数据结构与算法图解笔记.html">《数据结构与算法图解》笔记</a></li>
+<h1 class="title">《数据结构与算法图解》笔记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org14a6f7a">1. 数据结构为何重要</a>
+<ul>
+<li><a href="#org685b6a9">1.1 基础数据结构：数组</a></li>
 </ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org14a6f7a" class="outline-2">
+<h2 id="org14a6f7a">1. 数据结构为何重要</h2>
+<div class="outline-text-2" id="text-org14a6f7a">
+<p>
+编程基本上就是在跟数据打交道。计算机程序总是在接收数据、操作数据或返回数据。不管是求两数之和这样的简单程序，还是企业级软件，都运行在数据之上。<br />
+</p>
+
+<p>
+数据是一个广义的术语，可以指代各种类型的信息，包括最基本的数字和字符串，比如 <code>Hello World</code> 就是一条数据。无论多复杂的数据，我们都可以将其拆成一堆数字和字符串来看待。<br />
+</p>
+
+<p>
+<b>数据结构</b> 则是指数据的组织形式。看看以下代码：<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">x = <span style="color: #50a14f;">"Hello! "</span>
+y = <span style="color: #50a14f;">"How are you"</span>
+z = <span style="color: #50a14f;">"today?"</span>
+
+<span style="color: #a626a4;">print</span> x+y+z
+</pre>
+</div>
+
+<p>
+这个简单的程序把3条数据串成了一句话。如果要描述该程序中的数据结构，我们会说，有3个独立的变量，分别引用着3个独立的字符串。<br />
+</p>
+
+<p>
+但数据结构不只是用于组织数据，它还极大影响着代码的 <b>运行速度</b> 。因为数据结构不同，程序的运行速度可能相差多个数量级。如果你写的程序要处理大量的数据，或者要让数千人同时使用，那么你采用何种数据结构，将决定它是能够运行，还是会因为不堪重负而崩溃。<br />
+</p>
+
+<p>
+<del>一旦对各种数据结构有了深刻的理解，你就能写出快速而优雅的代码，编程技能也会更上一层楼。</del><br />
+</p>
+</div>
+
+<div id="outline-container-org685b6a9" class="outline-3">
+<h3 id="org685b6a9">1.1 基础数据结构：数组</h3>
+<div class="outline-text-3" id="text-org685b6a9">
+<p>
+<b>数组</b> 是计算机科学中最基本的数据结构之一，它是一个含有数据的列表。 下列代码就是一个数组，包含5个字符串，每个代表我从超市买的食物。<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">array=[<span style="color: #50a14f;">"apples"</span>, <span style="color: #50a14f;">"bananas"</span>, <span style="color: #50a14f;">"cucumbers"</span>, <span style="color: #50a14f;">"dates"</span>, <span style="color: #50a14f;">"elderberries"</span>]
+</pre>
+</div>
+
+<p>
+我们会用一些名为索引的数字来标识每项数据在数组中的位置<br />
+</p>
+
+
+<div id="orgb7e1646" class="figure">
+<p><img src="img/2021-07-18_15-11-48_epub_26211939_5.jpeg" alt="2021-07-18_15-11-48_epub_26211939_5.jpeg" width="800px" /><br />
+</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>
