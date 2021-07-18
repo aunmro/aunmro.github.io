@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head>
-<!-- 2021-07-18 Sun 15:29 -->
+<!-- 2021-07-18 Sun 20:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>《数据结构与算法图解》笔记</title>
@@ -230,7 +230,16 @@
 <ul>
 <li><a href="#org14a6f7a">1. 数据结构为何重要</a>
 <ul>
-<li><a href="#org685b6a9">1.1 基础数据结构：数组</a></li>
+<li><a href="#org685b6a9">1.1 基础数据结构：数组</a>
+<ul>
+<li><a href="#org8814bc5">步数</a></li>
+<li><a href="#org5d208b4">1.1.1 读取</a>
+<ul>
+<li><a href="#org51ee277">计算机为什么能一步到位</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -287,13 +296,124 @@ z = <span style="color: #50a14f;">"today?"</span>
 </div>
 
 <p>
-我们会用一些名为索引的数字来标识每项数据在数组中的位置<br />
+接着我们用一种名为 <b>索引</b> 的数字来标识每项数据在数组中的位置(大多数的编程语言中，索引是从0算起的)。<br />
 </p>
 
 
-<div id="orgb7e1646" class="figure">
-<p><img src="img/2021-07-18_15-11-48_epub_26211939_5.jpeg" alt="2021-07-18_15-11-48_epub_26211939_5.jpeg" width="800px" /><br />
+<div id="orgac74978" class="figure">
+<p><img src="img/2021-07-18_15-11-48_epub_26211939_5.jpeg" alt="2021-07-18_15-11-48_epub_26211939_5.jpeg" width="400px" /><br />
 </p>
+</div>
+
+<hr />
+
+<p>
+想了解某个数据结构（例如数组）的性能，得分析程序怎样操作这一数据结构。一般数据结构都有以下4种操作：<br />
+</p>
+<ol class="org-ol">
+<li>读取：查看数据结构中某一位置上的数据，例如，查看索引2上有什么食品。<br /></li>
+<li>查找：从数据结构中找出某个数据值的所在，例如，检查"dates"是否存在于食品清单之中。<br /></li>
+<li>插入：给数据结构增加一个数据值，个格子并填入一个值。例如，往购物清单中多加一项"figs"。<br /></li>
+<li>删除：从数据结构中移走一个数据值， 例如，把购物清单中的"bananas"移走。<br /></li>
+</ol>
+<p>
+我们将会研究这些操作在数组上的运行速度。<br />
+</p>
+</div>
+
+<div id="outline-container-org8814bc5" class="outline-4">
+<h4 id="org8814bc5">步数</h4>
+<div class="outline-text-4" id="text-org8814bc5">
+<p>
+我们也将学到第一个重要理论： <b>操作的速度，不按时间计算，而按步数计算</b> 。<br />
+</p>
+
+<p>
+<b>为什么不按时间计算</b> ：<br />
+某项操作在这台机器上要花5秒，但换到一台旧一点的机器，可能就要多于5秒；换到一台未来的超级计算机，运行时间又将显著缩短。所以，受硬件影响的计时方法，非常不可靠。<br />
+</p>
+
+<p>
+按 <b>步数</b> 来算，则确切得多。如果A操作要5步，B操作要500步，无论什么硬件上，A都快过B。因此，衡量步数是分析速度的关键。这个步数也常被称为 <b>时间复杂度</b> 。<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d208b4" class="outline-4">
+<h4 id="org5d208b4">1.1.1 读取</h4>
+<div class="outline-text-4" id="text-org5d208b4">
+<p>
+读取这个操作只需要一步即可，因为计算机本身就有跳到任一索引位置的能力。<br />
+</p>
+
+<p>
+在 <code>["apples","bananas", "cucumbers", "dates", "elderberries"]</code> 的例子中，如果查看索引2的值，计算机就会直接跳到索引2，并告诉你那里有"cucumbers"。<br />
+</p>
+</div>
+
+<div id="outline-container-org51ee277" class="outline-5">
+<h5 id="org51ee277">计算机为什么能一步到位</h5>
+<div class="outline-text-5" id="text-org51ee277">
+<p>
+计算机的内存可以被看成一堆格子, 其中有些格子有数据，有些则是空白。<br />
+</p>
+
+
+<div id="orgf9fb2e3" class="figure">
+<p><img src="img/2021-07-18_18-33-41_epub_26211939_6.jpeg" alt="2021-07-18_18-33-41_epub_26211939_6.jpeg" width="400px" /><br />
+</p>
+</div>
+
+<p>
+当程序声明一个数组时，它会先划分出一些连续的空格子以备使用。创建一个包含5个元素的数组，计算机就会找出5个排成一行的空格子，将其当成数组。<br />
+</p>
+
+<div id="org92766d6" class="figure">
+<p><img src="img/2021-07-18_19-16-25_epub_26211939_7.jpeg" alt="2021-07-18_19-16-25_epub_26211939_7.jpeg" width="400px" /><br />
+</p>
+</div>
+
+<p>
+内存中的每个格子都有各自地址，就像街道地址。内存地址只用一个普通的数字来表示。而且， <b>每个格子的内存地址都比前一个大1</b> ，如下图：<br />
+</p>
+
+<div id="orge59938b" class="figure">
+<p><img src="img/2021-07-18_19-26-44_epub_26211939_8.jpeg" alt="2021-07-18_19-26-44_epub_26211939_8.jpeg" width="400px" /><br />
+</p>
+</div>
+
+<p>
+购物清单数组的索引和内存地址，如下图：<br />
+</p>
+
+<div id="orgf1cac72" class="figure">
+<p><img src="img/2021-07-18_19-34-11_epub_26211939_9.jpeg" alt="2021-07-18_19-34-11_epub_26211939_9.jpeg" width="400px" /><br />
+</p>
+</div>
+
+<p>
+计算机在读取数组中某个索引所指的值时，能直接跳到那个位置上，因为<br />
+</p>
+<ol class="org-ol">
+<li>计算机可以一步就跳到任意一个内存地址上。（就好比，要是你知道大街123号在哪儿，那么就可以直奔过去。）<br /></li>
+<li>数组本身会记有第一个格子的内存地址，计算机知道这个数组的开头在哪里。<br /></li>
+<li>数组的索引从 0 算起<br /></li>
+</ol>
+
+<p>
+当我们用计算机读取索引3的值时，它会做以下演算<br />
+</p>
+<ol class="org-ol">
+<li>该数组的索引从0算起，其开头的内存地址为1010<br /></li>
+<li>索引3在索引0后的第3个格子上，索引3的内存地址为1013(1010 + 3=1013)<br /></li>
+<li>当计算机一步跳到1013时，我们就能获取到"dates"这个值了<br /></li>
+</ol>
+
+
+<p>
+数组的读取是一种非常高效的操作，因为它只要一步就可以完成。这种一步(最快的速度)读取任意索引的能力，也是数组好用的原因之一。<br />
+</p>
+</div>
 </div>
 </div>
 </div>
