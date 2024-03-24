@@ -982,3 +982,8 @@ blockquote {
     border: solid 1px;
     /* border-bottom: solid 1px; */
 }
+
+h3 {border-bottom: 1px solid #ddd;}
+h4 {border-bottom: 1px solid #ddd;}
+h5 {border-bottom: 1px solid #ddd;}
+h6 {border-bottom: 1px solid #ddd;}
