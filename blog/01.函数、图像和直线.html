@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-24 Sun 09:48 -->
+<!-- 2024-03-24 Sun 12:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>普林斯顿微积分读本&#x2013;第1章:函数、图像和直线</title>
@@ -236,12 +236,8 @@
 <ul>
 <li><a href="#orgd76c276">1.1 函数</a>
 <ul>
-<li><a href="#orgc4b7ac7">函数的概念</a>
-<ul>
-<li><a href="#org2aa03a5">函数是将一个对象 x 转化为另一个对象的规则, 比如 \(f(x)=x^2\) 就是一个函数</a></li>
+<li><a href="#orgc4b7ac7">函数的概念</a></li>
 <li><a href="#org43622e7">一些函数的例子：</a></li>
-</ul>
-</li>
 <li><a href="#org578c882">值域: 一个函数必须给每一个有效的输入指定唯一的输出，这个输出构成了值域, 值域是函数的输出集合.</a></li>
 <li><a href="#orgf0f4c44">1.1.1 区间表示法</a></li>
 <li><a href="#org228d802">1.1.2 求定义域</a>
@@ -271,40 +267,10 @@
 </li>
 <li><a href="#org31509af">1.3 函数复合</a>
 <ul>
-<li>
-<ul>
-<li><a href="#orgd21872c">函数复合概念 #card</a>
-<ul>
-<li><a href="#org972fc20">一个函数可以和另一个函数结合起来，被称为函数复合</a></li>
-<li><a href="#org24e88b2">^<sup>函数的复合并</sup>^<sup>不是把它们相乘</sup>. 例如 \(f(x) = x^2sin(x)\) ,这个函数并不存在函数先后关系和复合计算</a></li>
-</ul>
-</li>
-<li><a href="#orgd59101d">练习1 #card</a>
-<ul>
-<li><a href="#orgb0b66ea">\(f(x)=g(h(j(x)))=g(h(2x-1))=g(5(2x-1)^4)=2^{5(2x-1)^4}\)</a></li>
-</ul>
-</li>
-<li><a href="#orgd9b3cb9">练习2 #card</a>
-<ul>
-<li><a href="#org7aa10a2">1. 从函数式中找到 x, 首先需要加 3, 所以设 g(x) = x + 3</a></li>
-</ul>
-</li>
-<li><a href="#orgbc889df">复合函数的图像</a>
-<ul>
-<li><a href="#org50e37d8">将函数 f 和 \(g(x)=x-a\) (a 是常数) 进行复合，得到新函数 \(h(x)=f(x-a)\) 。h(x)的图像相对于f(x)有什么变化? #card</a>
-<ul>
-<li><a href="#org98adc36">\(y=h(x)\) 和函数 \(y=f(x)\) 的图像一样, 只不过 \(y=h(x)\) 的函数图像向右平移了 a 个单位.</a></li>
-</ul>
-</li>
-<li><a href="#org36b3a67">例子：如何画 \(y = (x - 1)^2\) 的图像 #card</a>
-<ul>
-<li><a href="#org280ca23">$y = (x - 1)<sup>2</sup>$就像 \(y = x^2\) 的图像一样, 用 x-1 来代替 x. 将函数 \(y =x^2\) 的图像向右平移 1 个单位，如图：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#org5129f74">函数复合概念</a></li>
+<li><a href="#orgc98170a">练习1</a></li>
+<li><a href="#org2ba3044">练习2</a></li>
+<li><a href="#orgbc889df">复合函数的图像</a></li>
 </ul>
 </li>
 <li><a href="#org61ed99e">1.4 奇函数和偶函数</a>
@@ -349,7 +315,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#org7ec490d">概念 #card</a>
+<li><a href="#orgfc1d18e">概念 #card</a>
 <ul>
 <li><a href="#orgce6a906">\(f(x)= mx + b\) 这类函数叫做线性函数。它的图像是直线, ^<sup>直线的斜率是</sup> m^^。如下图</a></li>
 </ul>
@@ -386,7 +352,7 @@
 <ul>
 <li><a href="#org961f818">多项式函数</a>
 <ul>
-<li><a href="#orgcfdbfeb">概念 #card</a>
+<li><a href="#orgf0f6d05">概念 #card</a>
 <ul>
 <li><a href="#org36bd843">基于 x 的非负次幂乘以实数, 可以 1、x、\(x^2\) 、\(x^3\) … 等为基本项, 用实数乘以这些基本项, 然后把有限个这样的项加到一起就是**多项式函数**, 比如</a></li>
 </ul>
@@ -423,7 +389,7 @@
 </li>
 <li><a href="#org96a25b9">指数函数</a>
 <ul>
-<li><a href="#orgdb0ce1f">概念 #card</a>
+<li><a href="#org736d987">概念 #card</a>
 <ul>
 <li><a href="#org0eaf2e5">\(y=a^x (a>1)\) .图像如下图(以 \(y=2^x\) 为例)</a></li>
 </ul>
@@ -474,10 +440,9 @@
 <div id="outline-container-orgc4b7ac7" class="outline-3">
 <h3 id="orgc4b7ac7">函数的概念</h3>
 <div class="outline-text-3" id="text-orgc4b7ac7">
-</div>
-<div id="outline-container-org2aa03a5" class="outline-4">
-<h4 id="org2aa03a5">函数是将一个对象 x 转化为另一个对象的规则, 比如 \(f(x)=x^2\) 就是一个函数</h4>
-<div class="outline-text-4" id="text-org2aa03a5">
+<p>
+函数是将一个对象 x 转化为另一个对象的规则, 比如 \(f(x)=x^2\) 就是一个函数
+</p>
 <ul class="org-ul">
 <li>x 被称为输入, 是来自称为 <span class="underline">定义域</span> 的集合；</li>
 <li>返回的对象被称为输出, 函数的 <span class="underline">实际输出值</span> 构成了另一个集合: <span class="underline">值域</span> . 我们常用 y 表示函数的返回值，\(f(x)=x^2\) 又可以写作 \(y=x^2\)</li>
@@ -485,9 +450,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org43622e7" class="outline-4">
-<h4 id="org43622e7">一些函数的例子：</h4>
-<div class="outline-text-4" id="text-org43622e7">
+<div id="outline-container-org43622e7" class="outline-3">
+<h3 id="org43622e7">一些函数的例子：</h3>
+<div class="outline-text-3" id="text-org43622e7">
 <ul class="org-ul">
 <li>例子1： \(f(x)=x^2\) 这个式子定义了函数 \(f\) ，它会将任何数变为自己的平方。
 <ul class="org-ul">
@@ -500,7 +465,6 @@
 <p>
 函数 g 看上去和 函数 f 一样，但 <span class="underline">实际上二者的定义域不同</span> ， \(f(-\frac{1}{2}) = 1/4\), 但 g(-1/2) 不存在。 g 和 f 有相同的规则，g 是限制 f 的定义域产生的。
 </p>
-</div>
 </div>
 </div>
 <div id="outline-container-org578c882" class="outline-3">
@@ -532,7 +496,7 @@
 </p>
 
 
-<div id="org1ec3459" class="figure">
+<div id="orgf6581dd" class="figure">
 <p><img src="../static/image_1684892119478_0.png" alt="image_1684892119478_0.png" width="500" />
 </p>
 </div>
@@ -602,7 +566,7 @@
 </ol>
 
 
-<div id="org536682c" class="figure">
+<div id="org2d1a1cc" class="figure">
 <p><img src="../static/image_1684892497266_0.png" alt="image_1684892497266_0.png" width="500" />
 </p>
 </div>
@@ -620,7 +584,7 @@
 当 x  落在区间 (-3, 3) 上时. 对于这其中的任意 x 值, 垂线通过 (x, 0) 和圆相交两次，违反了 <span class="underline">函数每一个有效的输入指定唯一的输出</span>
 </p>
 
-<div id="org603c2d6" class="figure">
+<div id="org1dacff1" class="figure">
 <p><img src="../static/image_1687582040718_0.png" alt="image_1687582040718_0.png" width="400" />
 </p>
 </div></li>
@@ -629,7 +593,7 @@
 例子3：下图也是一个函数，可以通过垂线检测
 </p>
 
-<div id="org2c43e4e" class="figure">
+<div id="org20b46ae" class="figure">
 <p><img src="../static/image_1687583658008_0.png" alt="image_1687583658008_0.png" width="400" />
 </p>
 </div></li>
@@ -703,7 +667,7 @@
 下图以 f(x)=\(x^3\) 和 g(x)=\(x^2\) 为例, 函数f有反函数, 函数g没有反函数
 </p>
 
-<div id="org9d9af3e" class="figure">
+<div id="orgb2a641d" class="figure">
 <p><img src="../static/image_1693135087066_0.png" alt="image_1693135087066_0.png" width="600" />
 </p>
 </div>
@@ -748,7 +712,7 @@
 反函数图像与原函数图像的规律： <span class="underline">反函数是函数相对于y=x的镜像</span> ，如下图 \(f(x)=x^3\) 与其反函数
 </p>
 
-<div id="orgcd9b174" class="figure">
+<div id="org40c30e1" class="figure">
 <p><img src="../static/image_1693137006077_0.png" alt="image_1693137006077_0.png" width="400" />
 </p>
 </div>
@@ -775,7 +739,7 @@
 限制后的函数能通过水平检验：以 \(g(x)=x^2, x∈ [0, +∞)\) 为例，限制后的图像为：
 </p>
 
-<div id="org9b64dd0" class="figure">
+<div id="org4392dc4" class="figure">
 <p><img src="../static/image_1693138829522_0.png" alt="image_1693138829522_0.png" width="400" />
 </p>
 </div>
@@ -792,7 +756,7 @@
 </ol>
 
 
-<div id="orgcaeb5ca" class="figure">
+<div id="org35e5158" class="figure">
 <p><img src="../static/image_1693138842922_0.png" alt="image_1693138842922_0.png" width="400" />
 </p>
 </div>
@@ -801,7 +765,7 @@
 如果不限制定义域，\(y=x^2\) 关于 y=x 的图像如下，无法通过垂线检测，就不是反函数
 </p>
 
-<div id="org63d3cbc" class="figure">
+<div id="org7f72dc0" class="figure">
 <p><img src="../static/image_1693138856290_0.png" alt="image_1693138856290_0.png" width="400" />
 </p>
 </div>
@@ -812,13 +776,12 @@
 <h2 id="org31509af">1.3 函数复合</h2>
 <div class="outline-text-2" id="text-org31509af">
 </div>
-<div id="outline-container-orgd21872c" class="outline-4">
-<h4 id="orgd21872c">函数复合概念 #card</h4>
-<div class="outline-text-4" id="text-orgd21872c">
-</div>
-<div id="outline-container-org972fc20" class="outline-5">
-<h5 id="org972fc20">一个函数可以和另一个函数结合起来，被称为函数复合</h5>
-<div class="outline-text-5" id="text-org972fc20">
+<div id="outline-container-org5129f74" class="outline-3">
+<h3 id="org5129f74">函数复合概念</h3>
+<div class="outline-text-3" id="text-org5129f74">
+<p>
+一个函数可以和另一个函数结合起来，被称为函数复合
+</p>
 <ul class="org-ul">
 <li>函数复合：\(g(x)=x^2\) 中的x可被替换为任何有意义对象, 比如\(g(x^2)=(x^2)^2=x^4\)</li>
 <li>函数h与g的复合写作 \(h(g(x))\) ， 也可以写作  \(h\circ g\) , 左边为外部函数,即 h(g(x))</li>
@@ -828,34 +791,35 @@
 <li>\(h(x) = 3^x\) 中 x 换为\(x^2+6\) , 整个函数变为\(h(x^2 + 6) = 3^{x^2 +6}\)</li>
 </ul></li>
 </ul>
+
+<blockquote>
+<p>
+<span class="underline">函数的复合并</span> 不是把它们相乘. 例如 \(f(x) = x^2sin(x)\) ,这个函数并不存在函数先后关系和复合计算
+</p>
+</blockquote>
 </div>
 </div>
-<div id="outline-container-org24e88b2" class="outline-5">
-<h5 id="org24e88b2">^<sup>函数的复合并</sup>^<sup>不是把它们相乘</sup>. 例如 \(f(x) = x^2sin(x)\) ,这个函数并不存在函数先后关系和复合计算</h5>
-</div>
-</div>
-<div id="outline-container-orgd59101d" class="outline-4">
-<h4 id="orgd59101d">练习1 #card</h4>
-<div class="outline-text-4" id="text-orgd59101d">
+<div id="outline-container-orgc98170a" class="outline-3">
+<h3 id="orgc98170a">练习1</h3>
+<div class="outline-text-3" id="text-orgc98170a">
 <p>
 \(g(x) = 2^x, h(x) = 5x^4, j(x) = 2x - 1\) , 求函数 f = g ○ h ○ j
 </p>
+
+<p>
+\(f(x)=g(h(j(x)))=g(h(2x-1))=g(5(2x-1)^4)=2^{5(2x-1)^4}\)
+</p>
 </div>
-<div id="outline-container-orgb0b66ea" class="outline-5">
-<h5 id="orgb0b66ea">\(f(x)=g(h(j(x)))=g(h(2x-1))=g(5(2x-1)^4)=2^{5(2x-1)^4}\)</h5>
 </div>
-</div>
-<div id="outline-container-orgd9b3cb9" class="outline-4">
-<h4 id="orgd9b3cb9">练习2 #card</h4>
-<div class="outline-text-4" id="text-orgd9b3cb9">
+<div id="outline-container-org2ba3044" class="outline-3">
+<h3 id="org2ba3044">练习2</h3>
+<div class="outline-text-3" id="text-org2ba3044">
 <p>
 将函数 \(f(x)=\frac{1}{tan(5log_2(x+3))}\) 分解为简单函数
 </p>
-</div>
-<div id="outline-container-org7aa10a2" class="outline-5">
-<h5 id="org7aa10a2">1. 从函数式中找到 x, 首先需要加 3, 所以设 g(x) = x + 3</h5>
-<div class="outline-text-5" id="text-org7aa10a2">
+
 <ol class="org-ol">
+<li>从函数式中找到 x, 首先需要加 3, 所以设 g(x) = x + 3</li>
 <li>然后要对所得值取以 2 为底的对数, 所以令 h(x) = log2(x)</li>
 <li>接着需乘 5, 则设 j(x) = 5x</li>
 <li>再接着要求正切值, 因此令 k(x) = tan(x)</li>
@@ -863,37 +827,28 @@
 </ol>
 </div>
 </div>
-</div>
-<div id="outline-container-orgbc889df" class="outline-4">
-<h4 id="orgbc889df">复合函数的图像</h4>
-<div class="outline-text-4" id="text-orgbc889df">
-</div>
-<div id="outline-container-org50e37d8" class="outline-5">
-<h5 id="org50e37d8">将函数 f 和 \(g(x)=x-a\) (a 是常数) 进行复合，得到新函数 \(h(x)=f(x-a)\) 。h(x)的图像相对于f(x)有什么变化? #card</h5>
-<div class="outline-text-5" id="text-org50e37d8">
-</div>
-<div id="outline-container-org98adc36" class="outline-6">
-<h6 id="org98adc36">\(y=h(x)\) 和函数 \(y=f(x)\) 的图像一样, 只不过 \(y=h(x)\) 的函数图像向右平移了 a 个单位.</h6>
-<div class="outline-text-6" id="text-org98adc36">
+<div id="outline-container-orgbc889df" class="outline-3">
+<h3 id="orgbc889df">复合函数的图像</h3>
+<div class="outline-text-3" id="text-orgbc889df">
 <p>
-如果 a 是负的, 那么就是向左平移.
+将函数 f 和 \(g(x)=x-a\) (a 是常数) 进行复合，得到新函数 \(h(x)=f(x-a)\) , 此时 <span class="underline">h(x)的图像相对于f(x)有什么变化</span> ?
 </p>
-</div>
-</div>
-</div>
-<div id="outline-container-org36b3a67" class="outline-5">
-<h5 id="org36b3a67">例子：如何画 \(y = (x - 1)^2\) 的图像 #card</h5>
-<div class="outline-text-5" id="text-org36b3a67">
-</div>
-<div id="outline-container-org280ca23" class="outline-6">
-<h6 id="org280ca23">$y = (x - 1)<sup>2</sup>$就像 \(y = x^2\) 的图像一样, 用 x-1 来代替 x. 将函数 \(y =x^2\) 的图像向右平移 1 个单位，如图：</h6>
-<div class="outline-text-6" id="text-org280ca23">
+
 <p>
-<img src="../assets/image_1696599726008_0.png" alt="image_1696599726008_0.png" />
-类似地, \(y = (x + 2)^2\) 的图像是将 \(y = x^2\) 的图像向左平移 2 个单位, 可以把 (x + 2) 理解为 (x - (-2))
+\(y=h(x)\) 和函数 \(y=f(x)\) 的图像一样, 只不过 \(y=h(x)\) 的函数图像向右平移了 a 个单位. 如果 a 是负的, 那么就是向左平移.
 </p>
-</div>
-</div>
+<ul class="org-ul">
+<li><p>
+例子：如何画 \(y = (x - 1)^2\) 的图像:
+\(y = (x - 1)^2\) 就像 \(y = x^2\) 的图像一样, 用 x-1 来代替 x. 将函数 \(y =x^2\) 的图像向右平移 1 个单位，如图：
+</p>
+
+<div id="org67d912e" class="figure">
+<p><img src="../static/image_1696599726008_0.png" alt="image_1696599726008_0.png" width="400" />
+</p>
+</div></li>
+<li>类似地, \(y = (x + 2)^2\) 的图像是将 \(y = x^2\) 的图像向左平移 2 个单位, 可以把 (x + 2) 理解为 (x - (-2))</li>
+</ul>
 </div>
 </div>
 </div>
@@ -940,7 +895,7 @@
 <h5 id="org8b1bc71">偶函数的图像关于 ^<sup>y</sup> 轴^<sup>具有镜面对称性</sup></h5>
 <div class="outline-text-5" id="text-org8b1bc71">
 
-<div id="orgc3108ad" class="figure">
+<div id="org3e7092e" class="figure">
 <p><img src="../assets/image_1696602081708_0.png" alt="image_1696602081708_0.png" />
 </p>
 </div>
@@ -950,7 +905,7 @@
 <h5 id="org7d9cf5c">奇函数的图像关于原点有 180° 的点对称性, 图像在 x 坐标上方和 -x 坐标下方具有相同的高度</h5>
 <div class="outline-text-5" id="text-org7d9cf5c">
 
-<div id="orgb678d92" class="figure">
+<div id="org21619f2" class="figure">
 <p><img src="../assets/image_1696602107032_0.png" alt="image_1696602107032_0.png" />
 </p>
 </div>
@@ -1010,15 +965,15 @@
 <h2 id="orgc545062">1.5 线性函数</h2>
 <div class="outline-text-2" id="text-orgc545062">
 </div>
-<div id="outline-container-org7ec490d" class="outline-4">
-<h4 id="org7ec490d">概念 #card</h4>
-<div class="outline-text-4" id="text-org7ec490d">
+<div id="outline-container-orgfc1d18e" class="outline-4">
+<h4 id="orgfc1d18e">概念 #card</h4>
+<div class="outline-text-4" id="text-orgfc1d18e">
 </div>
 <div id="outline-container-orgce6a906" class="outline-5">
 <h5 id="orgce6a906">\(f(x)= mx + b\) 这类函数叫做线性函数。它的图像是直线, ^<sup>直线的斜率是</sup> m^^。如下图</h5>
 <div class="outline-text-5" id="text-orgce6a906">
 
-<div id="orgc2ba9c4" class="figure">
+<div id="org67d987e" class="figure">
 <p><img src="../assets/image_1696606840372_0.png" alt="image_1696606840372_0.png" />
 </p>
 </div>
@@ -1104,9 +1059,9 @@
 <h4 id="org961f818">多项式函数</h4>
 <div class="outline-text-4" id="text-org961f818">
 </div>
-<div id="outline-container-orgcfdbfeb" class="outline-5">
-<h5 id="orgcfdbfeb">概念 #card</h5>
-<div class="outline-text-5" id="text-orgcfdbfeb">
+<div id="outline-container-orgf0f6d05" class="outline-5">
+<h5 id="orgf0f6d05">概念 #card</h5>
+<div class="outline-text-5" id="text-orgf0f6d05">
 </div>
 <div id="outline-container-org36bd843" class="outline-6">
 <h6 id="org36bd843">基于 x 的非负次幂乘以实数, 可以 1、x、\(x^2\) 、\(x^3\) … 等为基本项, 用实数乘以这些基本项, 然后把有限个这样的项加到一起就是**多项式函数**, 比如</h6>
@@ -1130,7 +1085,7 @@
 <h6 id="org9516f4b">单个多项式函数的图像</h6>
 <div class="outline-text-6" id="text-org9516f4b">
 
-<div id="org7fe3ebc" class="figure">
+<div id="orge90c66c" class="figure">
 <p><img src="../assets/image_1696654555751_0.png" alt="image_1696654555751_0.png" />
 </p>
 </div>
@@ -1240,15 +1195,15 @@
 <h4 id="org96a25b9">指数函数</h4>
 <div class="outline-text-4" id="text-org96a25b9">
 </div>
-<div id="outline-container-orgdb0ce1f" class="outline-5">
-<h5 id="orgdb0ce1f">概念 #card</h5>
-<div class="outline-text-5" id="text-orgdb0ce1f">
+<div id="outline-container-org736d987" class="outline-5">
+<h5 id="org736d987">概念 #card</h5>
+<div class="outline-text-5" id="text-org736d987">
 </div>
 <div id="outline-container-org0eaf2e5" class="outline-6">
 <h6 id="org0eaf2e5">\(y=a^x (a>1)\) .图像如下图(以 \(y=2^x\) 为例)</h6>
 <div class="outline-text-6" id="text-org0eaf2e5">
 
-<div id="orge98dc75" class="figure">
+<div id="org1bb4181" class="figure">
 <p><img src="../assets/image_1696676107230_0.png" alt="image_1696676107230_0.png" />
 </p>
 </div>
@@ -1351,7 +1306,7 @@ $|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: aunmro</p>
-<p class="date">Created: 2024-03-24 Sun 09:48</p>
+<p class="date">Created: 2024-03-24 Sun 12:19</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
