@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-24 Sun 12:19 -->
+<!-- 2024-03-24 Sun 16:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>普林斯顿微积分读本&#x2013;第1章:函数、图像和直线</title>
@@ -237,8 +237,8 @@
 <li><a href="#orgd76c276">1.1 函数</a>
 <ul>
 <li><a href="#orgc4b7ac7">函数的概念</a></li>
-<li><a href="#org43622e7">一些函数的例子：</a></li>
-<li><a href="#org578c882">值域: 一个函数必须给每一个有效的输入指定唯一的输出，这个输出构成了值域, 值域是函数的输出集合.</a></li>
+<li><a href="#org07cc5c5">一些函数的例子</a></li>
+<li><a href="#orgfdc2a77">值域</a></li>
 <li><a href="#orgf0f4c44">1.1.1 区间表示法</a></li>
 <li><a href="#org228d802">1.1.2 求定义域</a>
 <ul>
@@ -268,80 +268,32 @@
 <li><a href="#org31509af">1.3 函数复合</a>
 <ul>
 <li><a href="#org5129f74">函数复合概念</a></li>
-<li><a href="#orgc98170a">练习1</a></li>
-<li><a href="#org2ba3044">练习2</a></li>
+<li><a href="#org2332188">练习1</a></li>
+<li><a href="#org6a8a333">练习2</a></li>
 <li><a href="#orgbc889df">复合函数的图像</a></li>
 </ul>
 </li>
 <li><a href="#org61ed99e">1.4 奇函数和偶函数</a>
 <ul>
-<li>
-<ul>
-<li><a href="#org37f6b53">概念 #card #incremental</a>
-<ul>
-<li><a href="#org8f8fdd8">一些函数具有^<sup>对称性</sup>^^</a></li>
-<li><a href="#org719afaf">偶函数: 对所有的 x, 有 \(f(-x) = f(x)\)</a></li>
-<li><a href="#orga23032d">函数可能是奇的/偶的, 也可能非奇非偶.</a></li>
-</ul>
-</li>
-<li><a href="#orgc0d91cf">奇函数偶函数的图像 #card</a>
-<ul>
-<li><a href="#org8b1bc71">偶函数的图像关于 ^<sup>y</sup> 轴^<sup>具有镜面对称性</sup></a></li>
-<li><a href="#org7d9cf5c">奇函数的图像关于原点有 180° 的点对称性, 图像在 x 坐标上方和 -x 坐标下方具有相同的高度</a></li>
-</ul>
-</li>
-<li><a href="#org4a70620">如何确定奇函数,偶函数 #card</a>
-<ul>
-<li><a href="#org94674c8">将每个 x 替换为 (-x) 并计算 \(f(-x)\)</a></li>
-</ul>
-</li>
-<li><a href="#org8c53d09">判断 \(f(x) = log_5(2x^6 - 6x^2 + 3)\) 奇偶性 :-&gt; \(f(-x)=log_5(2(-x)^6-6(-x)^2+3)=log_5(2x^6-6x^2+3)\) 等于 f (x) 本身, 因此函数 f 是偶的</a></li>
-<li><a href="#orgcf98ed3">判断奇偶性 \(g(x)=\frac{2x^3+x}{3x^2+5}\) :-&gt; \(g(-x)=\frac{2(-x)^3+(-x)}{3(-x)^2+5}=\frac{-2x^3-x}{3x^2+5}=-g(x)\), g是奇函数</a></li>
-<li><a href="#org5138475">判断奇偶性 \(h(x)=\frac{2x^3+x-1}{3x^2+5}\) :-&gt; \(h(-x)=\frac{2(-x)^3+(-x)-1}{3(-x)^2+5}=\frac{-2x^3-x-1}{3x^2+5}=-\frac{2x^3+x+1}{3x^2+5}\) 函数 h 是非奇非偶的</a></li>
-<li><a href="#orge52135f">^<sup>两个奇函数之积是偶函数</sup>^^</a>
-<ul>
-<li><a href="#orga48da6a">证明 #card</a>
-<ul>
-<li><a href="#orga3b2757">定义有两个奇函数 f 和 g，这两个函数的积为 h</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#org8efded9">概念</a></li>
+<li><a href="#org409d20a">奇函数偶函数的图像</a></li>
+<li><a href="#org9c02e47">如何确定奇函数,偶函数</a></li>
+<li><a href="#org0c720da">练习1</a></li>
+<li><a href="#org08af144">练习2</a></li>
+<li><a href="#org1ad6260">练习3</a></li>
+<li><a href="#orgaa88b65">两个奇函数之积是偶函数</a></li>
 </ul>
 </li>
 <li><a href="#orgc545062">1.5 线性函数</a>
 <ul>
-<li>
-<ul>
-<li><a href="#orgfc1d18e">概念 #card</a>
-<ul>
-<li><a href="#orgce6a906">\(f(x)= mx + b\) 这类函数叫做线性函数。它的图像是直线, ^<sup>直线的斜率是</sup> m^^。如下图</a></li>
-</ul>
-</li>
-<li><a href="#org790e260">两点一线 #card</a>
-<ul>
-<li><a href="#orgc13cc9b">^<sup>仅需确认两个点</sup>, 就可以画出线性函数的图像^<sup>(两点一直线)</sup></a></li>
-</ul>
-</li>
+<li><a href="#org81340b6">概念</a></li>
+<li><a href="#orgddcc252">两点一线</a></li>
 <li><a href="#orga16ea6d">线性函数的点斜式</a>
 <ul>
-<li><a href="#org0011d07">线性函数的点斜式 #card</a>
-<ul>
-<li><a href="#orgd8dddd8">假设你知道直线通过某一固定的点以及它的斜率, 那就能很容易求出它的方程，这个方程被称为 ^<sup>直线方程的点斜式</sup>^^</a></li>
-<li><a href="#orga3b6d5e">一条直线通过\((x_0, y_0)\), 斜率为m, 它的公式为 \(y-y_0=m(x-x_0)\) ，这个式子被称为^<sup>点斜式</sup>^^</a></li>
-</ul>
-</li>
-<li><a href="#org32ba411">如果一条直线通过 (-2, 5), 斜率为 -3, 如何求它的方程？ :-&gt;  方程为 \(y-5 = -3(x - (-2))\) , 化简后结果为 \(y=-3x - 1\)</a></li>
-<li><a href="#org360e6a8">如果不知道直线的斜率, 但知道它通过哪两点. 那怎样求它的方程? :-&gt; 找出它的斜率, 再求出方程， 一条直线通过\((x_1,y_1),(x_2,y_2)\), 它的斜率为 \(\frac{y_2-y_1}{x_2-x_1}\)</a></li>
-<li><a href="#org5e01839">练习：通过 (-3, 4) 和 (2, -6) 的直线方程是什么？ #card</a>
-<ul>
-<li><a href="#org0b69bb3">1. 求它的斜率： 斜率 \(=\frac{-6-4}{2-(-3)}=\frac{-10}{5}=-2\)</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#org21f02d1">概念</a></li>
+<li><a href="#orgdeb422c">练习1</a></li>
+<li><a href="#orgd7325c1">根据2点求解线性方程</a></li>
+<li><a href="#org02347db">练习2</a></li>
 </ul>
 </li>
 </ul>
@@ -352,7 +304,7 @@
 <ul>
 <li><a href="#org961f818">多项式函数</a>
 <ul>
-<li><a href="#orgf0f6d05">概念 #card</a>
+<li><a href="#org255f677">概念 #card</a>
 <ul>
 <li><a href="#org36bd843">基于 x 的非负次幂乘以实数, 可以 1、x、\(x^2\) 、\(x^3\) … 等为基本项, 用实数乘以这些基本项, 然后把有限个这样的项加到一起就是**多项式函数**, 比如</a></li>
 </ul>
@@ -389,7 +341,7 @@
 </li>
 <li><a href="#org96a25b9">指数函数</a>
 <ul>
-<li><a href="#org736d987">概念 #card</a>
+<li><a href="#orgbb5ff06">概念 #card</a>
 <ul>
 <li><a href="#org0eaf2e5">\(y=a^x (a>1)\) .图像如下图(以 \(y=2^x\) 为例)</a></li>
 </ul>
@@ -441,42 +393,46 @@
 <h3 id="orgc4b7ac7">函数的概念</h3>
 <div class="outline-text-3" id="text-orgc4b7ac7">
 <p>
-函数是将一个对象 x 转化为另一个对象的规则, 比如 \(f(x)=x^2\) 就是一个函数
+函数是将一个对象 x 转化为另一个对象的规则, 比如 \(f(x)=x^2\) 就是一个函数<br />
 </p>
 <ul class="org-ul">
-<li>x 被称为输入, 是来自称为 <span class="underline">定义域</span> 的集合；</li>
-<li>返回的对象被称为输出, 函数的 <span class="underline">实际输出值</span> 构成了另一个集合: <span class="underline">值域</span> . 我们常用 y 表示函数的返回值，\(f(x)=x^2\) 又可以写作 \(y=x^2\)</li>
-<li>一个函数必须给 <b>每一个有效的输入指定唯一的输出</b> , 比如 \(\sqrt x\) ，x=4时，返回值可能为2也可能为-2，因此 \(\sqrt x\) 不是一个函数</li>
+<li>x 被称为输入, 是来自称为 <span class="underline">定义域</span> 的集合；<br /></li>
+<li>返回的对象被称为输出, 函数的 <span class="underline">实际输出值</span> 构成了另一个集合: <span class="underline">值域</span> . 我们常用 y 表示函数的返回值，\(f(x)=x^2\) 又可以写作 \(y=x^2\)<br /></li>
+<li>一个函数必须给 <b>每一个有效的输入指定唯一的输出</b> , 比如 \(\sqrt x\) ，x=4时，返回值可能为2也可能为-2，因此 \(\sqrt x\) 不是一个函数<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org43622e7" class="outline-3">
-<h3 id="org43622e7">一些函数的例子：</h3>
-<div class="outline-text-3" id="text-org43622e7">
+<div id="outline-container-org07cc5c5" class="outline-3">
+<h3 id="org07cc5c5">一些函数的例子</h3>
+<div class="outline-text-3" id="text-org07cc5c5">
 <ul class="org-ul">
-<li>例子1： \(f(x)=x^2\) 这个式子定义了函数 \(f\) ，它会将任何数变为自己的平方。
+<li>例子1： \(f(x)=x^2\) 这个式子定义了函数 \(f\) ，它会将任何数变为自己的平方。<br />
 <ul class="org-ul">
-<li>该函数 \(f\) 并没有规定定义域，因此默认定义域为 \(\mathbb{R}\) (所有实数的合集)</li>
-<li>对于任意实数，\(f\) 将该实数变为变为其平方: \(f(2)=4\), \(f(-\frac{1}{2})=\frac{1}{4}\)</li>
+<li>该函数 \(f\) 并没有规定定义域，因此默认定义域为 \(\mathbb{R}\) (所有实数的合集)<br /></li>
+<li>对于任意实数，\(f\) 将该实数变为变为其平方: \(f(2)=4\), \(f(-\frac{1}{2})=\frac{1}{4}\)<br /></li>
 </ul></li>
-<li>例子2： \(g(x)=x^2\) ， 定义域为非负数</li>
+<li>例子2： \(g(x)=x^2\) ， 定义域为非负数<br /></li>
 </ul>
 
 <p>
-函数 g 看上去和 函数 f 一样，但 <span class="underline">实际上二者的定义域不同</span> ， \(f(-\frac{1}{2}) = 1/4\), 但 g(-1/2) 不存在。 g 和 f 有相同的规则，g 是限制 f 的定义域产生的。
+函数 g 看上去和 函数 f 一样，但 <span class="underline">实际上二者的定义域不同</span> ， \(f(-\frac{1}{2}) = 1/4\), 但 g(-1/2) 不存在。 g 和 f 有相同的规则，g 是限制 f 的定义域产生的。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org578c882" class="outline-3">
-<h3 id="org578c882">值域: 一个函数必须给每一个有效的输入指定唯一的输出，这个输出构成了值域, 值域是函数的输出集合.</h3>
-<div class="outline-text-3" id="text-org578c882">
+<div id="outline-container-orgfdc2a77" class="outline-3">
+<h3 id="orgfdc2a77">值域</h3>
+<div class="outline-text-3" id="text-orgfdc2a77">
 <p>
-例子
+一个函数必须给每一个有效的输入指定唯一的输出，这个输出构成了值域, 值域是函数的输出集合.<br />
+</p>
+
+<p>
+例子<br />
 </p>
 <ul class="org-ul">
-<li>\(f(x)=x^2\) 其定义域是 \(\mathbb{R}\) ，值域是非负集合， \(f(\sqrt 2)=4\) 和 \(f(\sqrt -2)=4\)</li>
-<li>g(x)=x<sup>2</sup>$ 其定义域为非负数集合，值域也为非负集合， \(f(\sqrt 2)=4\)</li>
-<li>g(x) 和 f(x) 的值域是相同的。</li>
+<li>\(f(x)=x^2\) 其定义域是 \(\mathbb{R}\) ，值域是非负集合， \(f(\sqrt 2)=4\) 和 \(f(\sqrt -2)=4\)<br /></li>
+<li>g(x)=x<sup>2</sup>$ 其定义域为非负数集合，值域也为非负集合， \(f(\sqrt 2)=4\)<br /></li>
+<li>g(x) 和 f(x) 的值域是相同的。<br /></li>
 </ul>
 </div>
 </div>
@@ -484,20 +440,20 @@
 <h3 id="orgf0f4c44">1.1.1 区间表示法</h3>
 <div class="outline-text-3" id="text-orgf0f4c44">
 <p>
-我们经常会遇到实数轴 R 的子集, 比如 {x : 2 ≤ x &lt; 5} 这样的连通区间，我们通常 <span class="underline">使用区间表示法</span> 来表示这些范围：
+我们经常会遇到实数轴 R 的子集, 比如 {x : 2 ≤ x &lt; 5} 这样的连通区间，我们通常 <span class="underline">使用区间表示法</span> 来表示这些范围：<br />
 </p>
 <ul class="org-ul">
-<li><code>[a, b]</code> 表示满足 a≤x≤b 成立的 x 的集合，比如 <code>[2, 5]</code> 就是所有满足 2≤x≤5 的x。x 的值可以取为a或者b, <code>[a, b]</code> 这样的区间被称为 <b>闭区间</b></li>
-<li>(a, b) 则表示 满足 a&lt;x&lt;b 成立的 x 的集合，被称为 <b>开区间</b></li>
-<li><code>[a, b)</code> 表示 <b>半开半闭区间</b></li>
+<li><code>[a, b]</code> 表示满足 a≤x≤b 成立的 x 的集合，比如 <code>[2, 5]</code> 就是所有满足 2≤x≤5 的x。x 的值可以取为a或者b, <code>[a, b]</code> 这样的区间被称为 <b>闭区间</b><br /></li>
+<li>(a, b) 则表示 满足 a&lt;x&lt;b 成立的 x 的集合，被称为 <b>开区间</b><br /></li>
+<li><code>[a, b)</code> 表示 <b>半开半闭区间</b><br /></li>
 </ul>
 <p>
-(a, ∞) 表示从a到正无穷大；(-∞, b) 表示从负无穷大到
+(a, ∞) 表示从a到正无穷大；(-∞, b) 表示从负无穷大到<br />
 </p>
 
 
-<div id="orgf6581dd" class="figure">
-<p><img src="../static/image_1684892119478_0.png" alt="image_1684892119478_0.png" width="500" />
+<div id="org6cb3862" class="figure">
+<p><img src="../static/image_1684892119478_0.png" alt="image_1684892119478_0.png" width="500" /><br />
 </p>
 </div>
 </div>
@@ -510,8 +466,8 @@
 <h4 id="org6a79dac">求函数的定义域分为2种情况：</h4>
 <div class="outline-text-4" id="text-org6a79dac">
 <ol class="org-ol">
-<li>函数的定义中包括定义域,比如: \(g(x)=x^2(x\ge 0)\)</li>
-<li>定义域没给出时, 定义域包括实数集尽可能多的部分，比如 \(k=\sqrt x\) 定义域为 \([0, \infty)\)</li>
+<li>函数的定义中包括定义域,比如: \(g(x)=x^2(x\ge 0)\)<br /></li>
+<li>定义域没给出时, 定义域包括实数集尽可能多的部分，比如 \(k=\sqrt x\) 定义域为 \([0, \infty)\)<br /></li>
 </ol>
 </div>
 </div>
@@ -519,15 +475,15 @@
 <h4 id="org40693d5">常见几种限制定义域情况：</h4>
 <div class="outline-text-4" id="text-org40693d5">
 <ol class="org-ol">
-<li>分母不为零</li>
-<li>不能取一个负数或零的对数</li>
-<li>不能取负数的平方根 (或四次根, 六次根, 等等).</li>
+<li>分母不为零<br /></li>
+<li>不能取一个负数或零的对数<br /></li>
+<li>不能取负数的平方根 (或四次根, 六次根, 等等).<br /></li>
 </ol>
 <p>
-例子：对于tan(x) 来说 tan(90°) 无意义，因为 \(\frac{sin(90°)}{cos(90°)}=\frac{1}{0}\)
+例子：对于tan(x) 来说 tan(90°) 无意义，因为 \(\frac{sin(90°)}{cos(90°)}=\frac{1}{0}\)<br />
 </p>
 <ul class="org-ul">
-<li>anki: <a href="../anki/20240323121458-常见几种限制定义域情况.html#ID-f296f642-31ec-4cad-b390-1f0ff3e789e0">常见几种限制定义域情况</a></li>
+<li>anki: <a href="../anki/20240323121458-常见几种限制定义域情况.html#ID-f296f642-31ec-4cad-b390-1f0ff3e789e0">常见几种限制定义域情况</a><br /></li>
 </ul>
 </div>
 </div>
@@ -535,14 +491,14 @@
 <h4 id="org68fd9c9">例子： \(f(x)=\frac{\log_{10}(x+8)\sqrt{26-2x}}{(x-2)(x+19)}\) ，求函数定义域</h4>
 <div class="outline-text-4" id="text-org68fd9c9">
 <ol class="org-ol">
-<li>开平方根必须是正数，26-2x≥0，即x≤13</li>
-<li>对数必须大于0， x+8&gt;0，即x&gt;-8</li>
-<li>分母不为0，x≠2且x≠-19</li>
-<li>定义域合起来就是 <code>(-8, 13] \ 2</code></li>
+<li>开平方根必须是正数，26-2x≥0，即x≤13<br /></li>
+<li>对数必须大于0， x+8&gt;0，即x&gt;-8<br /></li>
+<li>分母不为0，x≠2且x≠-19<br /></li>
+<li>定义域合起来就是 <code>(-8, 13] \ 2</code><br /></li>
 </ol>
 <blockquote>
 <p>
-反斜杠表示 <span class="underline">不包括</span>
+反斜杠表示 <span class="underline">不包括</span><br />
 </p>
 </blockquote>
 </div>
@@ -552,22 +508,22 @@
 <h3 id="orgdc96742">1.1.3 利用图像求值域</h3>
 <div class="outline-text-3" id="text-orgdc96742">
 <ul class="org-ul">
-<li><a href="../anki/20240323122439-利用函数图像求值域.html#ID-1b2e4452-ccd4-42f2-b67a-e9628e91cfde">利用函数图像求值域</a></li>
+<li><a href="../anki/20240323122439-利用函数图像求值域.html#ID-1b2e4452-ccd4-42f2-b67a-e9628e91cfde">利用函数图像求值域</a><br /></li>
 </ul>
 <p>
-利用图形求解函数的值域：函数 \(F(x)=x^2\) 其定义域为 \([-2, 1]\)，现在 F 的值域是什么？
+利用图形求解函数的值域：函数 \(F(x)=x^2\) 其定义域为 \([-2, 1]\)，现在 F 的值域是什么？<br />
 </p>
 
 <ol class="org-ol">
-<li>画出函数图像</li>
-<li>想象从图像的左边和右边很远的地方朝向 y 轴水平地射入两束光</li>
-<li>光会在 y 轴上有两个影子</li>
-<li>值域就是影子的并集</li>
+<li>画出函数图像<br /></li>
+<li>想象从图像的左边和右边很远的地方朝向 y 轴水平地射入两束光<br /></li>
+<li>光会在 y 轴上有两个影子<br /></li>
+<li>值域就是影子的并集<br /></li>
 </ol>
 
 
-<div id="org2d1a1cc" class="figure">
-<p><img src="../static/image_1684892497266_0.png" alt="image_1684892497266_0.png" width="500" />
+<div id="orgb0aa225" class="figure">
+<p><img src="../static/image_1684892497266_0.png" alt="image_1684892497266_0.png" width="500" /><br />
 </p>
 </div>
 </div>
@@ -576,25 +532,25 @@
 <h3 id="org2857761">1.1.4 垂线检测</h3>
 <div class="outline-text-3" id="text-org2857761">
 <p>
-并非平面上所有图形都是函数图像，函数图像的 <span class="underline">坐标为 \((x, f (x))\)</span> 。函数的 <span class="underline">每一个有效的输入指定唯一的输出</span> ，因此对于任意x， (x, f (x)) 只有一个点，这就有了 <span class="underline">垂线检测</span> 这种方法: <span class="underline">任意一条垂线和函数只有有1个交点</span>
+并非平面上所有图形都是函数图像，函数图像的 <span class="underline">坐标为 \((x, f (x))\)</span> 。函数的 <span class="underline">每一个有效的输入指定唯一的输出</span> ，因此对于任意x， (x, f (x)) 只有一个点，这就有了 <span class="underline">垂线检测</span> 这种方法: <span class="underline">任意一条垂线和函数只有有1个交点</span><br />
 </p>
 <ul class="org-ul">
 <li><p>
-例子1：\(x^2+y^2=9\) 不是函数
-当 x  落在区间 (-3, 3) 上时. 对于这其中的任意 x 值, 垂线通过 (x, 0) 和圆相交两次，违反了 <span class="underline">函数每一个有效的输入指定唯一的输出</span>
+例子1：\(x^2+y^2=9\) 不是函数<br />
+当 x  落在区间 (-3, 3) 上时. 对于这其中的任意 x 值, 垂线通过 (x, 0) 和圆相交两次，违反了 <span class="underline">函数每一个有效的输入指定唯一的输出</span><br />
 </p>
 
-<div id="org1dacff1" class="figure">
-<p><img src="../static/image_1687582040718_0.png" alt="image_1687582040718_0.png" width="400" />
+<div id="org4b21a6f" class="figure">
+<p><img src="../static/image_1687582040718_0.png" alt="image_1687582040718_0.png" width="400" /><br />
 </p>
 </div></li>
-<li>例子2：上半圆方程 \(y=\sqrt{(9-x^2)}\) 和下半圆方程 \(y=-\sqrt{(9-x^2)}\) 可以通过垂线检测，是函数</li>
+<li>例子2：上半圆方程 \(y=\sqrt{(9-x^2)}\) 和下半圆方程 \(y=-\sqrt{(9-x^2)}\) 可以通过垂线检测，是函数<br /></li>
 <li><p>
-例子3：下图也是一个函数，可以通过垂线检测
+例子3：下图也是一个函数，可以通过垂线检测<br />
 </p>
 
-<div id="org20b46ae" class="figure">
-<p><img src="../static/image_1687583658008_0.png" alt="image_1687583658008_0.png" width="400" />
+<div id="orgef45de3" class="figure">
+<p><img src="../static/image_1687583658008_0.png" alt="image_1687583658008_0.png" width="400" /><br />
 </p>
 </div></li>
 </ul>
@@ -609,19 +565,19 @@
 <h3 id="org637f663">反函数的引入</h3>
 <div class="outline-text-3" id="text-org637f663">
 <p>
-对于一个函数 y=f(x) ，输入 x 得到 y。那反过来已知 y，有没有一个函数可以根据 y 求出 x ？
+对于一个函数 y=f(x) ，输入 x 得到 y。那反过来已知 y，有没有一个函数可以根据 y 求出 x ？<br />
 </p>
 
 <p>
-这个函数必须满足以下条件：
+这个函数必须满足以下条件：<br />
 </p>
 <ol class="org-ol">
-<li><span class="underline">y 必须在f(x)的值域中</span> ，否则就没有y满足f(x)=y</li>
-<li>但可能有很多 y 值满足 f(x)=y ，比如 \(f(x)=x^2\) ，当 \(y=x^2=64\) 时 x 可以为 -8 或 8。但函数  每一个有效的输入指定唯一的输出  ，因此我们需要限制 <span class="underline">仅有一个 x 值满足 f(x)=y</span></li>
+<li><span class="underline">y 必须在f(x)的值域中</span> ，否则就没有y满足f(x)=y<br /></li>
+<li>但可能有很多 y 值满足 f(x)=y ，比如 \(f(x)=x^2\) ，当 \(y=x^2=64\) 时 x 可以为 -8 或 8。但函数  每一个有效的输入指定唯一的输出  ，因此我们需要限制 <span class="underline">仅有一个 x 值满足 f(x)=y</span><br /></li>
 </ol>
 
 <p>
-输入 y , 根据某个函数发现一个且仅有一个输入 x 满足 f(x) = y。 这个新的函数称为 f 的反函数, 写作 \(f^{-1}\)
+输入 y , 根据某个函数发现一个且仅有一个输入 x 满足 f(x) = y。 这个新的函数称为 f 的反函数, 写作 \(f^{-1}\)<br />
 </p>
 </div>
 </div>
@@ -629,16 +585,16 @@
 <h3 id="orga846bbf">反函数的定义</h3>
 <div class="outline-text-3" id="text-orga846bbf">
 <p>
-反函数 \(f^{-1}\) 的定义： 对于函数 f ，其值域中任意值 y ，都有 <span class="underline">唯一</span> 的 x 满足 f(x)=y 并且
+反函数 \(f^{-1}\) 的定义： 对于函数 f ，其值域中任意值 y ，都有 <span class="underline">唯一</span> 的 x 满足 f(x)=y 并且<br />
 </p>
 <ol class="org-ol">
-<li>\(f^{-1}\) 的定义域和 f 的值域相同</li>
-<li>\(f^{-1}\) 的值域和 f 的定义域相同</li>
-<li>\(f^{-1}(y)\) 的值就是满足 f(x)=y 的 x</li>
+<li>\(f^{-1}\) 的定义域和 f 的值域相同<br /></li>
+<li>\(f^{-1}\) 的值域和 f 的定义域相同<br /></li>
+<li>\(f^{-1}(y)\) 的值就是满足 f(x)=y 的 x<br /></li>
 </ol>
 
 <p>
-如果 \(f(x) = y\), 那么反函数 \(f^{-1}(y)\) = x
+如果 \(f(x) = y\), 那么反函数 \(f^{-1}(y)\) = x<br />
 </p>
 </div>
 </div>
@@ -647,28 +603,28 @@
 <div class="outline-text-3" id="text-org80e1726">
 <blockquote>
 <p>
-求反函数时, 必须确定只有一个x值满足y=f(x) 即 (0, y) 的水平线和函数图像仅有一次相交, 交点为点 (x, y)。这样我们就有了 <span class="underline">水平检测</span> 这种方法。
+求反函数时, 必须确定只有一个x值满足y=f(x) 即 (0, y) 的水平线和函数图像仅有一次相交, 交点为点 (x, y)。这样我们就有了 <span class="underline">水平检测</span> 这种方法。<br />
 </p>
 
 <p>
-<b>本质还是对于反函数输入值y的输出值x唯一</b>
+<b>本质还是对于反函数输入值y的输出值x唯一</b><br />
 </p>
 </blockquote>
 
 <p>
-<span class="underline">水平线检验：</span>
+<span class="underline">水平线检验：</span><br />
 </p>
 <ol class="org-ol">
-<li>如果每一条水平线和一个函数的图像相交至多一次 =&gt; 函数有一个反函数</li>
-<li>如果即使只有一条水平线和图像相交多于一次 =&gt; 函数就没有反函数</li>
+<li>如果每一条水平线和一个函数的图像相交至多一次 =&gt; 函数有一个反函数<br /></li>
+<li>如果即使只有一条水平线和图像相交多于一次 =&gt; 函数就没有反函数<br /></li>
 </ol>
 
 <p>
-下图以 f(x)=\(x^3\) 和 g(x)=\(x^2\) 为例, 函数f有反函数, 函数g没有反函数
+下图以 f(x)=\(x^3\) 和 g(x)=\(x^2\) 为例, 函数f有反函数, 函数g没有反函数<br />
 </p>
 
-<div id="orgb2a641d" class="figure">
-<p><img src="../static/image_1693135087066_0.png" alt="image_1693135087066_0.png" width="600" />
+<div id="org280b5d2" class="figure">
+<p><img src="../static/image_1693135087066_0.png" alt="image_1693135087066_0.png" width="600" /><br />
 </p>
 </div>
 </div>
@@ -682,21 +638,21 @@
 <div class="outline-text-4" id="text-org5e1becd">
 <blockquote>
 <p>
-求反函数的一般步骤
+求反函数的一般步骤<br />
 </p>
 <ol class="org-ol">
-<li>写下 \(y=f(x)\)</li>
-<li>解出 x</li>
+<li>写下 \(y=f(x)\)<br /></li>
+<li>解出 x<br /></li>
 </ol>
 </blockquote>
 <p>
-具体步骤:
+具体步骤:<br />
 </p>
 <ol class="org-ol">
-<li>\(y=x^3\)</li>
-<li>\(x=\sqrt[3]y\)</li>
-<li>\(f(y)=\sqrt[3]x\)</li>
-<li>将y改为x，再加-1, \(f^{-1}(x)=\sqrt[3]y\)</li>
+<li>\(y=x^3\)<br /></li>
+<li>\(x=\sqrt[3]y\)<br /></li>
+<li>\(f(y)=\sqrt[3]x\)<br /></li>
+<li>将y改为x，再加-1, \(f^{-1}(x)=\sqrt[3]y\)<br /></li>
 </ol>
 </div>
 </div>
@@ -705,15 +661,15 @@
 <div class="outline-text-4" id="text-org0a8692c">
 <blockquote>
 <p>
-求解反函数x并不简单,经常出现x无法求解的状况，但如果知道函数图像,很容易画出反函数图像
+求解反函数x并不简单,经常出现x无法求解的状况，但如果知道函数图像,很容易画出反函数图像<br />
 </p>
 </blockquote>
 <p>
-反函数图像与原函数图像的规律： <span class="underline">反函数是函数相对于y=x的镜像</span> ，如下图 \(f(x)=x^3\) 与其反函数
+反函数图像与原函数图像的规律： <span class="underline">反函数是函数相对于y=x的镜像</span> ，如下图 \(f(x)=x^3\) 与其反函数<br />
 </p>
 
-<div id="org40c30e1" class="figure">
-<p><img src="../static/image_1693137006077_0.png" alt="image_1693137006077_0.png" width="400" />
+<div id="org62fb763" class="figure">
+<p><img src="../static/image_1693137006077_0.png" alt="image_1693137006077_0.png" width="400" /><br />
 </p>
 </div>
 </div>
@@ -723,50 +679,50 @@
 <h3 id="org10ca2b5">1.2.3 通过限制定义域得到反函数</h3>
 <div class="outline-text-3" id="text-org10ca2b5">
 <p>
-求一个函数的反函数失败
+求一个函数的反函数失败<br />
 </p>
 <ul class="org-ul">
-<li>失败原因: 对于相同 y 有多个 x 值</li>
-<li>解决方法: 放弃所有其他值，只保留一个x。</li>
+<li>失败原因: 对于相同 y 有多个 x 值<br /></li>
+<li>解决方法: 放弃所有其他值，只保留一个x。<br /></li>
 </ul>
 <p>
-这种方式称为 <span class="underline">限制定义域</span>
+这种方式称为 <span class="underline">限制定义域</span><br />
 </p>
 
 <hr />
 
 <p>
-限制后的函数能通过水平检验：以 \(g(x)=x^2, x∈ [0, +∞)\) 为例，限制后的图像为：
+限制后的函数能通过水平检验：以 \(g(x)=x^2, x∈ [0, +∞)\) 为例，限制后的图像为：<br />
 </p>
 
-<div id="org4392dc4" class="figure">
-<p><img src="../static/image_1693138829522_0.png" alt="image_1693138829522_0.png" width="400" />
+<div id="orgc332957" class="figure">
+<p><img src="../static/image_1693138829522_0.png" alt="image_1693138829522_0.png" width="400" /><br />
 </p>
 </div>
 
 <p>
-限制定义域后
+限制定义域后<br />
 </p>
 <ol class="org-ol">
-<li>取定义域\([0, ∞)\)</li>
-<li>\(y=x^2\)</li>
-<li>\(x=\sqrt y\)</li>
-<li>\(f^{-1}(x)=\sqrt x\) 定义域为 \([0, ∞)\)</li>
-<li>反函数图像如下，关于 \(y=x\) 对称</li>
+<li>取定义域\([0, ∞)\)<br /></li>
+<li>\(y=x^2\)<br /></li>
+<li>\(x=\sqrt y\)<br /></li>
+<li>\(f^{-1}(x)=\sqrt x\) 定义域为 \([0, ∞)\)<br /></li>
+<li>反函数图像如下，关于 \(y=x\) 对称<br /></li>
 </ol>
 
 
-<div id="org35e5158" class="figure">
-<p><img src="../static/image_1693138842922_0.png" alt="image_1693138842922_0.png" width="400" />
+<div id="orgc63fc1b" class="figure">
+<p><img src="../static/image_1693138842922_0.png" alt="image_1693138842922_0.png" width="400" /><br />
 </p>
 </div>
 
 <p>
-如果不限制定义域，\(y=x^2\) 关于 y=x 的图像如下，无法通过垂线检测，就不是反函数
+如果不限制定义域，\(y=x^2\) 关于 y=x 的图像如下，无法通过垂线检测，就不是反函数<br />
 </p>
 
-<div id="org7f72dc0" class="figure">
-<p><img src="../static/image_1693138856290_0.png" alt="image_1693138856290_0.png" width="400" />
+<div id="org6af0df4" class="figure">
+<p><img src="../static/image_1693138856290_0.png" alt="image_1693138856290_0.png" width="400" /><br />
 </p>
 </div>
 </div>
@@ -780,50 +736,50 @@
 <h3 id="org5129f74">函数复合概念</h3>
 <div class="outline-text-3" id="text-org5129f74">
 <p>
-一个函数可以和另一个函数结合起来，被称为函数复合
+一个函数可以和另一个函数结合起来，被称为函数复合<br />
 </p>
 <ul class="org-ul">
-<li>函数复合：\(g(x)=x^2\) 中的x可被替换为任何有意义对象, 比如\(g(x^2)=(x^2)^2=x^4\)</li>
-<li>函数h与g的复合写作 \(h(g(x))\) ， 也可以写作  \(h\circ g\) , 左边为外部函数,即 h(g(x))</li>
-<li>例子：
+<li>函数复合：\(g(x)=x^2\) 中的x可被替换为任何有意义对象, 比如\(g(x^2)=(x^2)^2=x^4\)<br /></li>
+<li>函数h与g的复合写作 \(h(g(x))\) ， 也可以写作  \(h\circ g\) , 左边为外部函数,即 h(g(x))<br /></li>
+<li>例子：<br />
 <ul class="org-ul">
-<li>\(g(x) = x^2\) 中的 x 可以换为任何使函数有意义的值，比如 \(g(y) = y^2\) 和 \(g(x + 5) = (x + 5)^2\)</li>
-<li>\(h(x) = 3^x\) 中 x 换为\(x^2+6\) , 整个函数变为\(h(x^2 + 6) = 3^{x^2 +6}\)</li>
+<li>\(g(x) = x^2\) 中的 x 可以换为任何使函数有意义的值，比如 \(g(y) = y^2\) 和 \(g(x + 5) = (x + 5)^2\)<br /></li>
+<li>\(h(x) = 3^x\) 中 x 换为\(x^2+6\) , 整个函数变为\(h(x^2 + 6) = 3^{x^2 +6}\)<br /></li>
 </ul></li>
 </ul>
 
 <blockquote>
 <p>
-<span class="underline">函数的复合并</span> 不是把它们相乘. 例如 \(f(x) = x^2sin(x)\) ,这个函数并不存在函数先后关系和复合计算
+<span class="underline">函数的复合并</span> 不是把它们相乘. 例如 \(f(x) = x^2sin(x)\) ,这个函数并不存在函数先后关系和复合计算<br />
 </p>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgc98170a" class="outline-3">
-<h3 id="orgc98170a">练习1</h3>
-<div class="outline-text-3" id="text-orgc98170a">
+<div id="outline-container-org2332188" class="outline-3">
+<h3 id="org2332188">练习1</h3>
+<div class="outline-text-3" id="text-org2332188">
 <p>
-\(g(x) = 2^x, h(x) = 5x^4, j(x) = 2x - 1\) , 求函数 f = g ○ h ○ j
+\(g(x) = 2^x, h(x) = 5x^4, j(x) = 2x - 1\) , 求函数 f = g ○ h ○ j<br />
 </p>
 
 <p>
-\(f(x)=g(h(j(x)))=g(h(2x-1))=g(5(2x-1)^4)=2^{5(2x-1)^4}\)
+\(f(x)=g(h(j(x)))=g(h(2x-1))=g(5(2x-1)^4)=2^{5(2x-1)^4}\)<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org2ba3044" class="outline-3">
-<h3 id="org2ba3044">练习2</h3>
-<div class="outline-text-3" id="text-org2ba3044">
+<div id="outline-container-org6a8a333" class="outline-3">
+<h3 id="org6a8a333">练习2</h3>
+<div class="outline-text-3" id="text-org6a8a333">
 <p>
-将函数 \(f(x)=\frac{1}{tan(5log_2(x+3))}\) 分解为简单函数
+将函数 \(f(x)=\frac{1}{tan(5log_2(x+3))}\) 分解为简单函数<br />
 </p>
 
 <ol class="org-ol">
-<li>从函数式中找到 x, 首先需要加 3, 所以设 g(x) = x + 3</li>
-<li>然后要对所得值取以 2 为底的对数, 所以令 h(x) = log2(x)</li>
-<li>接着需乘 5, 则设 j(x) = 5x</li>
-<li>再接着要求正切值, 因此令 k(x) = tan(x)</li>
-<li>最后要取倒数, 于是令 m(x) = 1/x</li>
+<li>从函数式中找到 x, 首先需要加 3, 所以设 g(x) = x + 3<br /></li>
+<li>然后要对所得值取以 2 为底的对数, 所以令 h(x) = log2(x)<br /></li>
+<li>接着需乘 5, 则设 j(x) = 5x<br /></li>
+<li>再接着要求正切值, 因此令 k(x) = tan(x)<br /></li>
+<li>最后要取倒数, 于是令 m(x) = 1/x<br /></li>
 </ol>
 </div>
 </div>
@@ -831,23 +787,23 @@
 <h3 id="orgbc889df">复合函数的图像</h3>
 <div class="outline-text-3" id="text-orgbc889df">
 <p>
-将函数 f 和 \(g(x)=x-a\) (a 是常数) 进行复合，得到新函数 \(h(x)=f(x-a)\) , 此时 <span class="underline">h(x)的图像相对于f(x)有什么变化</span> ?
+将函数 f 和 \(g(x)=x-a\) (a 是常数) 进行复合，得到新函数 \(h(x)=f(x-a)\) , 此时 <span class="underline">h(x)的图像相对于f(x)有什么变化</span> ?<br />
 </p>
 
 <p>
-\(y=h(x)\) 和函数 \(y=f(x)\) 的图像一样, 只不过 \(y=h(x)\) 的函数图像向右平移了 a 个单位. 如果 a 是负的, 那么就是向左平移.
+\(y=h(x)\) 和函数 \(y=f(x)\) 的图像一样, 只不过 \(y=h(x)\) 的函数图像向右平移了 a 个单位. 如果 a 是负的, 那么就是向左平移.<br />
 </p>
 <ul class="org-ul">
 <li><p>
-例子：如何画 \(y = (x - 1)^2\) 的图像:
-\(y = (x - 1)^2\) 就像 \(y = x^2\) 的图像一样, 用 x-1 来代替 x. 将函数 \(y =x^2\) 的图像向右平移 1 个单位，如图：
+例子：如何画 \(y = (x - 1)^2\) 的图像:<br />
+\(y = (x - 1)^2\) 就像 \(y = x^2\) 的图像一样, 用 x-1 来代替 x. 将函数 \(y =x^2\) 的图像向右平移 1 个单位，如图：<br />
 </p>
 
-<div id="org67d912e" class="figure">
-<p><img src="../static/image_1696599726008_0.png" alt="image_1696599726008_0.png" width="400" />
+<div id="org384bb22" class="figure">
+<p><img src="../static/image_1696599726008_0.png" alt="image_1696599726008_0.png" width="400" /><br />
 </p>
 </div></li>
-<li>类似地, \(y = (x + 2)^2\) 的图像是将 \(y = x^2\) 的图像向左平移 2 个单位, 可以把 (x + 2) 理解为 (x - (-2))</li>
+<li>类似地, \(y = (x + 2)^2\) 的图像是将 \(y = x^2\) 的图像向左平移 2 个单位, 可以把 (x + 2) 理解为 (x - (-2))<br /></li>
 </ul>
 </div>
 </div>
@@ -856,108 +812,117 @@
 <h2 id="org61ed99e">1.4 奇函数和偶函数</h2>
 <div class="outline-text-2" id="text-org61ed99e">
 </div>
-<div id="outline-container-org37f6b53" class="outline-4">
-<h4 id="org37f6b53">概念 #card #incremental</h4>
-<div class="outline-text-4" id="text-org37f6b53">
-</div>
-<div id="outline-container-org8f8fdd8" class="outline-5">
-<h5 id="org8f8fdd8">一些函数具有^<sup>对称性</sup>^^</h5>
-<div class="outline-text-5" id="text-org8f8fdd8">
-<ul class="org-ul">
-<li>比如 \(f(x)=x^2\), 随意取一个数x=3,那么f(3)=9, 而 f(-3)也等于9, 这类函数被称为^<sup>偶函数</sup>^^。</li>
-<li>而对于 \(f(x)=x^3\) 这类, 随意取一个数，f(-3)=-f(3) ，这类函数被称为^<sup>奇函数</sup>^^。</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org719afaf" class="outline-5">
-<h5 id="org719afaf">偶函数: 对所有的 x, 有 \(f(-x) = f(x)\)</h5>
-<div class="outline-text-5" id="text-org719afaf">
+<div id="outline-container-org8efded9" class="outline-3">
+<h3 id="org8efded9">概念</h3>
+<div class="outline-text-3" id="text-org8efded9">
 <p>
-奇函数: 对所有的 x, 有 \(f(-x) = -f(x)\)
+一些函数具有 <span class="underline">对称性</span><br />
 </p>
-</div>
-</div>
-<div id="outline-container-orga23032d" class="outline-5">
-<h5 id="orga23032d">函数可能是奇的/偶的, 也可能非奇非偶.</h5>
-<div class="outline-text-5" id="text-orga23032d">
 <ul class="org-ul">
-<li><b>大多数函数是非奇非偶的</b> .</li>
-<li><b>只有一个函数是既奇又偶的</b>, 它就是非常单调的对所有 x 都成立的 f(x) = 0(我们称之为零函数)</li>
+<li>比如 \(f(x)=x^2\), 随意取一个数x=3,那么f(3)=9, 而 f(-3)也等于9, 这类函数被称为 <span class="underline">偶函数</span> 。<br /></li>
+<li>而对于 \(f(x)=x^3\) 这类, 随意取一个数，f(-3)=-f(3) ，这类函数被称为 <span class="underline">奇函数</span> 。<br /></li>
+</ul>
+
+<blockquote>
+<ul class="org-ul">
+<li>偶函数: 对所有的 x, 有 \(f(-x) = f(x)\)<br /></li>
+<li>奇函数: 对所有的 x, 有 \(f(-x) = -f(x)\)<br /></li>
+</ul>
+</blockquote>
+
+<blockquote>
+<p>
+函数可能是奇的/偶的, 也可能非奇非偶.<br />
+</p>
+<ul class="org-ul">
+<li><b>大多数函数是非奇非偶的</b> .<br /></li>
+<li><b>只有一个函数是既奇又偶的</b>, 它就是非常单调的对所有 x 都成立的 f(x) = 0(我们称之为零函数)<br /></li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org409d20a" class="outline-3">
+<h3 id="org409d20a">奇函数偶函数的图像</h3>
+<div class="outline-text-3" id="text-org409d20a">
+<ul class="org-ul">
+<li><p>
+偶函数的图像关于 <span class="underline">y 轴</span> 具有镜面对称性<br />
+</p>
+
+<div id="orgbd0ecb5" class="figure">
+<p><img src="../static/image_1696602081708_0.png" alt="image_1696602081708_0.png" width="400" /><br />
+</p>
+</div></li>
+<li><p>
+奇函数的图像关于原点有 180° 的点对称性, 图像在 x 坐标上方和 -x 坐标下方具有相同的高度<br />
+</p>
+
+<div id="orgfa12c36" class="figure">
+<p><img src="../static/image_1696602107032_0.png" alt="image_1696602107032_0.png" width="400" /><br />
+</p>
+</div></li>
 </ul>
 </div>
 </div>
-</div>
-<div id="outline-container-orgc0d91cf" class="outline-4">
-<h4 id="orgc0d91cf">奇函数偶函数的图像 #card</h4>
-<div class="outline-text-4" id="text-orgc0d91cf">
-</div>
-<div id="outline-container-org8b1bc71" class="outline-5">
-<h5 id="org8b1bc71">偶函数的图像关于 ^<sup>y</sup> 轴^<sup>具有镜面对称性</sup></h5>
-<div class="outline-text-5" id="text-org8b1bc71">
-
-<div id="org3e7092e" class="figure">
-<p><img src="../assets/image_1696602081708_0.png" alt="image_1696602081708_0.png" />
+<div id="outline-container-org9c02e47" class="outline-3">
+<h3 id="org9c02e47">如何确定奇函数,偶函数</h3>
+<div class="outline-text-3" id="text-org9c02e47">
+<p>
+将每个 x 替换为 (-x) 并计算 \(f(-x)\)<br />
 </p>
-</div>
-</div>
-</div>
-<div id="outline-container-org7d9cf5c" class="outline-5">
-<h5 id="org7d9cf5c">奇函数的图像关于原点有 180° 的点对称性, 图像在 x 坐标上方和 -x 坐标下方具有相同的高度</h5>
-<div class="outline-text-5" id="text-org7d9cf5c">
-
-<div id="org21619f2" class="figure">
-<p><img src="../assets/image_1696602107032_0.png" alt="image_1696602107032_0.png" />
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org4a70620" class="outline-4">
-<h4 id="org4a70620">如何确定奇函数,偶函数 #card</h4>
-<div class="outline-text-4" id="text-org4a70620">
-</div>
-<div id="outline-container-org94674c8" class="outline-5">
-<h5 id="org94674c8">将每个 x 替换为 (-x) 并计算 \(f(-x)\)</h5>
-<div class="outline-text-5" id="text-org94674c8">
 <ol class="org-ol">
-<li>如果得出f(x), f 就是偶的. 即  \(f(-x) = f(x)\)</li>
-<li>如果得到 -f(x), f 就是奇的， 即  \(f(-x) = -f(x)\)</li>
-<li>如果得到既不是 f(x) 也不是 -f(x), 则 f 就非奇非偶(或之前的化简不充分)</li>
+<li>如果得出f(x), f 就是偶的. 即  \(f(-x) = f(x)\)<br /></li>
+<li>如果得到 -f(x), f 就是奇的， 即  \(f(-x) = -f(x)\)<br /></li>
+<li>如果得到既不是 f(x) 也不是 -f(x), 则 f 就非奇非偶(或之前的化简不充分)<br /></li>
 </ol>
 </div>
 </div>
-</div>
-<div id="outline-container-org8c53d09" class="outline-4">
-<h4 id="org8c53d09">判断 \(f(x) = log_5(2x^6 - 6x^2 + 3)\) 奇偶性 :-&gt; \(f(-x)=log_5(2(-x)^6-6(-x)^2+3)=log_5(2x^6-6x^2+3)\) 等于 f (x) 本身, 因此函数 f 是偶的</h4>
-<div class="outline-text-4" id="text-org8c53d09">
-</div>
-</div>
-<div id="outline-container-orgcf98ed3" class="outline-4">
-<h4 id="orgcf98ed3">判断奇偶性 \(g(x)=\frac{2x^3+x}{3x^2+5}\) :-&gt; \(g(-x)=\frac{2(-x)^3+(-x)}{3(-x)^2+5}=\frac{-2x^3-x}{3x^2+5}=-g(x)\), g是奇函数</h4>
-<div class="outline-text-4" id="text-orgcf98ed3">
-</div>
-</div>
-<div id="outline-container-org5138475" class="outline-4">
-<h4 id="org5138475">判断奇偶性 \(h(x)=\frac{2x^3+x-1}{3x^2+5}\) :-&gt; \(h(-x)=\frac{2(-x)^3+(-x)-1}{3(-x)^2+5}=\frac{-2x^3-x-1}{3x^2+5}=-\frac{2x^3+x+1}{3x^2+5}\) 函数 h 是非奇非偶的</h4>
-<div class="outline-text-4" id="text-org5138475">
-</div>
-</div>
-<div id="outline-container-orge52135f" class="outline-4">
-<h4 id="orge52135f">^<sup>两个奇函数之积是偶函数</sup>^^</h4>
-<div class="outline-text-4" id="text-orge52135f">
-</div>
-<div id="outline-container-orga48da6a" class="outline-5">
-<h5 id="orga48da6a">证明 #card</h5>
-<div class="outline-text-5" id="text-orga48da6a">
-</div>
-<div id="outline-container-orga3b2757" class="outline-6">
-<h6 id="orga3b2757">定义有两个奇函数 f 和 g，这两个函数的积为 h</h6>
-<div class="outline-text-6" id="text-orga3b2757">
+<div id="outline-container-org0c720da" class="outline-3">
+<h3 id="org0c720da">练习1</h3>
+<div class="outline-text-3" id="text-org0c720da">
 <p>
-\(h(-x)=f(-x)g(-x)=(-f(x))(-g(x))=f(x)g(x)=h(x)\)，得证
+判断 \(f(x) = log_5(2x^6 - 6x^2 + 3)\) 奇偶性<br />
+</p>
+
+<p>
+\(f(-x)=log_5(2(-x)^6-6(-x)^2+3)=log_5(2x^6-6x^2+3)\) 等于 f (x) 本身, 因此函数 f 是偶的<br />
 </p>
 </div>
 </div>
+<div id="outline-container-org08af144" class="outline-3">
+<h3 id="org08af144">练习2</h3>
+<div class="outline-text-3" id="text-org08af144">
+<p>
+判断奇偶性 \(g(x)=\frac{2x^3+x}{3x^2+5}\)<br />
+</p>
+
+<p>
+\(g(-x)=\frac{2(-x)^3+(-x)}{3(-x)^2+5}=\frac{-2x^3-x}{3x^2+5}=-g(x)\), g是奇函数<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1ad6260" class="outline-3">
+<h3 id="org1ad6260">练习3</h3>
+<div class="outline-text-3" id="text-org1ad6260">
+<p>
+判断奇偶性 \(h(x)=\frac{2x^3+x-1}{3x^2+5}\)<br />
+</p>
+
+<p>
+\(h(-x)=\frac{2(-x)^3+(-x)-1}{3(-x)^2+5}=\frac{-2x^3-x-1}{3x^2+5}=-\frac{2x^3+x+1}{3x^2+5}\) 函数 h 是非奇非偶的<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa88b65" class="outline-3">
+<h3 id="orgaa88b65">两个奇函数之积是偶函数</h3>
+<div class="outline-text-3" id="text-orgaa88b65">
+<p>
+证明：<br />
+</p>
+<ol class="org-ol">
+<li>定义有两个奇函数 f 和 g，这两个函数的积为 h<br /></li>
+<li>\(h(-x)=f(-x)g(-x)=(-f(x))(-g(x))=f(x)g(x)=h(x)\)，得证<br /></li>
+</ol>
 </div>
 </div>
 </div>
@@ -965,88 +930,94 @@
 <h2 id="orgc545062">1.5 线性函数</h2>
 <div class="outline-text-2" id="text-orgc545062">
 </div>
-<div id="outline-container-orgfc1d18e" class="outline-4">
-<h4 id="orgfc1d18e">概念 #card</h4>
-<div class="outline-text-4" id="text-orgfc1d18e">
-</div>
-<div id="outline-container-orgce6a906" class="outline-5">
-<h5 id="orgce6a906">\(f(x)= mx + b\) 这类函数叫做线性函数。它的图像是直线, ^<sup>直线的斜率是</sup> m^^。如下图</h5>
-<div class="outline-text-5" id="text-orgce6a906">
+<div id="outline-container-org81340b6" class="outline-3">
+<h3 id="org81340b6">概念</h3>
+<div class="outline-text-3" id="text-org81340b6">
+<p>
+\(f(x)= mx + b\) 这类函数叫做线性函数。它的图像是直线, <span class="underline">直线的斜率是 m</span> 。如下图<br />
+</p>
 
-<div id="org67d987e" class="figure">
-<p><img src="../assets/image_1696606840372_0.png" alt="image_1696606840372_0.png" />
+<div id="org7a71da2" class="figure">
+<p><img src="../static/image_1696606840372_0.png" alt="image_1696606840372_0.png" width="400" /><br />
 </p>
 </div>
 <ul class="org-ul">
-<li>m正数,线由左下向右上, m越大, 斜率越大, “上坡”越陡</li>
-<li>m为负数,图像由左上向右下, m的绝对值越大, “下坡”越陡</li>
-<li>m为0, 图像是一条水平的直线</li>
+<li>m正数,线由左下向右上, m越大, 斜率越大, “上坡”越陡<br /></li>
+<li>m为负数,图像由左上向右下, m的绝对值越大, “下坡”越陡<br /></li>
+<li>m为0, 图像是一条水平的直线<br /></li>
 </ul>
 </div>
 </div>
-</div>
-<div id="outline-container-org790e260" class="outline-4">
-<h4 id="org790e260">两点一线 #card</h4>
-<div class="outline-text-4" id="text-org790e260">
-</div>
-<div id="outline-container-orgc13cc9b" class="outline-5">
-<h5 id="orgc13cc9b">^<sup>仅需确认两个点</sup>, 就可以画出线性函数的图像^<sup>(两点一直线)</sup></h5>
-<div class="outline-text-5" id="text-orgc13cc9b">
+<div id="outline-container-orgddcc252" class="outline-3">
+<h3 id="orgddcc252">两点一线</h3>
+<div class="outline-text-3" id="text-orgddcc252">
+<p>
+<span class="underline">仅需确认两个点, 就可以画出线性函数的图像(两点一直线)</span><br />
+</p>
 <ul class="org-ul">
-<li>第一点：y 轴的截距。 令 \(x=0\) , \(y=m×0+b=b\) 所以直线通过 (0,b)</li>
-<li>另一个点：我们可以选择 x 轴的截距。令 y=0, mx+b=0, \(x=-\frac{b}{m}\) 直线通过 (-b/m, 0)</li>
+<li>第一点：y 轴的截距。 令 \(x=0\) , \(y=m×0+b=b\) 所以直线通过 (0,b)<br /></li>
+<li>另一个点：我们可以选择 x 轴的截距。令 y=0, mx+b=0, \(x=-\frac{b}{m}\) 直线通过 (-b/m, 0)<br /></li>
 </ul>
-
 
 <p>
-这种方法有2种例外：
+这种方法有2种例外：<br />
 </p>
-<ul class="org-ul">
-<li>b=0, 此时函数变为 \(y=mx\)。 为求得另一点, 可以把 x=1 代入, 可得 \(y=m\).
-所以直线 \(y=mx\) 通过 (0, 0) 和 (1, m) 这两点.
-例如, 直线 y = -2x 通过原点和 (1, -2)，图像:
-<img src="../assets/image_1696607265746_0.png" alt="image_1696607265746_0.png" /></li>
-<li>m=0, 这时函数变为 y=b, 是一条通过 (0, b) 的水平直线</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orga16ea6d" class="outline-4">
-<h4 id="orga16ea6d">线性函数的点斜式</h4>
-<div class="outline-text-4" id="text-orga16ea6d">
-</div>
-<div id="outline-container-org0011d07" class="outline-5">
-<h5 id="org0011d07">线性函数的点斜式 #card</h5>
-<div class="outline-text-5" id="text-org0011d07">
-</div>
-<div id="outline-container-orgd8dddd8" class="outline-6">
-<h6 id="orgd8dddd8">假设你知道直线通过某一固定的点以及它的斜率, 那就能很容易求出它的方程，这个方程被称为 ^<sup>直线方程的点斜式</sup>^^</h6>
-</div>
-<div id="outline-container-orga3b6d5e" class="outline-6">
-<h6 id="orga3b6d5e">一条直线通过\((x_0, y_0)\), 斜率为m, 它的公式为 \(y-y_0=m(x-x_0)\) ，这个式子被称为^<sup>点斜式</sup>^^</h6>
-</div>
-</div>
-<div id="outline-container-org32ba411" class="outline-5">
-<h5 id="org32ba411">如果一条直线通过 (-2, 5), 斜率为 -3, 如何求它的方程？ :-&gt;  方程为 \(y-5 = -3(x - (-2))\) , 化简后结果为 \(y=-3x - 1\)</h5>
-<div class="outline-text-5" id="text-org32ba411">
-</div>
-</div>
-<div id="outline-container-org360e6a8" class="outline-5">
-<h5 id="org360e6a8">如果不知道直线的斜率, 但知道它通过哪两点. 那怎样求它的方程? :-&gt; 找出它的斜率, 再求出方程， 一条直线通过\((x_1,y_1),(x_2,y_2)\), 它的斜率为 \(\frac{y_2-y_1}{x_2-x_1}\)</h5>
-<div class="outline-text-5" id="text-org360e6a8">
-</div>
-</div>
-<div id="outline-container-org5e01839" class="outline-5">
-<h5 id="org5e01839">练习：通过 (-3, 4) 和 (2, -6) 的直线方程是什么？ #card</h5>
-<div class="outline-text-5" id="text-org5e01839">
-</div>
-<div id="outline-container-org0b69bb3" class="outline-6">
-<h6 id="org0b69bb3">1. 求它的斜率： 斜率 \(=\frac{-6-4}{2-(-3)}=\frac{-10}{5}=-2\)</h6>
-<div class="outline-text-6" id="text-org0b69bb3">
 <ol class="org-ol">
-<li>方程为 y-4=-2(x-(-3)), 化简后为 y=-2x - 2</li>
+<li><p>
+b=0, 此时函数变为 \(y=mx\)。 为求得另一点, 可以把 x=1 代入, 可得 \(y=m\).<br />
+所以直线 \(y=mx\) 通过 (0, 0) 和 (1, m) 这两点.<br />
+例如, 直线 y = -2x 通过原点和 (1, -2)，图像:<br />
+</p>
+
+<div id="org73d5164" class="figure">
+<p><img src="../static/image_1696607265746_0.png" alt="image_1696607265746_0.png" width="400" /><br />
+</p>
+</div></li>
+<li>m=0, 这时函数变为 y=b, 是一条通过 (0, b) 的水平直线<br /></li>
 </ol>
 </div>
+</div>
+<div id="outline-container-orga16ea6d" class="outline-3">
+<h3 id="orga16ea6d">线性函数的点斜式</h3>
+<div class="outline-text-3" id="text-orga16ea6d">
+</div>
+<div id="outline-container-org21f02d1" class="outline-4">
+<h4 id="org21f02d1">概念</h4>
+<div class="outline-text-4" id="text-org21f02d1">
+<p>
+假设你知道直线通过某一固定的点以及它的斜率, 那就能很容易求出它的方程，这个方程被称为 <span class="underline">直线方程的点斜式</span><br />
+一条直线通过\((x_0, y_0)\), 斜率为m, 它的公式为 \(\frac{y-y_0}{x-x_0}=m\) ，这个式子被称为 <span class="underline">点斜式</span><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgdeb422c" class="outline-4">
+<h4 id="orgdeb422c">练习1</h4>
+<div class="outline-text-4" id="text-orgdeb422c">
+<p>
+如果一条直线通过 (-2, 5), 斜率为 -3, 如何求它的方程？<br />
+方程为 \(y-5 = -3(x - (-2))\) , 化简后结果为 \(y=-3x - 1\)<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd7325c1" class="outline-4">
+<h4 id="orgd7325c1">根据2点求解线性方程</h4>
+<div class="outline-text-4" id="text-orgd7325c1">
+<p>
+如果不知道直线的斜率, 但知道它通过哪两点. 那怎样求它的方程?<br />
+找出它的斜率, 再求出方程， 一条直线通过\((x_1,y_1),(x_2,y_2)\), 它的斜率为 \(\frac{y_2-y_1}{x_2-x_1}\)<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org02347db" class="outline-4">
+<h4 id="org02347db">练习2</h4>
+<div class="outline-text-4" id="text-org02347db">
+<p>
+通过 (-3, 4) 和 (2, -6) 的直线方程是什么？<br />
+</p>
+<ol class="org-ol">
+<li>求它的斜率： 斜率 \(=\frac{-6-4}{2-(-3)}=\frac{-10}{5}=-2\)<br /></li>
+<li>方程为 y-4=-2(x-(-3)), 化简后为 y=-2x - 2<br /></li>
+</ol>
 </div>
 </div>
 </div>
@@ -1059,20 +1030,20 @@
 <h4 id="org961f818">多项式函数</h4>
 <div class="outline-text-4" id="text-org961f818">
 </div>
-<div id="outline-container-orgf0f6d05" class="outline-5">
-<h5 id="orgf0f6d05">概念 #card</h5>
-<div class="outline-text-5" id="text-orgf0f6d05">
+<div id="outline-container-org255f677" class="outline-5">
+<h5 id="org255f677">概念 #card</h5>
+<div class="outline-text-5" id="text-org255f677">
 </div>
 <div id="outline-container-org36bd843" class="outline-6">
 <h6 id="org36bd843">基于 x 的非负次幂乘以实数, 可以 1、x、\(x^2\) 、\(x^3\) … 等为基本项, 用实数乘以这些基本项, 然后把有限个这样的项加到一起就是**多项式函数**, 比如</h6>
 <div class="outline-text-6" id="text-org36bd843">
 <ul class="org-ul">
-<li>\(f(x)=5x^4-4x^3+10\)
+<li>\(f(x)=5x^4-4x^3+10\)<br />
 <ul class="org-ul">
-<li>**多项式系数**：基本项 \(x^n\) 的倍数叫作 \(x^n\) 的系数，其中\(x^4\) 系数为5, \(x^3\) 系数为-4, \(x^0\) 系数为10，\(f(x)=5x^4-4x^3+10\) 的系数分别是5 4 0 0 10</li>
-<li>**多项式次数**：\(f(x)=5x^4-4x^3+10\) 中最大幂指数 \(5x^4\) 中的 4 被称为多项式的次数，该式被称为4次多项式。</li>
+<li>**多项式系数**：基本项 \(x^n\) 的倍数叫作 \(x^n\) 的系数，其中\(x^4\) 系数为5, \(x^3\) 系数为-4, \(x^0\) 系数为10，\(f(x)=5x^4-4x^3+10\) 的系数分别是5 4 0 0 10<br /></li>
+<li>**多项式次数**：\(f(x)=5x^4-4x^3+10\) 中最大幂指数 \(5x^4\) 中的 4 被称为多项式的次数，该式被称为4次多项式。<br /></li>
 </ul></li>
-<li>次数为 n 的多项式的数学通项公式: \(f(x)=a_nx^n+a_{n-1}x^{n-1}+…+a_2x^2+ax+a_0\)</li>
+<li>次数为 n 的多项式的数学通项公式: \(f(x)=a_nx^n+a_{n-1}x^{n-1}+…+a_2x^2+ax+a_0\)<br /></li>
 </ul>
 </div>
 </div>
@@ -1085,8 +1056,8 @@
 <h6 id="org9516f4b">单个多项式函数的图像</h6>
 <div class="outline-text-6" id="text-org9516f4b">
 
-<div id="orge90c66c" class="figure">
-<p><img src="../assets/image_1696654555751_0.png" alt="image_1696654555751_0.png" />
+<div id="org67efedc" class="figure">
+<p><img src="../assets/image_1696654555751_0.png" alt="image_1696654555751_0.png" /><br />
 </p>
 </div>
 </div>
@@ -1095,8 +1066,8 @@
 <h6 id="orgf2887ed">多项式函数图像</h6>
 <div class="outline-text-6" id="text-orgf2887ed">
 <p>
-一般多项式的图像很难画，但 <b><b>多项式的图像左右两端的走势</b></b> 容易判断. 由 <b><b>最高次数的项的系数(首项系数)</b></b> 决定，多项式函数 \(f(x)=a_nx^n+a_{n-1}x^{n-1}+…+a_2x^2+ax+a_0\) 图像如下
-<img src="../assets/image_1696654603809_0.png" alt="image_1696654603809_0.png" />
+一般多项式的图像很难画，但 <b><b>多项式的图像左右两端的走势</b></b> 容易判断. 由 <b><b>最高次数的项的系数(首项系数)</b></b> 决定，多项式函数 \(f(x)=a_nx^n+a_{n-1}x^{n-1}+…+a_2x^2+ax+a_0\) 图像如下<br />
+<img src="../assets/image_1696654603809_0.png" alt="image_1696654603809_0.png" /><br />
 </p>
 </div>
 </div>
@@ -1118,12 +1089,12 @@
 <li><a id="orgc04d2e2"></a>二次函数$p(x) = ax<sup>2</sup> + bx + c$有个判别式，根据判别式的符号可以判断二次函数到底有两个、一个还是没有实数解。这个判别式通常用符号 \(Δ\) 表示<br />
 <div class="outline-text-7" id="text-orgc04d2e2">
 <p>
-\(Δ = b^2-4ac\)
+\(Δ = b^2-4ac\)<br />
 </p>
 <ol class="org-ol">
-<li>\(Δ > 0\) 2个不同解</li>
-<li>\(Δ = 0\) 2个相同解</li>
-<li>\(Δ < 0\) 无解</li>
+<li>\(Δ > 0\) 2个不同解<br /></li>
+<li>\(Δ = 0\) 2个相同解<br /></li>
+<li>\(Δ < 0\) 无解<br /></li>
 </ol>
 </div>
 </li>
@@ -1137,8 +1108,8 @@
 <li><a id="org46a6c2f"></a>二次函数的解为 \(x = \frac{-b± \sqrt{b^2-4ac}}{2a}\)<br />
 <div class="outline-text-7" id="text-org46a6c2f">
 <ol class="org-ol">
-<li>有2个解时，解分别为不同的正负号，即 \(x_1=\frac{-b+ \sqrt{b^2-4ac}}{2a}\) \(x_2=\frac{-b- \sqrt{b^2-4ac}}{2a}\)</li>
-<li>有一个解时为 \(x=\frac{-b}{2a}\)</li>
+<li>有2个解时，解分别为不同的正负号，即 \(x_1=\frac{-b+ \sqrt{b^2-4ac}}{2a}\) \(x_2=\frac{-b- \sqrt{b^2-4ac}}{2a}\)<br /></li>
+<li>有一个解时为 \(x=\frac{-b}{2a}\)<br /></li>
 </ol>
 </div>
 </li>
@@ -1152,8 +1123,8 @@
 <li><a id="orgdf871a0"></a>\(2x^2-3x+10\) \(=2(x^2-\frac{3}{2}x+5)\) 提取2,使 \(x^2\) 的系数变为1<br />
 <div class="outline-text-7" id="text-orgdf871a0">
 <p>
-\(=2[(x-\frac{3}{4})^2+5-(\frac{3}{4})^2]\)  为了凑出一个 \((x＋a)^2\) 的形式
-\(=2(x-\frac{3}{4})^2+\frac{71}{8}\)  将-3/4移出括号
+\(=2[(x-\frac{3}{4})^2+5-(\frac{3}{4})^2]\)  为了凑出一个 \((x＋a)^2\) 的形式<br />
+\(=2(x-\frac{3}{4})^2+\frac{71}{8}\)  将-3/4移出括号<br />
 </p>
 </div>
 </li>
@@ -1173,10 +1144,10 @@
 <h6 id="org14069bb">\(\frac{p(x)}{q(x)}\) 形式, p q为多项式, 它的图像根据p q变化而变化</h6>
 <div class="outline-text-6" id="text-org14069bb">
 <ul class="org-ul">
-<li>最简单的有理函数：
+<li>最简单的有理函数：<br />
 <ol class="org-ol">
-<li>\(f(x)=p(x)\) 即分母为1, 多项式函数</li>
-<li>或分子为1 \(f(x)=\frac{1}{x^n}\) (n为正整数)</li>
+<li>\(f(x)=p(x)\) 即分母为1, 多项式函数<br /></li>
+<li>或分子为1 \(f(x)=\frac{1}{x^n}\) (n为正整数)<br /></li>
 </ol></li>
 </ul>
 </div>
@@ -1195,27 +1166,27 @@
 <h4 id="org96a25b9">指数函数</h4>
 <div class="outline-text-4" id="text-org96a25b9">
 </div>
-<div id="outline-container-org736d987" class="outline-5">
-<h5 id="org736d987">概念 #card</h5>
-<div class="outline-text-5" id="text-org736d987">
+<div id="outline-container-orgbb5ff06" class="outline-5">
+<h5 id="orgbb5ff06">概念 #card</h5>
+<div class="outline-text-5" id="text-orgbb5ff06">
 </div>
 <div id="outline-container-org0eaf2e5" class="outline-6">
 <h6 id="org0eaf2e5">\(y=a^x (a>1)\) .图像如下图(以 \(y=2^x\) 为例)</h6>
 <div class="outline-text-6" id="text-org0eaf2e5">
 
-<div id="org1bb4181" class="figure">
-<p><img src="../assets/image_1696676107230_0.png" alt="image_1696676107230_0.png" />
+<div id="orge3456ef" class="figure">
+<p><img src="../assets/image_1696676107230_0.png" alt="image_1696676107230_0.png" /><br />
 </p>
 </div>
 <ol class="org-ol">
-<li>定义域为全体实数</li>
-<li>y轴截距为1, 因为 \(a^0=1\)</li>
-<li>图形左端无限接近与x轴,但不会到达</li>
+<li>定义域为全体实数<br /></li>
+<li>y轴截距为1, 因为 \(a^0=1\)<br /></li>
+<li>图形左端无限接近与x轴,但不会到达<br /></li>
 </ol>
 <hr />
 <p>
-指数为负数时, 图像相反
-<img src="../assets/image_1696676141684_0.png" alt="image_1696676141684_0.png" />
+指数为负数时, 图像相反<br />
+<img src="../assets/image_1696676141684_0.png" alt="image_1696676141684_0.png" /><br />
 </p>
 </div>
 </div>
@@ -1228,7 +1199,7 @@
 <h6 id="org8b0ae63">如果底小于 1, 情况会是怎样？</h6>
 <div class="outline-text-6" id="text-org8b0ae63">
 <p>
-比如 \(y=\biggl(\frac{1}{2}\biggr)^x\) . 注意到 \(\biggl(\frac{1}{2}\biggr)^x=1/2^x=2^{-x}\) , 所以 \(y=2^{(-x)}\) 的图像也是 \(y=\biggl(\frac{1}{2}\biggr)^x\) 的图像, 因为对于任意 x, \(2^{-x}\) 与 \(\biggl(\frac{1}{2}\biggr)^x\) 均相等. 同理可得任何 y = bx(0 &lt; b &lt; 1) 的图像.
+比如 \(y=\biggl(\frac{1}{2}\biggr)^x\) . 注意到 \(\biggl(\frac{1}{2}\biggr)^x=1/2^x=2^{-x}\) , 所以 \(y=2^{(-x)}\) 的图像也是 \(y=\biggl(\frac{1}{2}\biggr)^x\) 的图像, 因为对于任意 x, \(2^{-x}\) 与 \(\biggl(\frac{1}{2}\biggr)^x\) 均相等. 同理可得任何 y = bx(0 &lt; b &lt; 1) 的图像.<br />
 </p>
 </div>
 </div>
@@ -1242,13 +1213,13 @@
 <h5 id="org1dd504b">指数函数的反函数就是对数函数，比如 \(y = 2^x\) 的 反函数是以 2 为底的对数函数 \(y = log_2(x)\) 以直线 \(y = x\) 为镜子, \(y = log_2(x)\) 如图</h5>
 <div class="outline-text-5" id="text-org1dd504b">
 <p>
-<img src="../assets/image_1696677610185_0.png" alt="image_1696677610185_0.png" />
-对数函数\(f(x)=log_a{x}\)
+<img src="../assets/image_1696677610185_0.png" alt="image_1696677610185_0.png" /><br />
+对数函数\(f(x)=log_a{x}\)<br />
 </p>
 <ol class="org-ol">
-<li>定义域 \([0, +∞)\) (负数和 0 不能求对数)</li>
-<li>值域：全体实数</li>
-<li>y轴为渐进轴</li>
+<li>定义域 \([0, +∞)\) (负数和 0 不能求对数)<br /></li>
+<li>值域：全体实数<br /></li>
+<li>y轴为渐进轴<br /></li>
 </ol>
 </div>
 </div>
@@ -1265,7 +1236,7 @@
 <h6 id="org34e6890">带有绝对值的函数，表示数轴上 0 和 x 的距离</h6>
 <div class="outline-text-6" id="text-org34e6890">
 <p>
-$|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$
+$|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$<br />
 </p>
 </div>
 </div>
@@ -1278,8 +1249,8 @@ $|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$
 <h6 id="orgcf38dc6">\(|x-a|\) 是数轴上 x和a 两点的距离</h6>
 <div class="outline-text-6" id="text-orgcf38dc6">
 <p>
-比如 |x - 1| ≤ 3 ， x 和 1 之间的距离小于或等于 3, 所有与 1 之间的距离不大于 3 的点，如下图
-<img src="../assets/image_1696683668520_0.png" alt="image_1696683668520_0.png" />{:height 58, :width 260}
+比如 |x - 1| ≤ 3 ， x 和 1 之间的距离小于或等于 3, 所有与 1 之间的距离不大于 3 的点，如下图<br />
+<img src="../assets/image_1696683668520_0.png" alt="image_1696683668520_0.png" />{:height 58, :width 260}<br />
 </p>
 </div>
 </div>
@@ -1292,11 +1263,11 @@ $|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$
 <h6 id="orga80676d">绝对值函数的图像是以x轴以下的部分做关于x轴的镜像</h6>
 <div class="outline-text-6" id="text-orga80676d">
 <p>
-例子：
+例子：<br />
 </p>
 <ul class="org-ul">
-<li>y=|x|的图像 <img src="../assets/image_1696683774234_0.png" alt="image_1696683774234_0.png" /></li>
-<li>\(y = |log_2(x)|\) 的图像 <img src="../assets/image_1696683791788_0.png" alt="image_1696683791788_0.png" /></li>
+<li>y=|x|的图像 <img src="../assets/image_1696683774234_0.png" alt="image_1696683774234_0.png" /><br /></li>
+<li>\(y = |log_2(x)|\) 的图像 <img src="../assets/image_1696683791788_0.png" alt="image_1696683791788_0.png" /><br /></li>
 </ul>
 </div>
 </div>
@@ -1306,7 +1277,7 @@ $|x|=\left\{\begin{array}{c}x \&#x00ad;x\end{array}\right.$
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: aunmro</p>
-<p class="date">Created: 2024-03-24 Sun 12:19</p>
+<p class="date">Created: 2024-03-24 Sun 16:54</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
