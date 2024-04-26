@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-31 Sun 23:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>普林斯顿微积分读本&#x2013;第2章:三角学</title>
+<meta name="author" content="turbolink" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/one.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">普林斯顿微积分读本&#x2013;第2章:三角学</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org99a0113">2.1 基础知识</a>
+<ul>
+<li><a href="#orgd1abdbb">弧度</a>
+<ul>
+<li><a href="#org5927bad">定义</a></li>
+<li><a href="#orgebed64f">弧度和角度的转换</a>
+<ul>
+<li><a href="#org7c0c291">弧度角度转换公式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org472678d">三角函数</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org0c6d41a">我们通过^<sup>三角形</sup>^<sup>来定义三角函数</sup>: 假设有一个直角三角形, 除直角外的一角被记为θ, 如图：</a></li>
+<li><a href="#orgfce1a9a">三角函数还有一些倒函数面定义:</a>
+<ul>
+<li><a href="#orgb31fabf">余切 :-&gt;  \(cot(x)=\frac{1}{tan(x)}\)</a></li>
+<li><a href="#orgb9a4721">正割 :-&gt; \(sec(x)=\frac{1}{cos(x)}\)</a></li>
+<li><a href="#org31a08c2">余割 :-&gt; \(csc(x)=\frac{1}{sin(x)}\)</a></li>
+</ul>
+</li>
+<li><a href="#org0f2c835">常用三角函数值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org02d8602">2.2 扩展三角函数定义域</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org72a930c">事实上三角函数远不止 0 至 π/2 这个范围，我们可以取任意角的正弦或者余弦, 哪怕这个角是负的</a></li>
+<li><a href="#orgbd9960d">2.2.1 0到2π(360度)的三角函数</a>
+<ul>
+<li><a href="#org90de82d">计算sin(θ)(或cos(θ)/tan(θ))的值, 其中 θ 是介于 0 到 \(\frac{π}{2}\) 的角. #card</a>
+<ul>
+<li><a href="#org018f02c">1. 将平面划分为4象限</a></li>
+</ul>
+</li>
+<li><a href="#orge875810">例子：计算sin(7π/6) #card</a>
+<ul>
+<li><a href="#org3eeead9">../assets/07.d02z.012_1696773093146_0.png</a></li>
+</ul>
+</li>
+<li><a href="#orge53fc5f">判断三角函数的正负：ASTC 方法 #card</a>
+<ul>
+<li><a href="#org8cd752b">../assets/07.d02z.013_1696779741405_0.png</a></li>
+</ul>
+</li>
+<li><a href="#org90fdd10">总结计算三角函数 0-2π 的过程 #card</a>
+<ul>
+<li><a href="#orga7f32a3">1. 画象限图, 确定角在哪里</a></li>
+</ul>
+</li>
+<li><a href="#org5c23918">例子: 计算cos(7π/4)</a>
+<ul>
+<li><a href="#org427837f">../assets/07.d02z.014_1696780149589_0.png</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga757973">2.2.2 [0, 2π] 以外的三角函数</a>
+<ul>
+<li><a href="#org45a0018">如何取大于 2π 或小于 0 的角的三角函数 #card</a>
+<ul>
+<li><a href="#orge9b2dd6">加上或减去 2π 的倍数, 直到角在 0 和 2π 之间.</a></li>
+</ul>
+</li>
+<li><a href="#orgb59fe5b">例子：sec(15π/4) #card</a>
+<ul>
+<li><a href="#orga65f557">1. sec(15π/4)是 cos(15π/4)的倒数，我们首先需要求出cos(15π/4)</a></li>
+</ul>
+</li>
+<li><a href="#org363c793">例子：sin(-5π/6) #card</a>
+<ul>
+<li><a href="#org9aab56f">1. 2π + (-5π/6)=7π/6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3838613">2.3 三角函数图像</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org74f18db">正弦、余弦和正切函数的图像都是周期的</a></li>
+<li><a href="#org570f1f3">sin(x) 的图像 #card</a>
+<ul>
+<li><a href="#orgf96c7fd">sin(x) 0 到 2π 的图像</a></li>
+</ul>
+</li>
+<li><a href="#org202f0cf">cos(x) 的图像 #card</a>
+<ul>
+<li><a href="#org3c2340d">0到2π时的cos图像</a></li>
+</ul>
+</li>
+<li><a href="#org72cd93f">tan(x) 的图像 #card</a>
+<ul>
+<li><a href="#org2be50e5">tan 的图像和之前不同，先画出介于 -π/2 到 π/2 的图像</a></li>
+</ul>
+</li>
+<li><a href="#org266f123">sec(x) 的图像 #card</a>
+<ul>
+<li><a href="#orgde1e74f">../assets/07.d02z.024_1696784170367_0.png</a></li>
+</ul>
+</li>
+<li><a href="#org50fa5aa">CSC(x)的图像 #card</a>
+<ul>
+<li><a href="#orgd47f9ea">../assets/07.d02z.025_1696784331392_0.png</a></li>
+</ul>
+</li>
+<li><a href="#orgf589843">Cot(X)的图像 #card</a>
+<ul>
+<li><a href="#org2a5820f">../assets/07.d02z.026_1696784425837_0.png</a></li>
+</ul>
+</li>
+<li><a href="#orga2cabc7">三角函数的奇偶性 #card</a>
+<ul>
+<li><a href="#org66a2022">sin(x) tan(x) cot(x) csc(x) 是奇函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org28accdc">2.4 三角恒等式</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orga82b298">\(\tan(x)=\frac{\sin(x)}{\cos(x)}\)</a></li>
+<li><a href="#org9a965d7">毕达哥拉斯定理 #card</a>
+<ul>
+<li><a href="#org8bfc4be">三角恒等式中最重要的就是毕达哥拉斯定理了 (用三角函数表示):</a></li>
+</ul>
+</li>
+<li><a href="#orgae555b8">互余公式</a>
+<ul>
+<li><a href="#org2f9963c">一些函数的名字是以音节 <b>co</b> 开头的. 这是 <b>互余(complementary)</b> 的简称.</a>
+<ul>
+<li><a href="#org2a47ae4">三角函数(x) = co-三角函数\(\Bigl(\frac{\pi}{2}-x\Bigr)\)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org06c6bab">和角公式与倍角公式</a>
+<ul>
+<li><a href="#orgfba7cf7">和角公式</a>
+<ul>
+<li><a href="#org8e90685">sin(A+B) :-&gt; \(sin(A+B)=\sin(A)\cos(B)+\cos(A)\sin(B)\)</a></li>
+<li><a href="#orgc5c6cb3">cos(A+B) :-&gt; \(cos(A+B)=\cos(A)\cos(B)-\sin(A)\sin(B)\)</a></li>
+</ul>
+</li>
+<li><a href="#org2bdbd02">合角公式中令 \(A = B = x\) 我们得到了倍角公式</a>
+<ul>
+<li><a href="#org415c19a">sin2x :-&gt; sin(2x) = 2sin(x)cos(x)</a></li>
+<li><a href="#orgbe750a8">cos2x :-&gt; \(cos(2x) = cos^2(x)-sin^2(x)=2cos^2(x)-1=1-2sin^2(x)\) (根据毕达哥拉斯定理 \(sin^2(x) + cos^2(x) = 1\) )</a></li>
+</ul>
+</li>
+<li><a href="#org689f567">4倍角，不需要记忆，能推导即可</a>
+<ul>
+<li><a href="#org20d6b54">sin4x :-&gt; \(\sin(4x)=2(2\sin(x)\cos(x))(2\cos^2(x)-1)=8\sin(x)\cos^3(x)-4\sin(x)\cos(x)\)</a></li>
+<li><a href="#org7d45282">cos4x :-&gt; \(\cos(4x)=2\cos^2(2x)-1=2(2\cos^2(x)-1)^2-1=8\cos^4(x)-8\cos^2(x)+1\)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org99a0113" class="outline-2">
+<h2 id="org99a0113">2.1 基础知识</h2>
+<div class="outline-text-2" id="text-org99a0113">
+<blockquote>
+<p>
+<i>学习微积分必须要了解三角学, 弧度制，三角函数等，我们先从弧度开始。</i>
+</p>
+</blockquote>
+</div>
+<div id="outline-container-orgd1abdbb" class="outline-3">
+<h3 id="orgd1abdbb">弧度</h3>
+<div class="outline-text-3" id="text-orgd1abdbb">
+</div>
+<div id="outline-container-org5927bad" class="outline-4">
+<h4 id="org5927bad">定义</h4>
+<div class="outline-text-4" id="text-org5927bad">
+<p>
+我们将旋转一周定义为 \(2\pi\) 弧度，用于代替 \(360^{\circ}\)
+</p>
+
+<p>
+半径为 1 个单位的圆的周长是 2π 个单位, 这个圆的一个扇形的弧长就是这个扇形的圆心角的弧度, 如图：
+</p>
+
+<div id="org2acfa3a" class="figure">
+<p><img src="../static/2020-09-06_18-07-03_07.d02z.001_1696688211469_0.png" alt="2020-09-06_18-07-03_07.d02z.001_1696688211469_0.png" width="400" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgebed64f" class="outline-4">
+<h4 id="orgebed64f">弧度和角度的转换</h4>
+<div class="outline-text-4" id="text-orgebed64f">
+<p>
+更重要的是掌握弧度和角度的转换， 90°=π/2, 180°=π, 270°=3π/2
+下图为角度和弧度转换:
+</p>
+
+<div id="org5c9276f" class="figure">
+<p><img src="../static/2020-09-06_18-14-28_07.d02z.002_1696689557424_0.png" alt="2020-09-06_18-14-28_07.d02z.002_1696689557424_0.png" width="400" />
+</p>
+</div>
+</div>
+<div id="outline-container-org7c0c291" class="outline-5">
+<h5 id="org7c0c291">弧度角度转换公式</h5>
+<div class="outline-text-5" id="text-org7c0c291">
+<p>
+公式: 弧度 = \(\frac{\pi}{180} *\) 角度
+</p>
+<ol class="org-ol">
+<li>将75度转为弧度制: (π/180)*75=5π/12</li>
+<li>5π/12 转换成角度: (180/π) × (5π/12) = 75°</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org472678d" class="outline-3">
+<h3 id="org472678d">三角函数</h3>
+<div class="outline-text-3" id="text-org472678d">
+</div>
+<div id="outline-container-org0c6d41a" class="outline-5">
+<h5 id="org0c6d41a">我们通过^<sup>三角形</sup>^<sup>来定义三角函数</sup>: 假设有一个直角三角形, 除直角外的一角被记为θ, 如图：</h5>
+<div class="outline-text-5" id="text-org0c6d41a">
+<p>
+<img src="../assets/2020-09-06_19-03-25_07.d02z.006_1696766275154_0.png" alt="2020-09-06_19-03-25_07.d02z.006_1696766275154_0.png" />
+三角函数的基本公式为：
+</p>
+
+<p>
+正弦 \(sin(\theta)\) = {{c1 对边/斜边}}
+余弦 \(cos(\theta)\) = {{c2 邻边/斜边}}
+正切 \(tan(\theta)\) = {{c3 对边/邻边}}
+</p>
+
+<p>
+如果是另一个角是θ，公式不变
+<img src="../assets/2020-09-06_19-08-08_07.d02z.007_1696766366306_0.png" alt="2020-09-06_19-08-08_07.d02z.007_1696766366306_0.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgfce1a9a" class="outline-5">
+<h5 id="orgfce1a9a">三角函数还有一些倒函数面定义:</h5>
+<div class="outline-text-5" id="text-orgfce1a9a">
+</div>
+<div id="outline-container-orgb31fabf" class="outline-6">
+<h6 id="orgb31fabf">余切 :-&gt;  \(cot(x)=\frac{1}{tan(x)}\)</h6>
+<div class="outline-text-6" id="text-orgb31fabf">
+</div>
+</div>
+<div id="outline-container-orgb9a4721" class="outline-6">
+<h6 id="orgb9a4721">正割 :-&gt; \(sec(x)=\frac{1}{cos(x)}\)</h6>
+<div class="outline-text-6" id="text-orgb9a4721">
+</div>
+</div>
+<div id="outline-container-org31a08c2" class="outline-6">
+<h6 id="org31a08c2">余割 :-&gt; \(csc(x)=\frac{1}{sin(x)}\)</h6>
+<div class="outline-text-6" id="text-org31a08c2">
+</div>
+</div>
+</div>
+<div id="outline-container-org0f2c835" class="outline-5">
+<h5 id="org0f2c835">常用三角函数值</h5>
+<div class="outline-text-5" id="text-org0f2c835">
+<p>
+#card
+<b>背熟这张表! 数学不是死记硬背, 但有些内容是值得记忆</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">0(度)</th>
+<th scope="col" class="org-left">\(\frac{\pi}{6}\)(30度)</th>
+<th scope="col" class="org-left">\(\frac{\pi}{4}\)(45度)</th>
+<th scope="col" class="org-left">\(\frac{\pi}{3}\)(60度)</th>
+<th scope="col" class="org-right">\(\frac{\pi}{2}\)(90度)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">sin</td>
+<td class="org-right">0</td>
+<td class="org-left">\(\frac{1}{2}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt 2}\)</td>
+<td class="org-left">\(\frac{\sqrt 3}{2}\)</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">cos</td>
+<td class="org-right">1</td>
+<td class="org-left">\(\frac{\sqrt 3}{2}\)</td>
+<td class="org-left">\(\frac{1}{\sqrt 2}\)</td>
+<td class="org-left">\(\frac{1}{2}\)</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">tan</td>
+<td class="org-right">0</td>
+<td class="org-left">\(\frac{1}{\sqrt 3}\)</td>
+<td class="org-left">1</td>
+<td class="org-left">\(\sqrt 3\)</td>
+<td class="org-right">* (不存在)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org02d8602" class="outline-2">
+<h2 id="org02d8602">2.2 扩展三角函数定义域</h2>
+<div class="outline-text-2" id="text-org02d8602">
+</div>
+<div id="outline-container-org72a930c" class="outline-4">
+<h4 id="org72a930c">事实上三角函数远不止 0 至 π/2 这个范围，我们可以取任意角的正弦或者余弦, 哪怕这个角是负的</h4>
+</div>
+<div id="outline-container-orgbd9960d" class="outline-4">
+<h4 id="orgbd9960d">2.2.1 0到2π(360度)的三角函数</h4>
+<div class="outline-text-4" id="text-orgbd9960d">
+</div>
+<div id="outline-container-org90de82d" class="outline-5">
+<h5 id="org90de82d">计算sin(θ)(或cos(θ)/tan(θ))的值, 其中 θ 是介于 0 到 \(\frac{π}{2}\) 的角. #card</h5>
+<div class="outline-text-5" id="text-org90de82d">
+</div>
+<div id="outline-container-org018f02c" class="outline-6">
+<h6 id="org018f02c">1. 将平面划分为4象限</h6>
+<div class="outline-text-6" id="text-org018f02c">
+
+<div id="orgdf9ee1a" class="figure">
+<p><img src="../assets/07.d02z.008_1696771078650_0.png" alt="07.d02z.008_1696771078650_0.png" />
+</p>
+</div>
+<ol class="org-ol">
+<li>从x轴正方向开始旋转, 角度 \(\theta\) ，就是你要求的函数角度</li>
+</ol>
+
+<div id="org32ad371" class="figure">
+<p><img src="../assets/07.d02z.009_1696771134273_0.png" alt="07.d02z.009_1696771134273_0.png" />
+</p>
+</div>
+<blockquote>
+<ul class="org-ul">
+<li>如果你转动了 π/2, 你将正面向上并且你的足迹将是 y 轴的正半轴</li>
+<li>如果你转动了角 π, 你将得到 x 轴的负半轴</li>
+<li>如果你转动了角 3π/2, 你将得到 y 轴的负半轴</li>
+<li>如果你转动了角 2π, 那么会回到了起始的那个位置, 即 x 轴的正半轴. 好像根本没转动过! 这就是为什么 0 ≡ 2π. 对于角度而言, 0 和 2π 是等价的</li>
+</ul>
+</blockquote>
+<ol class="org-ol">
+<li>旋转后线条向x轴做垂线</li>
+</ol>
+
+<div id="orge1339a2" class="figure">
+<p><img src="../assets/07.d02z.010_1696772064868_0.png" alt="07.d02z.010_1696772064868_0.png" />
+</p>
+</div>
+<ol class="org-ol">
+<li>在线上 <b>任选某个点</b> 并从该点画一条垂线至 x 轴</li>
+<li>我们需要三个值：
+<ul class="org-ul">
+<li>该点的 x 坐标和 y 坐标。 x 和 y 可能会为负，x在负半轴上x值取负号,  y在 x 轴以下取负号</li>
+<li>该点到原点的距离r. r 总是正的, 因为它是距离。
+通常我们会选择1作为r的值，这样得到的点 (x, y) 会落在^<sup>单位圆</sup>^<sup>上</sup></li>
+</ul></li>
+</ol>
+<p>
+根据勾股定理，\(r=\sqrt{x^2+y^2}\)
+</p>
+
+<p>
+现在可以定义出三角函数, x、y 和 r 分别解释为邻边、对边和斜边
+\(sin(\theta)=\frac{y}{r}\)
+\(cos(\theta)=\frac{x}{r}\)
+\(tan(\theta)=\frac{y}{x}\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge875810" class="outline-5">
+<h5 id="orge875810">例子：计算sin(7π/6) #card</h5>
+<div class="outline-text-5" id="text-orge875810">
+</div>
+<div id="outline-container-org3eeead9" class="outline-6">
+<h6 id="org3eeead9"><img src="../assets/07.d02z.012_1696773093146_0.png" alt="07.d02z.012_1696773093146_0.png" /></h6>
+<div class="outline-text-6" id="text-org3eeead9">
+<ol class="org-ol">
+<li>7/6π &gt; π 因此直线落在第三象限</li>
+<li>选取该射线上的一点, 该点至原点的距离 \(r = 1\)</li>
+<li>从该点至 x 轴做了一条垂线</li>
+<li>计算出射线与x轴的夹角，即7π/6-π=π/6</li>
+<li>\(sin (π/6) = 1/2\)</li>
+<li>但1/2不是最终答案，因为对边y是负数，r是正数，所以 \(sin(θ) =y/r\)  最终值：sin(7π/6)=-1/2</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orge53fc5f" class="outline-5">
+<h5 id="orge53fc5f">判断三角函数的正负：ASTC 方法 #card</h5>
+<div class="outline-text-5" id="text-orge53fc5f">
+</div>
+<div id="outline-container-org8cd752b" class="outline-6">
+<h6 id="org8cd752b"><img src="../assets/07.d02z.013_1696779741405_0.png" alt="07.d02z.013_1696779741405_0.png" /></h6>
+</div>
+</div>
+<div id="outline-container-org90fdd10" class="outline-5">
+<h5 id="org90fdd10">总结计算三角函数 0-2π 的过程 #card</h5>
+<div class="outline-text-5" id="text-org90fdd10">
+</div>
+<div id="outline-container-orga7f32a3" class="outline-6">
+<h6 id="orga7f32a3">1. 画象限图, 确定角在哪里</h6>
+<div class="outline-text-6" id="text-orga7f32a3">
+<ol class="org-ol">
+<li>如果角在 x 轴或 y 轴上 (即没在任何象限中), 那么画出三角函数的图像, 从图像中读取数值</li>
+<li>否则找出射线和 x 轴之间最小的角(参考角)</li>
+<li>计算出参考角三角函数的值</li>
+<li>根据astc判断符号</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5c23918" class="outline-5">
+<h5 id="org5c23918">例子: 计算cos(7π/4)</h5>
+<div class="outline-text-5" id="text-org5c23918">
+</div>
+<div id="outline-container-org427837f" class="outline-6">
+<h6 id="org427837f"><img src="../assets/07.d02z.014_1696780149589_0.png" alt="07.d02z.014_1696780149589_0.png" /></h6>
+<div class="outline-text-6" id="text-org427837f">
+<ol class="org-ol">
+<li>根据图像， 参考角就是 2π 和 7π/4 的差 π/4.</li>
+<li>cos(π/4)=\(1/\sqrt{2}\)</li>
+<li>ASTC 图可知, 在第四象限中余弦为正</li>
+</ol>
+
+<p>
+\(\cos(7\pi/4)=1/\sqrt{2}\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga757973" class="outline-4">
+<h4 id="orga757973">2.2.2 [0, 2π] 以外的三角函数</h4>
+<div class="outline-text-4" id="text-orga757973">
+</div>
+<div id="outline-container-org45a0018" class="outline-5">
+<h5 id="org45a0018">如何取大于 2π 或小于 0 的角的三角函数 #card</h5>
+<div class="outline-text-5" id="text-org45a0018">
+</div>
+<div id="outline-container-orge9b2dd6" class="outline-6">
+<h6 id="orge9b2dd6">加上或减去 2π 的倍数, 直到角在 0 和 2π 之间.</h6>
+<div class="outline-text-6" id="text-orge9b2dd6">
+<p>
+从图像上看, 三角函数并不是在 2π 结束了, 它一直在旋转。
+比如 5π/2 ，这个图像在旋转了两周以后到达了 π/2, 所以二者的三角函数值是一样的，以下弧度的三角函数的值都是相等的:
+\(\frac{\pi}{2},\frac{5\pi}{2},\frac{9\pi}{2},\frac{13\pi}{2},\frac{17\pi}{2},\cdots\)
+</p>
+
+<p>
+另一种情况，弧度为负，此时图像做了逆时针旋转.
+比如 -3π/2. 此将 -3π/2 加上 2π，结果为π/2,下面为π/2相关的弧度：
+\(\cdots,-\frac{15\pi}{2},-\frac{11\pi}{2},-\frac{7\pi}{2},-\frac{3\pi}{2},\frac{\pi}{2},\frac{5\pi}{2},\frac{9\pi}{2},\frac{13\pi}{2},\frac{17\pi}{2},\cdots\)
+</p>
+
+<p>
+我们可以用集合表示所有的弧度 \({\frac{\pi}{2} + 2\pi n}\) , n表示所有整数
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb59fe5b" class="outline-5">
+<h5 id="orgb59fe5b">例子：sec(15π/4) #card</h5>
+<div class="outline-text-5" id="text-orgb59fe5b">
+</div>
+<div id="outline-container-orga65f557" class="outline-6">
+<h6 id="orga65f557">1. sec(15π/4)是 cos(15π/4)的倒数，我们首先需要求出cos(15π/4)</h6>
+<div class="outline-text-6" id="text-orga65f557">
+<ol class="org-ol">
+<li>(15/4)π - 2π = (7/4)π</li>
+<li>cos(7π/4)= \(1/\sqrt{2}\)</li>
+<li>sec(15π/4)=\(\sqrt{2}\)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org363c793" class="outline-5">
+<h5 id="org363c793">例子：sin(-5π/6) #card</h5>
+<div class="outline-text-5" id="text-org363c793">
+</div>
+<div id="outline-container-org9aab56f" class="outline-6">
+<h6 id="org9aab56f">1. 2π + (-5π/6)=7π/6</h6>
+<div class="outline-text-6" id="text-org9aab56f">
+<ol class="org-ol">
+<li>\(sin(-5π/6) = sin(7π/6)=-1/2\)</li>
+</ol>
+
+<div id="org488928e" class="figure">
+<p><img src="../assets/07.d02z.016_1696781423164_0.png" alt="07.d02z.016_1696781423164_0.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3838613" class="outline-2">
+<h2 id="org3838613">2.3 三角函数图像</h2>
+<div class="outline-text-2" id="text-org3838613">
+</div>
+<div id="outline-container-org74f18db" class="outline-4">
+<h4 id="org74f18db">正弦、余弦和正切函数的图像都是周期的</h4>
+</div>
+<div id="outline-container-org570f1f3" class="outline-4">
+<h4 id="org570f1f3">sin(x) 的图像 #card</h4>
+<div class="outline-text-4" id="text-org570f1f3">
+</div>
+<div id="outline-container-orgf96c7fd" class="outline-5">
+<h5 id="orgf96c7fd">sin(x) 0 到 2π 的图像</h5>
+<div class="outline-text-5" id="text-orgf96c7fd">
+
+<div id="org3508f67" class="figure">
+<p><img src="../assets/07.d02z.017_1696783018202_0.png" alt="07.d02z.017_1696783018202_0.png" />
+</p>
+</div>
+
+<p>
+sin(x) 以 2π 为单位重复 (sin(x) 是 x 的周期函数, 其周期为 2π), 图像如下：
+<img src="../assets/07.d02z.018_1696783043328_0.png" alt="07.d02z.018_1696783043328_0.png" />
+sinx图像关于原点有 180° 点对称性, 是奇函数.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org202f0cf" class="outline-4">
+<h4 id="org202f0cf">cos(x) 的图像 #card</h4>
+<div class="outline-text-4" id="text-org202f0cf">
+</div>
+<div id="outline-container-org3c2340d" class="outline-5">
+<h5 id="org3c2340d">0到2π时的cos图像</h5>
+<div class="outline-text-5" id="text-org3c2340d">
+<p>
+<img src="../assets/07.d02z.019_1696783330113_0.png" alt="07.d02z.019_1696783330113_0.png" />
+cos(x) 是周期函数及其周期为 2π，其全部图像为
+<img src="../assets/07.d02z.020_1696783337804_0.png" alt="07.d02z.020_1696783337804_0.png" />
+该图像关于 y 轴有镜面对称性，是偶函数
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org72cd93f" class="outline-4">
+<h4 id="org72cd93f">tan(x) 的图像 #card</h4>
+<div class="outline-text-4" id="text-org72cd93f">
+</div>
+<div id="outline-container-org2be50e5" class="outline-5">
+<h5 id="org2be50e5">tan 的图像和之前不同，先画出介于 -π/2 到 π/2 的图像</h5>
+<div class="outline-text-5" id="text-org2be50e5">
+
+<div id="orgc8f6ed4" class="figure">
+<p><img src="../assets/image_1696783384674_0.png" alt="image_1696783384674_0.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>正切函数有垂直渐近线.</li>
+<li>周期是 π, 而不是 2π.</li>
+</ul>
+
+
+<p>
+y = tan (x) 的全部图像：
+<img src="../assets/07.d02z.022_1696783467677_0.png" alt="07.d02z.022_1696783467677_0.png" />
+</p>
+<ul class="org-ul">
+<li>当 x 是 π/2 的奇数倍数时, y = tan(x)有垂直渐近线(因而此处是无定义的)</li>
+<li><b>tan(x) 是奇函数</b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org266f123" class="outline-4">
+<h4 id="org266f123">sec(x) 的图像 #card</h4>
+<div class="outline-text-4" id="text-org266f123">
+</div>
+<div id="outline-container-orgde1e74f" class="outline-5">
+<h5 id="orgde1e74f"><img src="../assets/07.d02z.024_1696784170367_0.png" alt="07.d02z.024_1696784170367_0.png" /></h5>
+</div>
+</div>
+<div id="outline-container-org50fa5aa" class="outline-4">
+<h4 id="org50fa5aa">CSC(x)的图像 #card</h4>
+<div class="outline-text-4" id="text-org50fa5aa">
+</div>
+<div id="outline-container-orgd47f9ea" class="outline-5">
+<h5 id="orgd47f9ea"><img src="../assets/07.d02z.025_1696784331392_0.png" alt="07.d02z.025_1696784331392_0.png" /></h5>
+</div>
+</div>
+<div id="outline-container-orgf589843" class="outline-4">
+<h4 id="orgf589843">Cot(X)的图像 #card</h4>
+<div class="outline-text-4" id="text-orgf589843">
+</div>
+<div id="outline-container-org2a5820f" class="outline-5">
+<h5 id="org2a5820f"><img src="../assets/07.d02z.026_1696784425837_0.png" alt="07.d02z.026_1696784425837_0.png" /></h5>
+</div>
+</div>
+<div id="outline-container-orga2cabc7" class="outline-4">
+<h4 id="orga2cabc7">三角函数的奇偶性 #card</h4>
+<div class="outline-text-4" id="text-orga2cabc7">
+</div>
+<div id="outline-container-org66a2022" class="outline-5">
+<h5 id="org66a2022">sin(x) tan(x) cot(x) csc(x) 是奇函数</h5>
+<div class="outline-text-5" id="text-org66a2022">
+<p>
+cos(x) csc(x) 是偶函数
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org28accdc" class="outline-2">
+<h2 id="org28accdc">2.4 三角恒等式</h2>
+<div class="outline-text-2" id="text-org28accdc">
+</div>
+<div id="outline-container-orga82b298" class="outline-4">
+<h4 id="orga82b298">\(\tan(x)=\frac{\sin(x)}{\cos(x)}\)</h4>
+<div class="outline-text-4" id="text-orga82b298">
+<p>
+\(\cot(x)=\frac{\cos(x)}{\sin(x)}\)
+</p>
+<blockquote>
+<p>
+有时, 根据这些恒等式, 用正弦和余弦来代替每一个正切和余切会有帮助, 但这只是你被卡住时不得已而为之的下下策.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org9a965d7" class="outline-4">
+<h4 id="org9a965d7">毕达哥拉斯定理 #card</h4>
+<div class="outline-text-4" id="text-org9a965d7">
+</div>
+<div id="outline-container-org8bfc4be" class="outline-5">
+<h5 id="org8bfc4be">三角恒等式中最重要的就是毕达哥拉斯定理了 (用三角函数表示):</h5>
+<div class="outline-text-5" id="text-org8bfc4be">
+<p>
+\(sin^2(x)+cos^2(x)=1\)
+</p>
+<blockquote>
+<p>
+为什么这是毕达哥拉斯定理呢？如果直角三角形的斜边是 1, 其中一个角为 x, 自己验证三角形的其他两条边长就是 cos (x) 和 sin (x)
+</p>
+</blockquote>
+
+<p>
+等式两边同除以 \(cos^2(x)\) -&gt; \(tan^2(x)+1=sec^2(x)\)
+等式两边同除以 \(sin^2(x)\) -&gt; \(1+cot^2(x)=csc^2(x)\)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae555b8" class="outline-4">
+<h4 id="orgae555b8">互余公式</h4>
+<div class="outline-text-4" id="text-orgae555b8">
+</div>
+<div id="outline-container-org2f9963c" class="outline-5">
+<h5 id="org2f9963c">一些函数的名字是以音节 <b>co</b> 开头的. 这是 <b>互余(complementary)</b> 的简称.</h5>
+<div class="outline-text-5" id="text-org2f9963c">
+<p>
+两个角互余, 意味着它们的和是 π/2 (或 90°).
+</p>
+
+<p>
+互余的函数满足以下公式 #card
+</p>
+</div>
+<div id="outline-container-org2a47ae4" class="outline-6">
+<h6 id="org2a47ae4">三角函数(x) = co-三角函数\(\Bigl(\frac{\pi}{2}-x\Bigr)\)</h6>
+<div class="outline-text-6" id="text-org2a47ae4">
+<p>
+\(\sin(x)=\cos\Bigl(\frac{\pi}{2}-x\Bigr),\quad\tan(x)=\cot\Bigl(\frac{\pi}{2}-x\Bigr),\quad\sec(x)=\csc\Bigl(\frac{\pi}{2}-x\Bigr)\)
+\(\cos(x)=\sin\Bigl(\frac{\pi}{2}-x\Bigr),\quad\cot(x)=\tan\Bigl(\frac{\pi}{2}-x\Bigr),\quad\csc(x)=\sec\Bigl(\frac{\pi}{2}-x\Bigr)\)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org06c6bab" class="outline-4">
+<h4 id="org06c6bab">和角公式与倍角公式</h4>
+<div class="outline-text-4" id="text-org06c6bab">
+</div>
+<div id="outline-container-orgfba7cf7" class="outline-5">
+<h5 id="orgfba7cf7">和角公式</h5>
+<div class="outline-text-5" id="text-orgfba7cf7">
+</div>
+<div id="outline-container-org8e90685" class="outline-6">
+<h6 id="org8e90685">sin(A+B) :-&gt; \(sin(A+B)=\sin(A)\cos(B)+\cos(A)\sin(B)\)</h6>
+<div class="outline-text-6" id="text-org8e90685">
+</div>
+</div>
+<div id="outline-container-orgc5c6cb3" class="outline-6">
+<h6 id="orgc5c6cb3">cos(A+B) :-&gt; \(cos(A+B)=\cos(A)\cos(B)-\sin(A)\sin(B)\)</h6>
+<div class="outline-text-6" id="text-orgc5c6cb3">
+</div>
+</div>
+</div>
+<div id="outline-container-org2bdbd02" class="outline-5">
+<h5 id="org2bdbd02">合角公式中令 \(A = B = x\) 我们得到了倍角公式</h5>
+<div class="outline-text-5" id="text-org2bdbd02">
+</div>
+<div id="outline-container-org415c19a" class="outline-6">
+<h6 id="org415c19a">sin2x :-&gt; sin(2x) = 2sin(x)cos(x)</h6>
+<div class="outline-text-6" id="text-org415c19a">
+</div>
+</div>
+<div id="outline-container-orgbe750a8" class="outline-6">
+<h6 id="orgbe750a8">cos2x :-&gt; \(cos(2x) = cos^2(x)-sin^2(x)=2cos^2(x)-1=1-2sin^2(x)\) (根据毕达哥拉斯定理 \(sin^2(x) + cos^2(x) = 1\) )</h6>
+<div class="outline-text-6" id="text-orgbe750a8">
+</div>
+</div>
+</div>
+<div id="outline-container-org689f567" class="outline-5">
+<h5 id="org689f567">4倍角，不需要记忆，能推导即可</h5>
+<div class="outline-text-5" id="text-org689f567">
+</div>
+<div id="outline-container-org20d6b54" class="outline-6">
+<h6 id="org20d6b54">sin4x :-&gt; \(\sin(4x)=2(2\sin(x)\cos(x))(2\cos^2(x)-1)=8\sin(x)\cos^3(x)-4\sin(x)\cos(x)\)</h6>
+<div class="outline-text-6" id="text-org20d6b54">
+</div>
+</div>
+<div id="outline-container-org7d45282" class="outline-6">
+<h6 id="org7d45282">cos4x :-&gt; \(\cos(4x)=2\cos^2(2x)-1=2(2\cos^2(x)-1)^2-1=8\cos^4(x)-8\cos^2(x)+1\)</h6>
+<div class="outline-text-6" id="text-org7d45282">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: turbolink</p>
+<p class="date">Created: 2024-03-31 Sun 23:30</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
