@@ -987,3 +987,7 @@ h3 {border-bottom: 1px solid #ddd;}
 h4 {border-bottom: 1px solid #ddd;}
 h5 {border-bottom: 1px solid #ddd;}
 h6 {border-bottom: 1px solid #ddd;}
+
+p > code {
+    background-color: #f2f2f2;
+}

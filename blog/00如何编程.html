@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-10 Sat 00:04 -->
+<!-- 2024-08-10 Sat 03:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>屠龙术与废物们</title>
-<meta name="author" content="aunmro" />
+<title>开篇：如何编程</title>
+<meta name="author" content="turbolink" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -197,55 +197,134 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">屠龙术与废物们</h1>
+<h1 class="title">开篇：如何编程</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org279f280">数学</a></li>
-<li><a href="#org7a7b5b1">设计</a></li>
-<li><a href="#orgfccc036">屠龙术</a></li>
-<li><a href="#org8470c66">屁用没有</a></li>
+<li><a href="#org56f730b">准备开发环境</a></li>
+<li><a href="#org26cb90f">第一个程序</a></li>
+<li><a href="#org1e90b83">Racket 的括号语法</a></li>
+<li><a href="#org7d3ac6a">DrRacket 的基本界面</a></li>
+<li><a href="#orgdbac237">DrRacket 的交互区</a></li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org56f730b" class="outline-2">
+<h2 id="org56f730b">准备开发环境</h2>
+<div class="outline-text-2" id="text-org56f730b">
+<p>
+下载Racket,这是用来写代码的东西：<a href="https://mirrors.tuna.tsinghua.edu.cn/racket-installers/8.10/racket-8.10-x86_64-win32-cs.exe">https://mirrors.tuna.tsinghua.edu.cn/racket-installers/8.10/racket-8.10-x86_64-win32-cs.exe</a> ，安装.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26cb90f" class="outline-2">
+<h2 id="org26cb90f">第一个程序</h2>
+<div class="outline-text-2" id="text-org26cb90f">
 <blockquote>
 <p>
-我们长久地告别了辩证法，但辩证法无处不在。
+当你还是孩子时，你的父母会教你用手指做算术："1+1等于几"，"3+2等于几"，此时你会用手指进行计算。
+他们在进行“编程”，而你做了“计算”，这就是 <b>编程和计算</b> 的全部内容。
 </p>
 </blockquote>
+<p>
+现在轮到你用Racket编程: <b>比如你想计算1+1</b>
+</p>
+<ol class="org-ol">
+<li><p>
+启动 DrRacket, 选择 <code>初级语言（Beginning student）</code>
+</p>
 
-<div id="outline-container-org279f280" class="outline-2">
-<h2 id="org279f280">数学</h2>
-<div class="outline-text-2" id="text-org279f280">
-<ul class="org-ul">
-<li><a href="普林斯顿微积分读本.html#ID-90f0ce12-d626-4026-8762-2d727fca4a16">普林斯顿微积分读本</a></li>
-</ul>
+<div id="orgd70d7ea" class="figure">
+<p><img src="../static/xQIOUlliCX_1683987255435_0.gif" alt="xQIOUlliCX_1683987255435_0.gif" width="800" />
+</p>
+</div></li>
+<li><p>
+在上方区域输入代码 <code>(+ 1 1)</code> ，点击右上角 <code>运行</code> 按钮 ，计算结果会出现在下方
+</p>
+
+<div id="org429f123" class="figure">
+<p><img src="../static/xA7xrMna6D_1683987142499_0.gif" alt="xA7xrMna6D_1683987142499_0.gif" width="800" />
+</p>
+</div></li>
+</ol>
+
+<blockquote>
+<p>
+编程就是这么简单
+</p>
+</blockquote>
 </div>
 </div>
 
-<div id="outline-container-org7a7b5b1" class="outline-2">
-<h2 id="org7a7b5b1">设计</h2>
-<div class="outline-text-2" id="text-org7a7b5b1">
+<div id="outline-container-org1e90b83" class="outline-2">
+<h2 id="org1e90b83">Racket 的括号语法</h2>
+<div class="outline-text-2" id="text-org1e90b83">
+<p>
+我们使用的编程语言是 Racket， racket 采用了前缀表达式和括号语法: 1+1要写为 <code>+ 1 1</code> ,然后被括号 <code>()</code> 包起来:
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #707183;">(</span><span style="color: #006FE0;">+</span> <span style="color: #D0372D;">1</span> <span style="color: #D0372D;">1</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<hr />
+
+<p>
+在Drracket 的上部分输入更多代码，点击 <code>运行</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-racket"><span style="color: #707183;">(</span><span style="color: #006FE0;">+</span> <span style="color: #D0372D;">2</span> <span style="color: #D0372D;">2</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #006FE0;">*</span> <span style="color: #D0372D;">3</span> <span style="color: #D0372D;">3</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #006FE0;">-</span> <span style="color: #D0372D;">4</span> <span style="color: #D0372D;">2</span><span style="color: #707183;">)</span>
+<span style="color: #707183;">(</span><span style="color: #006FE0;">/</span> <span style="color: #D0372D;">6</span> <span style="color: #D0372D;">2</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+<p>
+运行的结果： 4 9 2 3
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgfccc036" class="outline-2">
-<h2 id="orgfccc036">屠龙术</h2>
-<div class="outline-text-2" id="text-orgfccc036">
-<ul class="org-ul">
-<li><a href="htdp2.html#ID-d7a1233f-fec2-476d-ac40-9e73252f00ff">程序设计方法（第2版）笔记</a></li>
-</ul>
+<div id="outline-container-org7d3ac6a" class="outline-2">
+<h2 id="org7d3ac6a">DrRacket 的基本界面</h2>
+<div class="outline-text-2" id="text-org7d3ac6a">
+<p width="800">
+<img src="../static/image_1707210108520_0.png" alt="image_1707210108520_0.png" width="800" />
+DrRacket 上部分为 <span class="underline">定义区</span> ，我们在此设计程序、编写代码，比如:
+</p>
+<ol class="org-ol">
+<li>输入 <code>(+ 1 1)</code></li>
+<li>点击运行，DrRacket 会把定义区的表达式进行计算（或称求值），并在下半部分 <span class="underline">交互区</span> 显示结果</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org8470c66" class="outline-2">
-<h2 id="org8470c66">屁用没有</h2>
+<div id="outline-container-orgdbac237" class="outline-2">
+<h2 id="orgdbac237">DrRacket 的交互区</h2>
+<div class="outline-text-2" id="text-orgdbac237">
+<p>
+DrRacket的交互区也可以直接输入表达式并计算：在 &gt; 后输入表达式, 回车
+</p>
+
+<div id="org14cba48" class="figure">
+<p><img src="../static/DrRacket_krHhFqxhET_1683987886092_0.gif" alt="DrRacket_krHhFqxhET_1683987886092_0.gif" width="800" />
+</p>
+</div>
+
+<blockquote>
+<p>
+<b>完</b>, 跳转回之前的章节：<a href="htdp2.html#ID-d7a1233f-fec2-476d-ac40-9e73252f00ff">程序设计方法（第2版）的笔记</a>
+</p>
+</blockquote>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: aunmro</p>
-<p class="date">Created: 2024-08-10 Sat 00:04</p>
+<p class="author">Author: turbolink</p>
+<p class="date">Created: 2024-08-10 Sat 03:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-10 Sat 00:04 -->
+<!-- 2024-08-10 Sat 03:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>屠龙术与废物们</title>
+<title>Clojure By Example</title>
 <meta name="author" content="aunmro" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -197,55 +197,75 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">屠龙术与废物们</h1>
+<h1 class="title">Clojure By Example</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org279f280">数学</a></li>
-<li><a href="#org7a7b5b1">设计</a></li>
-<li><a href="#orgfccc036">屠龙术</a></li>
-<li><a href="#org8470c66">屁用没有</a></li>
+<li><a href="#org8aa3c9c">开发环境——debian</a></li>
 </ul>
 </div>
 </div>
-<blockquote>
+
+<div id="outline-container-org8aa3c9c" class="outline-2">
+<h2 id="org8aa3c9c">开发环境——debian</h2>
+<div class="outline-text-2" id="text-org8aa3c9c">
 <p>
-我们长久地告别了辩证法，但辩证法无处不在。
+在 debian 中安装 clojure
 </p>
-</blockquote>
-
-<div id="outline-container-org279f280" class="outline-2">
-<h2 id="org279f280">数学</h2>
-<div class="outline-text-2" id="text-org279f280">
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt -t bookworm-backports install clojure leiningen
+</pre>
+</div>
 <ul class="org-ul">
-<li><a href="普林斯顿微积分读本.html#ID-90f0ce12-d626-4026-8762-2d727fca4a16">普林斯顿微积分读本</a></li>
+<li>lein 是项目管理、包管理、命令行工具</li>
 </ul>
-</div>
-</div>
 
-<div id="outline-container-org7a7b5b1" class="outline-2">
-<h2 id="org7a7b5b1">设计</h2>
-<div class="outline-text-2" id="text-org7a7b5b1">
-</div>
-</div>
 
-<div id="outline-container-orgfccc036" class="outline-2">
-<h2 id="orgfccc036">屠龙术</h2>
-<div class="outline-text-2" id="text-orgfccc036">
-<ul class="org-ul">
-<li><a href="htdp2.html#ID-d7a1233f-fec2-476d-ac40-9e73252f00ff">程序设计方法（第2版）笔记</a></li>
-</ul>
-</div>
-</div>
+<hr />
 
-<div id="outline-container-org8470c66" class="outline-2">
-<h2 id="org8470c66">屁用没有</h2>
+<p>
+测试是否安装好clojure： 执行 <code>clojure</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ clojure
+Clojure 1.10.2
+<span style="color: #BA36A5;">user</span>=&gt;
+</pre>
+</div>
+<p>
+在 <code>user=&gt;</code> 后即可输入代码
+</p>
+
+<p>
+<b>clojure可以完全只靠repl开发</b> 或者使用编辑器配合repl插件。
+</p>
+
+<p>
+测试是否安装好lein：执行 <code>lein repl</code> ，如下表示安装成功
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ lein repl
+nREPL server started on port 38575 on host 127.0.0.1 - nrepl://127.0.0.1:38575
+REPL-y 0.5.1, nREPL 1.0.0
+Clojure 1.11.1
+OpenJDK 64-Bit Server VM 17.0.11+9-Debian-1deb12u1
+    Docs: (doc function-name-here)
+          (find-doc <span style="color: #008000;">"part-of-name-here"</span>)
+  Source: (<span style="color: #006FE0;">source</span> function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (<span style="color: #0000FF;">exit</span>) or (quit)
+ Results: Stored<span style="color: #0000FF;"> in</span> vars *1, *2, *3, an exception<span style="color: #0000FF;"> in</span> *e
+
+<span style="color: #BA36A5;">user</span>=&gt;
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: aunmro</p>
-<p class="date">Created: 2024-08-10 Sat 00:04</p>
+<p class="date">Created: 2024-08-10 Sat 03:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
