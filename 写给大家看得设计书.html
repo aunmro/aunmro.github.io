@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-11 Sun 20:02 -->
+<!-- 2024-08-11 Sun 19:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Clojure By Example</title>
+<title>写给大家看得设计书</title>
 <meta name="author" content="aunmro" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -197,75 +197,28 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Clojure By Example</h1>
+<h1 class="title">写给大家看得设计书</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge66312c">开发环境——debian</a></li>
+<li><a href="#orgc72066c">第一部分 设计原则</a></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orge66312c" class="outline-2">
-<h2 id="orge66312c">开发环境——debian</h2>
-<div class="outline-text-2" id="text-orge66312c">
-<p>
-在 debian 中安装 clojure
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">sudo apt -t bookworm-backports install clojure leiningen
-</pre>
-</div>
+<div id="outline-container-orgc72066c" class="outline-2">
+<h2 id="orgc72066c">第一部分 设计原则</h2>
+<div class="outline-text-2" id="text-orgc72066c">
 <ul class="org-ul">
-<li>lein 是项目管理、包管理、命令行工具</li>
+<li><a href="01四大基本原则.html#ID-febfbfca-6d1a-4702-9669-ff101a537782">第一章 四大基本原则</a></li>
+<li><a href="02亲密性.html#ID-a47286df-1436-4597-8872-2b9d04246ebf">第二章 亲密性</a></li>
 </ul>
-
-
-<hr />
-
-<p>
-测试是否安装好clojure： 执行 <code>clojure</code>
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">$ clojure
-Clojure 1.10.2
-user=&gt;
-</pre>
-</div>
-<p>
-在 <code>user=&gt;</code> 后即可输入代码
-</p>
-
-<p>
-<b>clojure可以完全只靠repl开发</b> 或者使用编辑器配合repl插件。
-</p>
-
-<p>
-测试是否安装好lein：执行 <code>lein repl</code> ，如下表示安装成功
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">$ lein repl
-nREPL server started on port 38575 on host 127.0.0.1 - nrepl://127.0.0.1:38575
-REPL-y 0.5.1, nREPL 1.0.0
-Clojure 1.11.1
-OpenJDK 64-Bit Server VM 17.0.11+9-Debian-1deb12u1
-    Docs: (doc function-name-here)
-          (find-doc "part-of-name-here")
-  Source: (source function-name-here)
- Javadoc: (javadoc java-object-or-class-here)
-    Exit: Control+D or (exit) or (quit)
- Results: Stored in vars *1, *2, *3, an exception in *e
-
-user=&gt;
-</pre>
-</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: aunmro</p>
-<p class="date">Created: 2024-08-11 Sun 20:02</p>
+<p class="date">Created: 2024-08-11 Sun 19:57</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
