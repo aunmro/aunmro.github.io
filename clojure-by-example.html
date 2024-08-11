@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-10 Sat 00:54 -->
+<!-- 2024-08-11 Sun 18:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>程序设计方法（第2版）的笔记</title>
-<meta name="author" content="turbolink" />
+<title>Clojure By Example</title>
+<meta name="author" content="aunmro" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -197,28 +197,75 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">程序设计方法（第2版）的笔记</h1>
+<h1 class="title">Clojure By Example</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org34a718d">开篇：如何编程</a></li>
+<li><a href="#orge66312c">开发环境——debian</a></li>
 </ul>
 </div>
 </div>
-<blockquote>
-<p>
-书籍地址：<a href="https://htdp.org/2023-8-14/Book/index.html">https://htdp.org/2023-8-14/Book/index.html</a>
-</p>
-</blockquote>
 
-<div id="outline-container-org34a718d" class="outline-2">
-<h2 id="org34a718d"><a href="00如何编程.html#ID-8b16b0d0-053f-4668-9876-cfb3f3c41cf5">开篇：如何编程</a></h2>
+<div id="outline-container-orge66312c" class="outline-2">
+<h2 id="orge66312c">开发环境——debian</h2>
+<div class="outline-text-2" id="text-orge66312c">
+<p>
+在 debian 中安装 clojure
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt -t bookworm-backports install clojure leiningen
+</pre>
+</div>
+<ul class="org-ul">
+<li>lein 是项目管理、包管理、命令行工具</li>
+</ul>
+
+
+<hr />
+
+<p>
+测试是否安装好clojure： 执行 <code>clojure</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ clojure
+Clojure 1.10.2
+user=&gt;
+</pre>
+</div>
+<p>
+在 <code>user=&gt;</code> 后即可输入代码
+</p>
+
+<p>
+<b>clojure可以完全只靠repl开发</b> 或者使用编辑器配合repl插件。
+</p>
+
+<p>
+测试是否安装好lein：执行 <code>lein repl</code> ，如下表示安装成功
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ lein repl
+nREPL server started on port 38575 on host 127.0.0.1 - nrepl://127.0.0.1:38575
+REPL-y 0.5.1, nREPL 1.0.0
+Clojure 1.11.1
+OpenJDK 64-Bit Server VM 17.0.11+9-Debian-1deb12u1
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=&gt;
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: turbolink</p>
-<p class="date">Created: 2024-08-10 Sat 00:54</p>
+<p class="author">Author: aunmro</p>
+<p class="date">Created: 2024-08-11 Sun 18:46</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
